@@ -1,0 +1,345 @@
+@import "var-mixins";
+@import "typographie";
+
+.house-resume__container {
+    background: $base-color-0;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    padding: 20px;
+    vertical-align: top;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        float: none;
+        display: table;
+    }
+}
+
+.house-resume__title {
+    @include ff_gothamRounded();
+    font-size: 20px;
+    line-height: 22px;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: 24px;
+        line-height: 26px;
+        text-align: left;
+    }
+}
+
+
+.house-resume__user {
+    text-align: center;
+    @include respond-to(tablet){
+
+    }
+}
+
+.house-resume__profile {
+    display: block;
+    margin: auto;
+    border-radius: 78px;
+    width: 78px;
+
+    @include respond-to(tablet){
+    display: table-cell;
+    }
+}
+
+.house-resume__general-info {
+    display: table-cell;
+    vertical-align: top;
+
+    @include respond-to(tablet) {
+        padding-left: 20px;
+    }
+}
+
+.house-resume__location {
+    margin: 10px auto 0;
+    display: table;
+
+    @include respond-to(tablet) {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.house-resume__profile-name {
+    opacity: 0;
+
+    @include respond-to(tablet) {
+        @include ff_gothamRounded();
+        display: block;
+        float: left;
+        font-size: 18px;
+        margin-top: 10px;
+        opacity: 1;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+.house-resume__icons {
+    float: left;
+    margin: 20px 0 0;
+    padding: 0;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin: 0;
+        width: auto;
+    }
+
+    .list-item {
+        float: left;
+        list-style: none;
+        position: relative;
+        width: 25%;
+
+        @include respond-to(tablet) {
+            width: 25%;
+        }
+
+        &.people {
+            .icon {
+                @include image('layout/people_icon.png', 'mobile');
+                height: 26px;
+                margin: 0 0 0 -13px;
+                width: 32px;
+            }
+        }
+
+        &.room {
+            .icon {
+                @include image('layout/room_icon.png', 'mobile');
+                height: 25px;
+                margin: 0 0 0 -12px;
+                width: 18px;
+            }
+        }
+
+        &.depto {
+            .icon {
+                @include image('layout/depto_icon.png', 'mobile');
+                height: 23px;
+                margin: 0 0 0 -11px;
+                width: 25px;
+            }
+        }
+
+        &.bath {
+            .icon {
+                @include image('layout/bath_icon.png', 'mobile');
+                height: 24px;
+                margin: 0 0 0 -12px;
+                width: 23px;
+            }
+        }
+
+        .icon {
+            display: block;
+            left: 50%;
+            margin: auto;
+            position: absolute;
+            top: 10px;
+
+            @include respond-to(tablet) {
+                top: 18px;
+            }
+        }
+
+        .text {
+            color: $base-color-1;
+            float: left;
+            font-size: 10px;
+            margin-top: 40px;
+            text-align: center;
+            width: 100%;
+
+            @include respond-to(tablet) {
+                margin-top: 50px;
+            }
+        }
+    }
+}
+
+.house__info-container {
+    margin-top: 45px;
+}
+
+.house__info-title {
+    @include ff_gothamRoundedBold();
+    color: $base-color-4;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+.house__info-description {
+    color: $base-color-4;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.house__section-container {
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    padding: 20px 0;
+    width: 100%;
+}
+
+
+.house__section-title {
+    @include ff_gothamRoundedBold();
+    color: $blue;
+    float: left;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 30%;
+    }
+}
+
+.house__section-column {
+    float: left;
+    margin-top: 5px;
+    width: 100%;
+
+    + .house__section-column {
+        margin-top: 0;
+    }
+
+    @include respond-to(tablet) {
+        margin-top: 0;
+    }
+
+    &:first-child {
+
+    }
+
+    @include respond-to(tablet) {
+        padding-right: 20px;
+        width: 35%;
+
+        + .house__section-column {
+            padding-right: 0;
+        }
+    }
+
+    &.amenities-column {
+
+        @include respond-to(tablet) {
+            margin-top: -4px;
+        }
+    }
+}
+
+.house__section-row {
+    float: left;
+    width: 100%;
+}
+
+.house__section-subcolumn {
+    float: left;
+    width: 50%;
+}
+
+.house__section-column-2 {
+    float: left;
+    padding-top: 10px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 70%;
+        padding-top: 0;
+    }
+}
+
+
+
+// Amenities
+
+.amenitie {
+    box-sizing: border-box;
+    float: left;
+    height: 30px;
+    padding-left: 36px;
+    position: relative;
+    line-height: 30px;
+    width: 100%;
+
+    &.disable {
+        color: $base-color-2;
+        padding-left: 0;
+        text-decoration: line-through;
+    }
+
+    &.kitchen {
+        .icon {
+            @include image('amenities/kitchen_icon.png', 'mobile');
+            height: 27px;
+            margin-left: -11px;
+            margin-top: -13px;
+            width: 23px;
+        }
+    }
+
+    &.air_condition {
+        .icon {
+            @include image('amenities/air_condition_icon.png', 'mobile');
+            height: 27px;
+            margin-left: -10px;
+            margin-top: -10px;
+            width: 20px;
+        }
+    }
+
+    &.gym {
+        .icon {
+            @include image('amenities/gym_icon.png', 'mobile');
+            height: 20px;
+            margin-left: -13px;
+            margin-top: -13px;
+            width: 27px;
+        }
+    }
+
+    &.internet {
+        .icon {
+            @include image('amenities/internet_icon.png', 'mobile');
+            height: 27px;
+            margin-left: -13px;
+            margin-top: -13px;
+            width: 27px;
+        }
+    }
+
+    .icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+    }
+}
+
+
+.tag {
+    background: $base-color-0;
+    float: left;
+    margin: 0 5px 5px 0;
+    padding: 5px 10px;
+}
+
+.tag__value {
+    color: $base-color-2;
+}

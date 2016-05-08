@@ -1,0 +1,36 @@
+{
+  "name": "MyTwinPlaces",
+  "version": "0.0.1",
+  "authors": [
+    "izigelbaum@gmail.com"
+  ],
+  "description": "Comparte tu casa con anfitriones en +160 países y hospédate gratis en tus viajes.",
+  "main": "bower.json",
+  "moduleType": [
+    "node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/foo/bar.git"
+  },
+  "keywords": [
+    "jeet"
+  ],
+  "license": "MIT",
+  "homepage": "localhost:8000",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jeet": "~6.1.2",
+    "normalize-scss": "~3.0.3",
+    "compass-breakpoint": "~2.7.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

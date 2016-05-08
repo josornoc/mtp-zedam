@@ -1,0 +1,111 @@
+@import "var-mixins";
+@import "typographie";
+
+.wishlist {
+    background: $base-color-0;
+    float: left;
+    width: 100%;
+}
+
+.wishlist__functionality {
+    box-sizing: border-box;
+    float: left;
+    padding: 20px;
+    width: 100%;
+}
+
+.wishlist__button {
+    @include ff_gothamRoundedBold();
+    border: 1px solid $base-color-1;
+    border-radius: 3px;
+    background: $white;
+    color: $base-color-4;
+    float: left;
+    font-size: 16px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    width: 100%;
+
+    .icon {
+        @include image('layout/heart_icon.png', 'mobile');
+        display: inline-block;
+        height: 16px;
+        margin-right: 10px;
+        margin-top: -4px;
+        vertical-align: middle;
+        width: 17px;
+    }
+}
+
+.wishlist__online {
+    color: $base-color-2;
+    float: left;
+    padding: 10px 0 0;
+    text-align: center;
+    width: 100%;
+}
+
+.wishlist__actions {
+    border-top: 1px solid $base-color-1;
+    float: left;
+    width: 100%;
+}
+
+.wishlist__btn {
+    @include ff_gothamRoundedBold();
+    box-sizing: border-box;
+    color: $base-color-4;
+    float: left;
+    font-size: 14px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    width: 50%;
+
+    &.email {
+
+        &:after {
+            background: $base-color-1;
+            content: '';
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+        }
+
+        .icon {
+            @include image('layout/email_icon.png', 'mobile');
+            height: 10px;
+            margin-top: -2px;
+            width: 15px;
+        }
+    }
+
+    &.social {
+
+        .icon {
+            @include image('layout/social_icon.png', 'mobile');
+            height: 15px;
+            margin-top: -2px;
+            width: 14px;
+        }
+    }
+
+    .icon {
+        display: inline-block;
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+}
+
+.wishlist__report {
+    @include ff_gothamRounded();
+    float: left;
+    color: $base-color-4;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+

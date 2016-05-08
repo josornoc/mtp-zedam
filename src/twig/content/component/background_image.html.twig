@@ -1,0 +1,62 @@
+<div class="background__container-animation lazyload"
+    {% if data_class is defined %}
+        data-class="{{ data_class }}"
+    {% endif %}
+    {% if data_position is defined %}
+        data-position="{{ data_position }}"
+    {% endif %}
+    {% if data_duration is defined %}
+        data-duration="{{ data_duration }}"
+    {% endif %}
+    {% if data_delay is defined %}
+        data-delay="{{ data_delay }}"
+    {% endif %}
+    {% if data_iteration_count is defined %}
+        data-iteration-count="{{ data_iteration_count }}"
+    {% endif %}
+    {% if data_viewport is defined %}
+        data-viewport="{{ data_viewport }}"
+    {% endif %}
+
+    {% if data_class_mobile is defined %}
+        data-class-mobile="{{ data_class_mobile }}"
+    {% endif %}
+    {% if data_position_mobile is defined %}
+        data-position-mobile="{{ data_position_mobile }}"
+    {% endif %}
+    {% if data_duration_mobile is defined %}
+        data-duration-mobile="{{ data_duration_mobile }}"
+    {% endif %}
+    {% if data_delay_mobile is defined %}
+        data-delay-mobile="{{ data_delay_mobile }}"
+    {% endif %}
+    {% if data_iteration_count_mobile is defined %}
+        data-iteration-count-mobile="{{ data_iteration_count_mobile }}"
+    {% endif %}
+    {% if data_viewport_mobile is defined %}
+        data-viewport-mobile="{{ data_viewport_mobile }}"
+    {% endif %}
+
+    {% if data_offset is defined %}
+        data-offset="{{ data_offset }}"
+    {% endif %}
+
+     data-sizes="auto"
+     data-bgset="{{ asset(mobile_path ~ image) }} [(max-width: 767px)] |
+		{{ asset(tablet_path ~ image) }} [(max-width: 1025px)] |
+		{{ asset(desktop_path ~ image) }} [(max-width: 1400px)] |
+		{{ asset(desktop_big_path ~ image) }}"
+    >
+    {#<div class="background__container_loader"
+        data-image-mobile="{{ asset(mobile_path ~ image) }}"
+        data-image-mobile-retina="{{ asset(mobile_path ~ image)|replace({ ('.'): '@2x.' }) }}"
+        data-image-tablet="{{ asset(tablet_path ~ image) }}"
+        data-image-tablet-retina="{{ asset(tablet_path ~ image)|replace({ ('.'): '@2x.' }) }}"
+        data-image-desktop="{{ asset(desktop_path ~ image) }}"
+        data-image-desktop-retina="{{ asset(desktop_path ~ image)|replace({ ('.'): '@2x.' }) }}"
+        data-image-desktop-big="{{ asset(desktop_big_path ~ image) }}"
+        data-image-desktop-big-retina="{{ asset(desktop_big_path ~ image)|replace({ ('.'): '@2x.' }) }}"
+        >
+
+    </div>#}
+</div>

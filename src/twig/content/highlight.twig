@@ -1,0 +1,22 @@
+<div class="house__section-container">
+    <div class="house__section-title">
+        Highlights
+    </div>
+    <div class="house__section-column-2">
+
+        {% set variab = {'Anfitrión': 2, 'Locación': 3, 'Recomendaciones': 11, 'Ciudad' : 5, 'Limpieza': 7, 'Baños': 8, 'Cocina': 5} %}
+
+        {% for key,item in variab %}
+
+            <span class="tag">
+                {{ key }}
+
+                <span class="tag__value">
+                    ({{ item }})
+                </span>
+            </span>
+
+        {% endfor %}
+
+    </div>
+</div>

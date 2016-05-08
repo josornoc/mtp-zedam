@@ -1,0 +1,28 @@
+<div class="house__section-container">
+    <div class="house__info-title">
+        Reviews
+        <span class="star__container">
+            {% for i in 0..3 %}
+                {% include 'component/image.html.twig' with {
+                alt: 'Host',
+                common: true,
+                class: 'star',
+                image: 'layout/star_icon@2x.png',
+                } only %}
+            {% endfor %}
+
+            {% include 'component/image.html.twig' with {
+                alt: 'Host',
+                common: true,
+                class: 'star',
+                image: 'layout/star_icon_off@2x.png',
+            } only %}
+        </span>
+    </div>
+</div>
+
+<!-- Highlights -->
+{% include 'highlight.twig' %}
+
+<!-- Summary -->
+{% include 'summary.twig' %}

@@ -1,0 +1,57 @@
+@import '../../bower_components/bootstrap/dist/css/bootstrap.css';
+@import '../../bower_components/normalize-scss/normalize.scss';
+@import '../../bower_components/compass-breakpoint/stylesheets/breakpoint';
+@import '../../bower_components/jeet/scss/jeet/index';
+@import "var-mixins";
+@import "typographie";
+@import "booking";
+@import 'settings';
+@import 'b64';
+@import 'header';
+@import "house_resume";
+@import "wishlist";
+
+a {
+    display: block;
+}
+
+$large: 1024px;
+
+$palette: (
+    'green': #00B141,
+    'orange': #FC6719,
+    'purple': #742E8B,
+    'pink': #EF3EA9
+);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font__main;
+
+    //background-color: color('green');
+    @include breakpoint($large) {
+        //background-color: color('orange');
+    }
+}
+
+@mixin ff_gothamRounded() {
+    font-family: GothamRounded-Book;
+}
+
+
+
+.star__container {
+    margin: 0 10px;
+}
+
+.star {
+    height: 12px;
+    width: 12px;
+}
+
+.bold {
+    @include ff_gothamRoundedBold();
+}

@@ -1,0 +1,60 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'home' %}
+
+{% block page %}
+
+    <div class="image__container">
+
+        {% include 'twig/content/component/image.html.twig' with {
+            alt: 'Header Image logo',
+            common: false,
+            class: 'logo_image',
+            image: 'header_image.png',
+        } only %}
+
+    </div>
+    <div class="row" style="margin: auto; max-width: 1045px;">
+
+        <div class="booking__case col-lg-4 col-md-4 col-sm-4 col-xs-12">
+            <!-- Booking Case-->
+            {% include 'twig/content/booking.twig' %}
+        </div>
+
+        <div class="col-lg-8 col-md-8">
+            <!-- Preview User Depto-->
+            {% include 'twig/content/house_resume.twig' %}
+
+            <!-- House info -->
+            {% include 'twig/content/house_info.twig' %}
+
+            <div class="house__section-container">
+                <div class="house__section-title">
+                    Contact host
+                </div>
+            </div>
+
+            <!-- House Space -->
+            {% include 'twig/content/space.twig' %}
+
+            <!-- House Amenities -->
+            {% include 'twig/content/amenities.twig' %}
+
+            <!-- House Description -->
+            {% include 'twig/content/description.twig' %}
+
+            <!-- House Rules -->
+            {% include 'twig/content/rules.twig' %}
+
+            <!-- House Availability -->
+            {% include 'twig/content/availability.twig' %}
+
+            <!-- Reviews -->
+            {% include 'twig/content/reviews.twig' %}
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

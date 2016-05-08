@@ -1,0 +1,205 @@
+@import "var-mixins";
+@import "typographie";
+
+.booking__case {
+    &.col-lg-4 {
+        float: right;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.booking__container {
+    background: $white;
+    box-sizing: border-box;
+    padding: 60px 0 20px;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        background: $base-color-0;
+        padding: 60px 20px 20px;
+        width: 315px;
+    }
+}
+
+.booking__header {
+    @include ff_gothamRounded();
+    background: rgba(86, 86, 86, .8);
+    box-sizing: border-box;
+    color: $white;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    left: -15px;
+    right: -15px;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+
+    @include respond-to(tablet) {
+        left: 0;
+        right: 0;
+    }
+}
+
+.booking__points,
+.booking__extra_info {
+    float: left;
+    font-size: 24px;
+    width: 50%;
+}
+
+.booking__extra_info {
+    font-size: 14px;
+    font-style: italic;
+    text-align: right;
+}
+
+.booking__body {
+    font-size: 14px;
+    color: $base-color-3;
+
+    .row {
+        float: left;
+        width: 100%;
+    }
+
+    .titles,
+    .content {
+        float: left;
+        width: 50%;
+    }
+
+    .booking__inputs {
+        display: table;
+        border-spacing: 10px;
+        margin-bottom: 10px;
+        margin-left: -10px;
+        width: calc(100% + 10px);
+    }
+
+    .booking__input {
+        margin-bottom: 10px;
+        float: left;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            display: table-cell;
+            float: none;
+            margin-bottom: 0;
+        }
+
+        input,
+        select {
+            -webkit-appearance: none;
+            background: $white;
+            border: 1px solid $base-color-1;
+            border-radius: 2px;
+            height: 36px;
+        }
+
+        label {
+            width: 100%;
+            font-size: 12px;
+        }
+    }
+
+    .booking__input-arrival {
+        box-sizing: border-box;
+        padding-left: 10px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            width: 100px;
+        }
+    }
+
+    .booking__input-departure {
+        box-sizing: border-box;
+        padding-left: 10px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            width: 100px;
+        }
+    }
+
+    .booking__input-people {
+        box-sizing: border-box;
+        padding-left: 10px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            padding-left: 10px;
+            text-align: center;
+            width: 54px;
+        }
+    }
+}
+
+.booking__row {
+
+    &:last-child {
+        border-bottom: 0;
+    }
+
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    width: 100%;
+
+    .content {
+        font-style: italic;
+        padding-right: 5px;
+        text-align: right;
+    }
+}
+
+.booking__submit {
+    -webkit-appearance: none;
+    background: $blue;
+    border-radius: 3px;
+    border: 0;
+    color: $white;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.booking__watching {
+    padding-top: 20px;
+}
+
+.booking__watching-title {
+    @include ff_gothamRoundedBold();
+    width: 100%;
+}
+
+.booking__watching-text {
+    padding-top: 5px;
+    width: 100%;
+}
+
+.booking__watching-icon {
+    @include image('layout/watch_icon.png', 'mobile');
+    float: right;
+    height: 34px;
+    margin-left: 10px;
+    width: 31px;
+}
+
+.booking__warning {
+    float: left;
+    padding: 20px;
+}
+.booking__warning-icon {
+    @include image('layout/warning_icon.png', 'mobile');
+    float: left;
+    height: 18px;
+    margin-right: 10px;
+    width: 18px;
+}
