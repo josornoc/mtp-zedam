@@ -70,7 +70,8 @@ gulp.task('dependecies', function () {
       'src/js/libs/00_webfont.min.js',
       'src/js/libs/01_load_webfont.min.js',
       'src/js/libs/01_loader.min.js',
-      'src/js/libs/lazysizes.min.js'
+      'src/js/libs/lazysizes.min.js',
+      'src/js/libs/ls.bgset.min.js',
     ])
     .pipe(gulp.dest('./dist/js'))
   gulp.src([

@@ -1,0 +1,95 @@
+@import "var-mixins";
+@import "typographie";
+
+.photo__container {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.photo__row {
+    float: left;
+    width: 100%;
+}
+
+.photo__row-big {
+    float: left;
+    padding-bottom: 56%;
+    position: relative;
+    margin-top: 5px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin-right: .5%;
+        margin-top: 0;
+        padding-bottom: 49%;
+        width: 49.5%;
+
+        & + .photo__row-big {
+            margin-left: .5%;
+            margin-right: 0;
+        }
+    }
+}
+
+.photo__row-small {
+    float: left;
+    padding-bottom: 56%;
+    position: relative;
+    margin-top: 5px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-bottom: 28%;
+        margin-right: 1%;
+        width: 32.666%;
+
+        + .photo__row-small {
+            + .photo__row-small {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.photo__view-all {
+    @include ff_gothamRoundedBold();
+    bottom: 0;
+    color: $white;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 1;
+
+    &:hover {
+        color: $base-color-1;
+
+        &:after {
+            opacity: .7;
+        }
+    }
+
+    &:after {
+        @include transition();
+        background: $base-color-4;
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: .6;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 0;
+    }
+}
+
+.photo__view-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -10px;
+    z-index: 2;
+}

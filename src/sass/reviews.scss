@@ -1,0 +1,46 @@
+@import "var-mixins";
+@import "typographie";
+
+.house__reviews-date {
+    display: block;
+    margin-top: 30px;
+}
+
+.house__reviews-response {
+    display: table;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.house__reviews-response-profile-container{
+    display: table-cell;
+    padding-right: 30px;
+    width: 36px;
+}
+
+.house__reviews-response-profile {
+    border-radius: 30px;
+    height: 36px;
+    width: 36px;
+}
+
+.house__reviews-response-content {
+    display: table-cell;
+    vertical-align: top;
+
+    .house__reviews-response-title {
+        @include ff_gothamRoundedBold();
+    }
+
+    .house__reviews-date {
+        margin-top: 20px;
+    }
+}
+
+.house__reviews-others {
+    @include ff_gothamRoundedBold();
+    float: left;
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+}

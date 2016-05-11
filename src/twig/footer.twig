@@ -1,1 +1,128 @@
-FOOTER
+<div class="footer__container">
+    <div class="container">
+
+        <div class="footer__logo"></div>
+
+        <div class="row">
+
+            <div class="col-xs-8 col-xs-push-2 col-sm-6 col-sm-push-3 col-md-4 col-md-push-8 col-lg-3 selector">
+                <div type="text" class="selector-language" >
+                    <div>English</div>
+                </div>
+            </div>
+
+            <div class="hidden-xs hidden-sm col-md-pull-4 col-md-8 footer__link col-lg-7 col-lg-offset-2">
+
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  ">
+                    <div class="footer__link-title">
+                        Empresa
+                    </div>
+                    <div>
+                        <a href="">
+                            About
+                        </a>
+                        <a href="">
+                            Careers
+                        </a>
+                        <a href="">
+                            Press</a>
+                        <a href="">
+                            Blog</a>
+                        <a href="">
+                            Help
+                        </a>
+                        <a href="">
+                            Policies
+                        </a>
+                        <a href="">
+                            Disaster Response
+                        </a>
+                        <a href="">
+                            Terms & Privacy
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                    <div class="footer__link-title">
+                        Descubre
+                    </div>
+                    <div>
+                        <a href="">
+                            Trust & Safety
+                        </a>
+                        <a href="">
+                            Travel Credit
+                        </a>
+                        <a href="">
+                            Gift Cards
+                        </a>
+                        <a href="">
+                            Picks
+                        </a>
+                        <a href="">
+                            Mobile
+                        </a>
+                        <a href="">
+                            Action
+                        </a>
+                        <a href="">
+                            Business Travel
+                        </a>
+                        <a href="">
+                            Site Map
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
+                    <div class="footer__link-title">
+                        Hospedar
+                    </div>
+                    <div>
+                        <a href="">
+                            Why Host
+                        </a>
+                        <a href="">
+                            Hospitality
+                        </a>
+                        <a href="">
+                            Responsible Hosting
+                        </a>
+                        <a href="">
+                            Home Safety
+                        </a>
+                        <a href="">
+                            Instant Book
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="social-icons__container">
+            {% set social = [
+                'facebook',
+                'google',
+                'linkedin',
+                'instagram',
+                'pinterest',
+                'twitter'
+            ] %}
+
+            <div class="social-icons">
+
+            {% for item in social %}
+                <a href="" class="icon-container {{ item }}">
+                    <span class="icon"></span>
+                </a>
+            {% endfor %}
+
+            </div>
+
+        </div>
+
+        <div class="footer__rights">
+            MyTwinPlace © 2016 · Todos los derechos reservados
+        </div>
+    </div>
+</div>

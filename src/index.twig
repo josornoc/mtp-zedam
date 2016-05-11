@@ -14,14 +14,15 @@
         } only %}
 
     </div>
-    <div class="row" style="margin: auto; max-width: 1045px;">
+    <div class="container " >
+    <div class="row booking__case-container">
 
-        <div class="booking__case col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        <div class="booking__case hidden-xs col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <!-- Booking Case-->
             {% include 'twig/content/booking.twig' %}
         </div>
 
-        <div class="col-lg-8 col-md-8">
+        <div class="col-lg-8 col-md-8" id="content">
             <!-- Preview User Depto-->
             {% include 'twig/content/house_resume.twig' %}
 
@@ -49,10 +50,78 @@
             <!-- House Availability -->
             {% include 'twig/content/availability.twig' %}
 
+            <div class="photo__container">
+                <div class="photo__row">
+                    <div class="photo__row-big hidden-xs">
+                        {% include 'twig/content/component/background_image.html.twig' with {
+                            alt: 'Header Image logo',
+                            common: false,
+                            class: 'logo_image',
+                            image: 'images/image_1@2x.png',
+                        } only %}
+                    </div>
+                    <div class="photo__row-big hidden-xs">
+                        {% include 'twig/content/component/background_image.html.twig' with {
+                            alt: 'Header Image logo',
+                            common: false,
+                            class: 'logo_image',
+                            image: 'images/image_2@2x.png',
+                        } only %}
+                    </div>
+                </div>
+                <div class="photo__row">
+
+                    <div class="photo__row-small hidden-xs">
+                        {% include 'twig/content/component/background_image.html.twig' with {
+                            alt: 'Header Image logo',
+                            common: false,
+                            class: 'logo_image',
+                            image: 'images/image_3@2x.png',
+                        } only %}
+                    </div>
+                    <div class="photo__row-small hidden-xs">
+                        {% include 'twig/content/component/background_image.html.twig' with {
+                            alt: 'Header Image logo',
+                            common: false,
+                            class: 'logo_image',
+                            image: 'images/image_4@2x.png',
+                        } only %}
+                    </div>
+                    <div class="photo__row-small">
+
+                        {% include 'twig/content/component/background_image.html.twig' with {
+                            alt: 'Header Image logo',
+                            common: false,
+                            class: 'logo_image',
+                            image: 'images/image_5@2x.png',
+                        } only %}
+
+                        <a href="" class="photo__view-all">
+                            <span class="photo__view-text">
+                                Ver todas las 20 fotos
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
             <!-- Reviews -->
             {% include 'twig/content/reviews.twig' %}
 
         </div>
+
+        <div class="col-md-12 col-lg-12">
+            <!-- Map -->
+            {% include 'twig/content/map.twig' %}
+
+            <!-- Related -->
+            {% include 'twig/content/related.twig' %}
+        </div>
+
+
+    </div>
     </div>
 
 

@@ -1,0 +1,89 @@
+@import "var-mixins";
+@import "typographie";
+
+.house__related-image {
+    padding-bottom: 56%;
+    position: relative;
+
+    @include respond-to(tablet) {
+        padding-bottom: 70%;
+    }
+}
+
+.house__related-profile-image {
+    border: 1px solid $white;
+    border-radius: 60px;
+    height: 60px;
+    position: absolute;
+    right: 10px;
+    top: -30px;
+    width: 60px;
+}
+
+.house__related-points {
+    @include ff_gothamRounded();
+    background: $base-color-3;
+    bottom: 25px;
+    color: $white;
+    font-size: 24px;
+    left: 0;
+    padding: 3px 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+.house__related-favorite {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+}
+
+
+
+.house__related-title {
+    @include ff_gothamRounded();
+    color: $base-color-4;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.house__related-description {
+    color: $base-color-2;
+    font-size: 14px;
+}
+
+.house__related-info {
+    position: relative;
+    float: left;
+    margin-bottom: 30px;
+    width: 100%;
+
+}
+
+.map__embed {
+    float: left;
+    position: relative;
+    height: 300px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        height: 500px;
+    }
+
+    @include respond-to(desktop) {
+        height: 700px;
+    }
+}
+
+.map__embed-iframe {
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#gmap_canvas img {
+     max-width: none !important;
+     background: none !important
+ }

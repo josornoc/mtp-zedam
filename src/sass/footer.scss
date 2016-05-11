@@ -1,0 +1,177 @@
+@import "var-mixins";
+@import "typographie";
+
+.footer__container {
+    background-image: url('/images/mobile/layout/grid@2x.png');
+    background-color: $base-color-4;
+    background-position: 50%;
+    box-sizing: border-box;
+    color: $white;
+    float: left;
+    padding-top: 80px;
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.footer__link {
+    a {
+        @include transition();
+        color: $base-color-1;
+        margin-bottom: 2px;
+
+        &:hover {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+}
+
+.footer__link-title {
+    @include ff_gothamRoundedBold();
+    margin-bottom: 10px;
+}
+
+.footer__logo {
+    @include image('layout/logo_icon.png', 'mobile');
+    height: 86px;
+    left: 50%;
+    margin-left: -42px;
+    position: absolute;
+    top: -43px;
+    width: 86px;
+    z-index: 1;
+}
+
+.social-icons__container {
+    border-top: 1px solid $blue;
+    float: left;
+    margin: 55px 0 25px;
+    width: 100%;
+}
+
+.social-icons {
+    display: table;
+    margin: 30px auto 0;
+
+    .icon-container {
+        border: 1px solid $white;
+        border-radius: 50px;
+        float: left;
+        height: 36px;
+        position: relative;
+        width: 36px;
+
+        + .icon-container {
+            margin-left: 20px;
+        }
+
+        .icon {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        &.facebook {
+            .icon {
+                @include image('layout/social/facebook_icon.png', 'mobile');
+                height: 20px;
+                margin: -10px 0 0 -5px;
+                width: 11px;
+            }
+        }
+
+        &.twitter {
+            .icon {
+                @include image('layout/social/twitter_icon.png', 'mobile');
+                height: 13px;
+                margin: -6px 0 0 -7px;
+                width: 16px;
+            }
+        }
+
+        &.google {
+            .icon {
+                @include image('layout/social/google_icon.png', 'mobile');
+                height: 18px;
+                margin: -9px 0 0 -8px;
+                width: 18px;
+            }
+        }
+
+        &.instagram {
+            .icon {
+                @include image('layout/social/instagram_icon.png', 'mobile');
+                height: 16px;
+                margin: -8px 0 0 -8px;
+                width: 16px;
+            }
+        }
+
+        &.linkedin {
+            .icon {
+                @include image('layout/social/linkedin_icon.png', 'mobile');
+                height: 17px;
+                margin: -9px 0 0 -8px;
+                width: 17px;
+            }
+        }
+
+        &.pinterest {
+            .icon {
+                @include image('layout/social/pinterest_icon.png', 'mobile');
+                height: 17px;
+                margin: -8px 0 0 -8px;
+                width: 17px;
+            }
+        }
+    }
+}
+
+.selector {
+    margin-bottom: 30px;
+}
+
+.selector-language {
+    @include transition();
+    background: $base-color-2;
+    border-radius: 2px;
+    color: $base-color-0;
+    cursor: pointer;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    opacity: .9;
+    padding: 0 10px;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        //max-width: 300px;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:after {
+        border-top: 7px solid $white;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        width: 0;
+        height: 0;
+        position: absolute;
+        content: '';
+        top: 50%;
+        margin-top: -3px;
+        right: 15px;
+        z-index: 1;
+    }
+}
+
+.footer__rights {
+    @include ff_gothamRoundedBold();
+    display: table;
+    font-size: 11px;
+    margin: 30px auto;
+}

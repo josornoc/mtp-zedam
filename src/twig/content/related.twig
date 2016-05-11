@@ -1,0 +1,87 @@
+
+<div class="house__section-container clean">
+    <div class="house__info-title">
+        Anuncios similares
+    </div>
+    <br/>
+    <br/>
+
+    {% set content = [
+    {
+        title: 'Excelente departamento en ...',
+        description: 'Casa/apto. entero — a 0.6 kilómetros',
+        image_profile: 'layout/host.png',
+        image: 'images/image_6.png',
+        points: '253 pts'
+    }, {
+        title: 'Excelente departamento en ...',
+        description: 'Casa/apto. entero — a 0.6 kilómetros',
+        image_profile: 'layout/host.png',
+        image: 'images/image_7.png',
+        points: '253 pts'
+    }, {
+        title: 'Excelente departamento en ...',
+        description: 'Casa/apto. entero — a 0.6 kilómetros',
+        image_profile: 'layout/host.png',
+        image: 'images/image_8.png',
+        points: '253 pts',
+        fav: true
+    }
+    ] %}
+
+    <div class="row">
+
+        {% for item in content %}
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+            <div class="house__related-image">
+                {% include 'component/background_image.html.twig' with {
+                    alt: item.title,
+                    common: false,
+                    class: 'logo_image',
+                    image: item.image
+                } only %}
+
+                <div class="house__related-points">
+                    {{ item.points }}
+                </div>
+
+                <span class="house__related-favorite fav{{ (item.fav) ? ' true' : '' }}"></span>
+            </div>
+
+            <div class="house__related-info">
+                {% include 'component/image.html.twig' with {
+                    alt: item.title,
+                    common: true,
+                    class: 'house__related-profile-image',
+                    image: item.image_profile
+                } only %}
+
+                <div class="house__related-title">
+                    {{ item.title }}
+                </div>
+
+                <div class="house__related-description">
+                    {{ item.description }}
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+<div class="house__section-container">
+</div>
+<div class="house__section-container clean">
+    <div class="house__info-title">
+        Descubre otras opciones en Barcelona y sus alrededores
+    </div>
+
+    <div class="house__info-description">
+        More places to stay in Buenos Aires: Houses · Bed & Breakfasts · Lofts · Villas · Condominiums<br/>
+        People also stay in Punta del Este Vacation Rentals · Punta del Diablo · Buenos Aires · Montevideo · Santiago · Florianopolis
+    </div>
+</div>

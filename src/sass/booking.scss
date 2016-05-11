@@ -2,11 +2,34 @@
 @import "typographie";
 
 .booking__case {
+
     &.col-lg-4 {
         float: right;
         position: relative;
         z-index: 1;
+
+        @include respond-to(tablet) {
+            margin-top: 30px;
+        }
+
+        @include respond-to(desktop) {
+            margin-top: 0;
+        }
     }
+
+
+
+    &.fixed {
+        position: absolute;
+        margin-top: 0;
+        z-index: 10000;
+        right: 0;
+    }
+}
+
+.booking__case-container {
+    float: left;
+    position: relative;
 }
 
 .booking__container {
@@ -19,7 +42,7 @@
     @include respond-to(tablet) {
         background: $base-color-0;
         padding: 60px 20px 20px;
-        width: 315px;
+        //width: 315px;
     }
 }
 
@@ -35,7 +58,7 @@
     right: -15px;
     padding: 0 10px;
     position: absolute;
-    top: 0;
+    top: -40px;
 
     @include respond-to(tablet) {
         left: 0;
@@ -158,16 +181,24 @@
 }
 
 .booking__submit {
+    @include ff_gothamRoundedBold();
+    @include transition();
     -webkit-appearance: none;
     background: $blue;
     border-radius: 3px;
     border: 0;
     color: $white;
+    font-size: 16px;
     height: 50px;
     line-height: 50px;
     margin-top: 20px;
+    outline: none;
     text-align: center;
     width: 100%;
+
+    &:hover {
+        background: $blue-hover;
+    }
 }
 
 .booking__watching {

@@ -42,21 +42,6 @@
     {% endif %}
 
      data-sizes="auto"
-     data-bgset="{{ asset(mobile_path ~ image) }} [(max-width: 767px)] |
-		{{ asset(tablet_path ~ image) }} [(max-width: 1025px)] |
-		{{ asset(desktop_path ~ image) }} [(max-width: 1400px)] |
-		{{ asset(desktop_big_path ~ image) }}"
+     data-bgset="/images/mobile/{{ image }} [(max-width: 767px)] | /images/tablet/{{ image }} [(max-width: 1025px)] | /images/desktop/{{ image }} [(max-width: 1400px)] | /images/desktop_big/{{ image }}"
     >
-    {#<div class="background__container_loader"
-        data-image-mobile="{{ asset(mobile_path ~ image) }}"
-        data-image-mobile-retina="{{ asset(mobile_path ~ image)|replace({ ('.'): '@2x.' }) }}"
-        data-image-tablet="{{ asset(tablet_path ~ image) }}"
-        data-image-tablet-retina="{{ asset(tablet_path ~ image)|replace({ ('.'): '@2x.' }) }}"
-        data-image-desktop="{{ asset(desktop_path ~ image) }}"
-        data-image-desktop-retina="{{ asset(desktop_path ~ image)|replace({ ('.'): '@2x.' }) }}"
-        data-image-desktop-big="{{ asset(desktop_big_path ~ image) }}"
-        data-image-desktop-big-retina="{{ asset(desktop_big_path ~ image)|replace({ ('.'): '@2x.' }) }}"
-        >
-
-    </div>#}
 </div>

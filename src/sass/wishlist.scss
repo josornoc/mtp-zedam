@@ -16,6 +16,7 @@
 
 .wishlist__button {
     @include ff_gothamRoundedBold();
+    @include transition();
     border: 1px solid $base-color-1;
     border-radius: 3px;
     background: $white;
@@ -36,6 +37,12 @@
         vertical-align: middle;
         width: 17px;
     }
+
+    &:hover {
+        background: $base-color-0;
+        color: $base-color-4;
+        text-decoration: none;
+    }
 }
 
 .wishlist__online {
@@ -54,6 +61,7 @@
 
 .wishlist__btn {
     @include ff_gothamRoundedBold();
+    @include transition();
     box-sizing: border-box;
     color: $base-color-4;
     float: left;
@@ -62,6 +70,12 @@
     position: relative;
     text-align: center;
     width: 50%;
+
+    &:hover {
+        background: $white;
+        color: $base-color-4;
+        text-decoration: none;
+    }
 
     &.email {
 
@@ -107,5 +121,16 @@
     padding: 10px 0;
     text-align: center;
     width: 100%;
+
+    @include respond-to(tablet) {
+        margin: 10px 0 30px;
+    }
+
+    .icon {
+        @include image('layout/report_icon.png', 'mobile');
+        display: inline-block;
+        height: 16px;
+        width: 17px;
+    }
 }
 

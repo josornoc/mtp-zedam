@@ -100,7 +100,7 @@
         width: 25%;
 
         @include respond-to(tablet) {
-            width: 25%;
+            width: 75px;
         }
 
         &.people {
@@ -188,6 +188,7 @@
 
 .house__info-description {
     color: $base-color-4;
+    float: left;
     font-size: 14px;
     margin-top: 10px;
 }
@@ -197,6 +198,10 @@
     float: left;
     padding: 20px 0;
     width: 100%;
+
+    &.clean {
+        border-bottom: 0 solid;
+    }
 }
 
 
@@ -204,6 +209,7 @@
     @include ff_gothamRoundedBold();
     color: $blue;
     float: left;
+    min-height: 10px;
     width: 100%;
 
     @include respond-to(tablet) {
@@ -330,16 +336,4 @@
         left: 16px;
         top: 50%;
     }
-}
-
-
-.tag {
-    background: $base-color-0;
-    float: left;
-    margin: 0 5px 5px 0;
-    padding: 5px 10px;
-}
-
-.tag__value {
-    color: $base-color-2;
 }
