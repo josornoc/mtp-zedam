@@ -17,8 +17,6 @@
         }
     }
 
-
-
     &.fixed {
         position: absolute;
         margin-top: 0;
@@ -41,8 +39,7 @@
 
     @include respond-to(tablet) {
         background: $base-color-0;
-        padding: 60px 20px 20px;
-        //width: 315px;
+        padding: 20px;
     }
 }
 

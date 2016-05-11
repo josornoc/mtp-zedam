@@ -53,8 +53,11 @@
 .social-icons {
     display: table;
     margin: 30px auto 0;
+    max-width: 400px;
+    width: 100%;
 
     .icon-container {
+        @include transition();
         border: 1px solid $white;
         border-radius: 50px;
         float: left;
@@ -62,14 +65,21 @@
         position: relative;
         width: 36px;
 
+        &:hover {
+            .icon {
+                opacity: 1;
+            }
+        }
+
         + .icon-container {
-            margin-left: 20px;
+            margin-left: 9%;
         }
 
         .icon {
             position: absolute;
             left: 50%;
             top: 50%;
+            opacity: .8;
         }
 
         &.facebook {
