@@ -6,12 +6,15 @@
 
     <div class="image__container">
 
-        {% include 'twig/content/component/image.html.twig' with {
+        <img src="https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93b9/f987/8c62/8900/032f/large/mtp-5a07743c54749ec34173e555ddc34ed9242a.jpg?1444123577"
+             class="logo_image" />
+
+       {# {% include 'twig/content/component/image.html.twig' with {
             alt: 'Header Image logo',
             common: false,
             class: 'logo_image',
             image: 'header_image.png',
-        } only %}
+        } only %}#}
 
     </div>
     <div class="container " >
@@ -22,9 +25,14 @@
             {% include 'twig/content/booking.twig' %}
         </div>
 
-        <div class="col-lg-8 col-md-8" id="content">
+        <div class="col-lg-8 col-md-8 col-xs-12" id="content">
             <!-- Preview User Depto-->
             {% include 'twig/content/house_resume.twig' %}
+
+            <!-- Reservation button, only visible in mobile -->
+            <a href="" class="booking__submit col-xs-12 visible-xs">
+                Solicitar reserva
+            </a>
 
             <!-- House info -->
             {% include 'twig/content/house_info.twig' %}
@@ -50,62 +58,8 @@
             <!-- House Availability -->
             {% include 'twig/content/availability.twig' %}
 
-            <div class="photo__container">
-                <div class="photo__row">
-                    <div class="photo__row-big hidden-xs">
-                        {% include 'twig/content/component/background_image.html.twig' with {
-                            alt: 'Header Image logo',
-                            common: false,
-                            class: 'logo_image',
-                            image: 'images/image_1@2x.png',
-                        } only %}
-                    </div>
-                    <div class="photo__row-big hidden-xs">
-                        {% include 'twig/content/component/background_image.html.twig' with {
-                            alt: 'Header Image logo',
-                            common: false,
-                            class: 'logo_image',
-                            image: 'images/image_2@2x.png',
-                        } only %}
-                    </div>
-                </div>
-                <div class="photo__row">
-
-                    <div class="photo__row-small hidden-xs">
-                        {% include 'twig/content/component/background_image.html.twig' with {
-                            alt: 'Header Image logo',
-                            common: false,
-                            class: 'logo_image',
-                            image: 'images/image_3@2x.png',
-                        } only %}
-                    </div>
-                    <div class="photo__row-small hidden-xs">
-                        {% include 'twig/content/component/background_image.html.twig' with {
-                            alt: 'Header Image logo',
-                            common: false,
-                            class: 'logo_image',
-                            image: 'images/image_4@2x.png',
-                        } only %}
-                    </div>
-                    <div class="photo__row-small">
-
-                        {% include 'twig/content/component/background_image.html.twig' with {
-                            alt: 'Header Image logo',
-                            common: false,
-                            class: 'logo_image',
-                            image: 'images/image_5@2x.png',
-                        } only %}
-
-                        <a href="" class="photo__view-all">
-                            <span class="photo__view-text">
-                                Ver todas las 20 fotos
-                            </span>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
+            <!-- Photos -->
+            {% include 'twig/content/photos.twig' %}
 
             <!-- Reviews -->
             {% include 'twig/content/reviews.twig' %}

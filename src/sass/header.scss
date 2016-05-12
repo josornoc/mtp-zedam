@@ -6,11 +6,15 @@
     @include transform(translateZ(0));
     background: $white;
     border-bottom: 1px solid $base-color-0;
-    position: absolute;
     height: 60px;
     line-height: 60px;
+    position: fixed;
     width: 100%;
     z-index: 10;
+
+    @include respond-to(tablet) {
+        position: absolute;
+    }
 }
 
 .header__search {

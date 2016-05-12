@@ -9,7 +9,7 @@
         z-index: 1;
 
         @include respond-to(tablet) {
-            margin-top: 30px;
+            margin-top: 60px;
         }
 
         @include respond-to(desktop) {
@@ -104,10 +104,25 @@
         float: left;
         width: 100%;
 
+        @include respond-to(tablet_portrait) {
+            width: 100px;
+
+        }
         @include respond-to(tablet) {
             display: table-cell;
             float: none;
             margin-bottom: 0;
+            width: 40%;
+
+            + .booking__input {
+                + .booking__input {
+                    width: 20%;
+                }
+            }
+        }
+
+        @include respond-to(desktop) {
+            width: 100px;
         }
 
         input,
@@ -130,8 +145,8 @@
         padding-left: 10px;
         width: 100%;
 
-        @include respond-to(tablet) {
-            width: 100px;
+        @include respond-to(desktop) {
+            width: 78px;
         }
     }
 
@@ -140,7 +155,7 @@
         padding-left: 10px;
         width: 100%;
 
-        @include respond-to(tablet) {
+        @include respond-to(desktop) {
             width: 100px;
         }
     }
@@ -150,7 +165,7 @@
         padding-left: 10px;
         width: 100%;
 
-        @include respond-to(tablet) {
+        @include respond-to(desktop) {
             padding-left: 10px;
             text-align: center;
             width: 54px;
@@ -195,6 +210,12 @@
 
     &:hover {
         background: $blue-hover;
+        color: $white;
+        text-decoration: none;
+    }
+
+    + .house__info-container {
+        margin-top: 20px;
     }
 }
 
@@ -218,12 +239,26 @@
     height: 34px;
     margin-left: 10px;
     width: 31px;
+
+    @include respond-to(tablet) {
+        margin-top: -10px;
+    }
 }
 
 .booking__warning {
     float: left;
     padding: 20px;
+
+    @include respond-to(tablet) {
+        width: 50%;
+    }
+
+    @include respond-to(desktop) {
+        padding: 20px;
+        width: 100%;
+    }
 }
+
 .booking__warning-icon {
     @include image('layout/warning_icon.png', 'mobile');
     float: left;

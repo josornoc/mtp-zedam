@@ -11,19 +11,19 @@
         title: 'Excelente departamento en ...',
         description: 'Casa/apto. entero — a 0.6 kilómetros',
         image_profile: 'layout/host.png',
-        image: 'images/image_6.png',
+        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
         points: '253 pts'
     }, {
         title: 'Excelente departamento en ...',
         description: 'Casa/apto. entero — a 0.6 kilómetros',
         image_profile: 'layout/host.png',
-        image: 'images/image_7.png',
+        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bc/f987/8c62/8900/0331/large/mtp-9a0190e97e2382795a05867e10dfcb71023a.jpg?1444123580',
         points: '253 pts'
     }, {
         title: 'Excelente departamento en ...',
         description: 'Casa/apto. entero — a 0.6 kilómetros',
         image_profile: 'layout/host.png',
-        image: 'images/image_8.png',
+        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
         points: '253 pts',
         fav: true
     }
@@ -34,20 +34,21 @@
         {% for item in content %}
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
-            <div class="house__related-image">
-                {% include 'component/background_image.html.twig' with {
+            <a href="" class="house__related-image">
+                <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+                {#{% include 'component/background_image.html.twig' with {
                     alt: item.title,
-                    common: false,
+                    common: true,
                     class: 'logo_image',
                     image: item.image
-                } only %}
+                } only %}#}
 
                 <div class="house__related-points">
                     {{ item.points }}
                 </div>
 
                 <span class="house__related-favorite fav{{ (item.fav) ? ' true' : '' }}"></span>
-            </div>
+            </a>
 
             <div class="house__related-info">
                 {% include 'component/image.html.twig' with {
@@ -57,9 +58,9 @@
                     image: item.image_profile
                 } only %}
 
-                <div class="house__related-title">
+                <a href="" class="house__related-title">
                     {{ item.title }}
-                </div>
+                </a>
 
                 <div class="house__related-description">
                     {{ item.description }}
@@ -71,7 +72,6 @@
 
     </div>
 </div>
-
 
 <div class="house__section-container">
 </div>

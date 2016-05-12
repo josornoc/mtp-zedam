@@ -5,6 +5,16 @@
     background: $base-color-0;
     float: left;
     width: 100%;
+
+    @include respond-to(tablet) {
+        margin-top: 5px;
+        width: 50%;
+    }
+
+    @include respond-to(desktop) {
+        margin-top: 5px;
+        width: 100%;
+    }
 }
 
 .wishlist__functionality {
@@ -123,7 +133,13 @@
     width: 100%;
 
     @include respond-to(tablet) {
+        float: right;
         margin: 10px 0 30px;
+        width: 50%;
+    }
+
+    @include respond-to(desktop) {
+        width: 100%;
     }
 
     .icon {

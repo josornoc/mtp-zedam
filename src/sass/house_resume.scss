@@ -6,13 +6,16 @@
     box-sizing: border-box;
     display: block;
     float: left;
+    margin-left: -15px;
     padding: 20px;
     vertical-align: top;
-    width: 100%;
+    width: calc(100% + 30px);
 
     @include respond-to(tablet) {
         float: none;
+        margin-left: 0;
         display: table;
+        width: 100%;
     }
 }
 
@@ -49,11 +52,11 @@
 }
 
 .house-resume__general-info {
-    display: table-cell;
-    vertical-align: top;
 
     @include respond-to(tablet) {
+        display: table-cell;
         padding-left: 20px;
+        vertical-align: top;
     }
 }
 
@@ -152,7 +155,7 @@
         }
 
         .text {
-            color: $base-color-1;
+            color: $base-color-2;
             float: left;
             font-size: 10px;
             margin-top: 40px;
@@ -244,6 +247,22 @@
     }
 
     &.amenities-column {
+
+        .amenitie {
+            width: 50%;
+
+            @include respond-to(tablet) {
+                width: 100%;
+            }
+        }
+
+        .disable {
+            display: none;
+
+            @include respond-to(tablet) {
+                display: block;
+            }
+        }
 
         @include respond-to(tablet) {
             margin-top: -4px;

@@ -34,6 +34,7 @@ $palette: (
 
 body {
     font-family: $font__main;
+    outline: none !important;
 
     //background-color: color('green');
     @include breakpoint($large) {
@@ -110,6 +111,46 @@ body {
 
 .tag__value {
     color: $base-color-2;
+}
+
+.labels_icons {
+    float: left;
+    width: 100%;
+}
+
+.label_icon {
+    float: left;
+    margin-right: 20px;
+
+    .icon {
+        @include ff_gothamRounded();
+        color: $white;
+        display: inline-block;
+        font-size: 12px;
+        line-height: 24px;
+        margin-right: 6px;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+.reviews_labels {
+    color: $black;
+    line-height: 24px;
+
+    .icon {
+        @include image('layout/reviews_icon.png', 'mobile');
+        height: 24px;
+        width: 29px;
+    }
+}
+
+.verified_labels {
+    .icon {
+        @include image('layout/verified_icon.png', 'mobile');
+        height: 27px;
+        width: 27px;
+    }
 }
 
 .background__container-animation {
