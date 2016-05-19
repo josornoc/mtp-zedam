@@ -5,17 +5,12 @@
 {% block page %}
 
     <div class="image__container">
-
-        <img src="https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93b9/f987/8c62/8900/032f/large/mtp-5a07743c54749ec34173e555ddc34ed9242a.jpg?1444123577"
-             class="logo_image" />
-
-       {# {% include 'twig/content/component/image.html.twig' with {
+        {% include 'twig/content/component/background_image.html.twig' with {
             alt: 'Header Image logo',
             common: false,
             class: 'logo_image',
             image: 'header_image.png',
-        } only %}#}
-
+        } only %}
     </div>
     <div class="container " >
     <div class="row booking__case-container">

@@ -171,9 +171,18 @@
 
 .image__container {
     float: left;
+    height: 300px;
     padding-top: 60px;
     position: relative;
     width: 100%;
+
+    @include respond-to(tablet) {
+        height: 500px;
+    }
+
+    @include respond-to(desktop) {
+        height: 600px;
+    }
 
     img {
         float: left;
