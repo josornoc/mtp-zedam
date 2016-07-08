@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>verified_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="verified_icon" stroke="#7AB6C9" stroke-width="1.5">
+            <polyline id="Stroke-1" points="14.9663 7.98 9.4273 13.519 6.5333 10.626"></polyline>
+            <path d="M20.75,10.75 C20.75,5.227 16.273,0.75 10.75,0.75 C5.227,0.75 0.75,5.227 0.75,10.75 C0.75,16.273 5.227,20.75 10.75,20.75 C16.273,20.75 20.75,16.273 20.75,10.75 L20.75,10.75 Z" id="Stroke-2"></path>
+        </g>
+    </g>
+</svg>

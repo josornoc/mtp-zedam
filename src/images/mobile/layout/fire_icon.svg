@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>fire_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(1.000000, 1.000000)" id="fire_icon" stroke="#808080">
+            <g>
+                <g id="Group-6">
+                    <path d="M20,10.1572 C20,15.6802 15.523,20.1572 10,20.1572 C4.477,20.1572 0,15.6802 0,10.1572 C0,4.6342 4.477,0.1572 10,0.1572 C15.523,0.1572 20,4.6342 20,10.1572 L20,10.1572 Z" id="Stroke-2"></path>
+                    <path d="M11.7881,8.2808 L10.8001,9.1278 L9.4821,5.6928 C9.4821,5.6928 7.6121,10.1638 7.2441,12.2678 C7.2371,12.3008 7.2331,12.3348 7.2261,12.3678 C7.1981,12.5558 7.1771,12.7298 7.1771,12.8698 C7.1771,14.4288 8.4411,15.6928 10.0001,15.6928 C11.5591,15.6928 12.8231,14.4288 12.8231,12.8698 C12.8231,11.0098 11.7881,8.2808 11.7881,8.2808 L11.7881,8.2808 Z" id="Stroke-4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
