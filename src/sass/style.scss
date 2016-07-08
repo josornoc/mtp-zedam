@@ -2,8 +2,11 @@
 @import '../../bower_components/normalize-scss/normalize.scss';
 @import '../../bower_components/compass-breakpoint/stylesheets/breakpoint';
 @import '../../bower_components/jeet/scss/jeet/index';
-@import "var-mixins";
+@import '../../bower_components/ion.rangeSlider/css/ion.rangeSlider.css';
+@import '../../bower_components/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css';
+@import "variables";
 @import "typographie";
+@import 'general';
 @import "booking";
 @import 'settings';
 @import 'b64';
@@ -14,192 +17,65 @@
 @import "reviews";
 @import "related";
 @import "footer";
+@import "search";
+@import "pagination";
+@import "explorer";
+@import "left_column";
+@import "right_column";
+@import "transactions";
+@import "pages/home";
+@import "pages/my_houses";
+@import "pages/profile";
+@import "pages/add_house";
+@import "pages/invite";
+@import "pages/message";
+@import "pages/calendar";
+@import "libs/daterangepicker";
+//@import "libs/jquery.rateyo.css";
 
-a {
+.jq-ry-container {
+    position: relative;
+    padding: 0 5px;
+    line-height: 0;
     display: block;
-}
-
-$large: 1024px;
-
-$palette: (
-    'green': #00B141,
-    'orange': #FC6719,
-    'purple': #742E8B,
-    'pink': #EF3EA9
-);
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: $font__main;
-    outline: none !important;
-
-    //background-color: color('green');
-    @include breakpoint($large) {
-        //background-color: color('orange');
-    }
-}
-
-@mixin ff_gothamRounded() {
-    font-family: GothamRounded-Book;
-}
-
-.star__container {
-    margin: 0 10px;
-
-    .house-resume__location & {
-        display: inline-block;
-        @include transform(translateY(-2px));
-    }
-}
-
-.star {
-    height: 15px;
-    width: 15px;
-}
-
-.btn {
-    @include ff_gothamRoundedBold();
-    @include transition();
-    background: $white;
-    border: 1px solid $base-color-1;
-    border-radius: 3px;
-    color: $base-color-4;
-    height: 36px;
-    float: left;
-    line-height: 36px;
-    padding: 0 20px;
-    margin-bottom: 20px;
-    width: 100%;
-
-    &:hover {
-        background: $base-color-0;
-    }
-
-    &.helpfull {
-        float: right;
-        margin-top: 25px;
-        padding-left: 40px;
-        position: relative;
-        width: auto;
-
-        .icon {
-            @include image('layout/helpfull_icon.png', 'mobile');
-            display: inline-block;
-            height: 17px;
-            left: 15px;
-            margin-top: -8px;
-            position: absolute;
-            top: 50%;
-            width: 20px;
-        }
-    }
-}
-
-.bold {
-    @include ff_gothamRoundedBold();
-}
-
-.tag {
-    background: $base-color-0;
-    float: left;
-    margin: 0 5px 5px 0;
-    padding: 5px 10px;
-}
-
-.tag__value {
-    color: $base-color-2;
-}
-
-.labels_icons {
-    float: left;
-    width: 100%;
-}
-
-.label_icon {
-    float: left;
-    margin-right: 20px;
-
-    .icon {
-        @include ff_gothamRounded();
-        color: $white;
-        display: inline-block;
-        font-size: 12px;
-        line-height: 24px;
-        margin-right: 6px;
-        text-align: center;
-        vertical-align: middle;
-    }
-}
-
-.reviews_labels {
-    color: $black;
-    line-height: 24px;
-
-    .icon {
-        @include image('layout/reviews_icon.png', 'mobile');
-        height: 24px;
-        width: 29px;
-    }
-}
-
-.verified_labels {
-    .icon {
-        @include image('layout/verified_icon.png', 'mobile');
-        height: 27px;
-        width: 27px;
-    }
-}
-
-.background__container-animation {
-    background-size: cover;
-    background-position: center;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-.fav {
-    @include image('layout/fav_icon.png', 'mobile');
-    @include transition();
-    background-position: 50% !important;
-    background-size: cover;
     cursor: pointer;
-    height: 31px;
-    opacity: .6;
-    width: 35px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.jq-ry-container[readonly="readonly"] {
+    cursor: default;
+}
+.jq-ry-container > .jq-ry-group-wrapper {
+    position: relative;
+    width: 100%;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group {
+    position: relative;
+    line-height: 0;
     z-index: 10;
+    white-space: nowrap;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group > svg {
+    display: inline-block;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-normal-group {
+    width: 100%;
+}
+.jq-ry-container > .jq-ry-group-wrapper > .jq-ry-group.jq-ry-rated-group {
+    width: 0;
+    z-index: 11;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
 
+.rateYo {
+    margin: 10px auto 0;
 
-    &:before {
-        @include image('layout/fav_icon.png', 'mobile');
-        background-position: top !important;
-        background-size: cover;
-        content: '';
-        height: 31px;
-        opacity: 0;
-        position: absolute;
-        width: 35px;
-        z-index: 13;
-    }
-
-    &:hover {
-        opacity: 1;
-
-        &.true {
-            opacity: .7;
-        }
-    }
-
-    &.true {
-        opacity: 1;
-
-        &:before {
-            opacity: 1;
-        }
+    @include respond-to(tablet) {
+        margin: 0;
+        float: right;
     }
 }

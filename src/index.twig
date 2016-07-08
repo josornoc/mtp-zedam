@@ -5,74 +5,83 @@
 {% block page %}
 
     <div class="image__container">
-        {% include 'twig/content/component/background_image.html.twig' with {
-            alt: 'Header Image logo',
-            common: false,
-            class: 'logo_image',
-            image: 'header_image.png',
-        } only %}
-    </div>
-    <div class="container " >
-    <div class="row booking__case-container">
 
-        <div class="booking__case hidden-xs col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            <!-- Booking Case-->
-            {% include 'twig/content/booking.twig' %}
-        </div>
+        <div class="background__container-animation"></div>
 
-        <div class="col-lg-8 col-md-8 col-xs-12" id="content">
-            <!-- Preview User Depto-->
-            {% include 'twig/content/house_resume.twig' %}
-
-            <!-- Reservation button, only visible in mobile -->
-            <a href="" class="booking__submit col-xs-12 visible-xs">
-                Solicitar reserva
-            </a>
-
-            <!-- House info -->
-            {% include 'twig/content/house_info.twig' %}
-
-            <div class="house__section-container">
-                <div class="house__section-title">
-                    Contact host
-                </div>
+        <div class="home__header-content">
+            <div class="home__header-title">
+                Alójate gratis en casas
+                de más de 160 paises
+            </div>
+            <div class="home__header-subtitle">
+                Host travelers. Earn Nights Points. Stay for free.
             </div>
 
-            <!-- House Space -->
-            {% include 'twig/content/space.twig' %}
-
-            <!-- House Amenities -->
-            {% include 'twig/content/amenities.twig' %}
-
-            <!-- House Description -->
-            {% include 'twig/content/description.twig' %}
-
-            <!-- House Rules -->
-            {% include 'twig/content/rules.twig' %}
-
-            <!-- House Availability -->
-            {% include 'twig/content/availability.twig' %}
-
-            <!-- Photos -->
-            {% include 'twig/content/photos.twig' %}
-
-            <!-- Reviews -->
-            {% include 'twig/content/reviews.twig' %}
-
+            <div class="home__header-play-button"></div>
         </div>
 
-        <div class="col-md-12 col-lg-12">
-            <!-- Map -->
-            {% include 'twig/content/map.twig' %}
+        <div class="home__search">
+            <form class="home__search-container ">
+                <div class="home__search-wrapper ">
+                    <span class="icon"></span>
+                    <input type="text" placeholder="¿Adonde quieres ir?" class="home__search-container-input location" />
 
-            <!-- Related -->
-            {% include 'twig/content/related.twig' %}
+                    <div class="input-daterange hidden-xs">
+                        <input type="text" name="start" class="input-sm form-control home__search-container-input start" placeholder="Llegada"/>
+
+                        <input type="text" name="end" class="input-sm form-control home__search-container-input end"  placeholder="Salida"/>
+                    </div>
+
+                    <div class="select-sm hidden-xs">
+                        <select name="personas" class="" placeholder="Huéspedes">
+                            <option>1 persona</option>
+                            <option>2 personas</option>
+                            <option>3 personas</option>
+                            <option>4 personas</option>
+                        </select>
+                    </div>
+                    <div class="home__search-submit-container">
+                        <input type="submit" class="home__search-submit" value="Buscar" />
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="container " >
+        <div class="row home__section">
+            <div class="home__section-title">
+                GIVE WINGS TO YOUR PROJECTS
+            </div>
+            <div class="home__section-text">
+                Stay for free in entrepreneurs' homes.
+            </div>
         </div>
 
+        {% include 'twig/house/related.twig' with {
+            show_title: false
+        }%}
 
-    </div>
+        <div class="home__section">
+            <div class="home__section-title">
+                GIVE WINGS TO YOUR PROJECTS
+            </div>
+            <div class="home__section-text">
+                Stay for free in entrepreneurs' homes.
+            </div>
+        </div>
+
+        {% include 'twig/home/entrepreneurs.twig' %}
     </div>
 
+    {# SUBSEARCH #}
+    {% include 'twig/home/subsearch.twig' %}
+
+    {# TRAVELERS #}
+    {% include 'twig/home/travelers.twig' %}
+
+    {# EXPLORE THE WORLD #}
+    {% include 'twig/home/explore.twig' %}
 
 
 {% endblock %}

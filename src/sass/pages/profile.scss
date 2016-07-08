@@ -1,0 +1,496 @@
+@import '../variables';
+@import '../typographie';
+
+.profile {
+    padding-top: 100px;
+}
+
+.profile__info {
+    background: $base-color-0;
+    box-sizing: border-box;
+    float: left;
+    margin-top: 10px;
+    padding: 20px;
+    width: 100%;
+}
+
+.profile__info-row {
+    float: left;
+    padding: 5px 0;
+    position: relative;
+    width: 100%;
+}
+.profile__info-cell {
+    float: left;
+    text-align: left;
+    width: 50%;
+
+    + .profile__info-cell {
+        text-align: right;
+    }
+}
+
+.profile__info-icon {
+    color: $base-color-2;
+    float: left;
+    font-size: 14px;
+    width: 100%;
+
+    .icon {
+        display: inline-block;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    &.email {
+        .icon {
+            @include image('profile/email_icon.png', 'mobile');
+            height: 16px;
+            width: 21px;
+        }
+    }
+    &.phone {
+        .icon {
+            @include image('profile/phone_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+    &.facebook {
+        .icon {
+            @include image('profile/facebook_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+    &.linkedin {
+        .icon {
+            @include image('profile/linkedin_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+    &.twitter {
+        .icon {
+            @include image('profile/twitter_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+    &.google {
+        .icon {
+            @include image('profile/google_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+}
+
+.profile__info-verified {
+    color: $base-color-3;
+    float: left;
+    font-size: 14px;
+    width: 100%;
+
+    .icon {
+        float: right;
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+
+    &.true {
+        .icon {
+            @include image('profile/verified_icon.png', 'mobile');
+            height: 22px;
+            width: 22px;
+        }
+    }
+}
+
+.profile__related-title {
+    @include ff_gothamRoundedMedium();
+    float: left;
+    font-size: 18px;
+    margin: 30px 0;
+    width: 100%;
+}
+
+.profile__related-content {
+    float: left;
+    width: 100%;
+}
+
+.profile__title {
+    @include ff_gothamRounded();
+    font-size: 28px;
+}
+
+.profile__location {
+    color: $base-color-2;
+ }
+
+.profile__personal {
+    margin-top: 20px;
+}
+
+.profile__section {
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    padding: 30px 0;
+    position: relative;
+    width: 100%;
+
+    input[type=checkbox] {
+        clear: left;
+        float: left;
+        margin-right: 10px;
+    }
+
+    &.clean {
+        border-bottom: 0 solid $base-color-1;
+    }
+
+    &.header-section {
+        .profile__save {
+            margin-bottom: 0;
+        }
+    }
+
+    &.top {
+        padding-top: 0;
+    }
+
+    &.mobile-container {
+        margin-left: -15px;
+        width: calc(100% + 30px);
+
+        @include respond-to(tablet) {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        &:before {
+            border-top: 1px solid $base-color-1;
+            content: '';
+            left: 0;
+            position: absolute;
+            top: -1px;
+            width: calc(100% + 30px);
+
+            @include respond-to(tablet) {
+                width: 100%;
+            }
+        }
+    }
+
+    &.extra {
+        margin-top: 30px;
+    }
+}
+
+.profile__section-title {
+    @include ff_gothamRoundedMedium();
+    color: $black;
+    font-size: 18px;
+    margin: 0 0 20px 0;
+
+    &.only {
+        float: left;
+        margin-bottom: 20px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            float: none;
+            margin: 0;
+        }
+    }
+
+    .form-control {
+        @include ff_Helvetica();
+        border: 1px solid $blue;
+        color: $blue;
+    }
+
+    .profile__save.booking__submit {
+        margin-top: 20px;
+
+        @include respond-to(tablet) {
+            margin-top: 0;
+        }
+    }
+}
+
+.profile__description-title,
+.profile__section-text {
+    color: $base-color-5;
+}
+.profile__section-label {
+    color: $base-color-2;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.profile__select-label {
+    color: $base-color-2;
+    padding-bottom: 5px;
+}
+.profile__list {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    li {
+        float: left;
+        list-style: none;
+        margin-bottom: 5px;
+        width: 50%;
+
+        &:before {
+            @include image('profile/verified_icon.png', 'mobile');
+            content: '';
+            height: 22px;
+            display: inline-block;
+            margin-right: 10px;
+            vertical-align: middle;
+            width: 22px;
+        }
+    }
+}
+
+.profile__section-reviews {
+    float: left;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.profile__section-actions {
+    float: left;
+    width: 100%;
+
+    a,
+    span {
+        color: $blue;
+        float: left; margin-right: 5px;
+    }
+}
+
+.profile__btn {
+    margin: 30px 0;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: auto !important;
+    }
+
+    &.delete {
+        color: $red;
+        float: left;
+        margin-left: 20px;
+        margin-top: 41px;
+    }
+}
+
+.profile__menu {
+    float:left;
+    font-size: 16px;
+    width: 100%;
+    position: relative;
+
+    a {
+        color: $blue;
+        position: relative;
+    }
+
+    div {
+        color: $base-color-5;
+        position: relative;
+    }
+
+    .notif {
+        background: $red;
+        border-radius: 100px;
+        box-sizing: border-box;
+        color: $white;
+        font-size: 12px;
+        line-height: 20px;
+        left: 130px;
+        min-width: 20px;
+        padding: 0 3px;
+        position: absolute;
+        text-align: center;
+
+        @include respond-to(tablet) {
+
+        }
+    }
+
+    &.messages {
+        margin-bottom: 30px;
+    }
+}
+
+.profile__basic-description {
+    color: $base-color-6;
+    float: left;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.profile__edit-image-container {
+    float: left;
+    margin-bottom: 20px;
+    position: relative;
+    width: 50%;
+
+    @include respond-to(tablet) {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    &.hidden-mobile {
+        display: none;
+
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+
+    + .profile__edit-image-container {
+        padding-left: 20px;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+
+        .profile__btn {
+            &.btn {
+                background: $blue;
+                color: $white;
+                height: auto;
+                line-height: 20px;
+                margin: 0;
+                padding: 20px;
+                white-space: inherit;
+                width: 100%;
+
+                span {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            &.delete {
+                margin: 20px 0;
+                text-align: center;
+                width: 100%
+
+            }
+        }
+    }
+
+}
+
+.profile__edit-image-back {
+    opacity: .5;
+}
+
+.profile__edit-image {
+    border-radius: 100px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.profile__save  {
+    float: right;
+    margin: 0;
+    padding: 0 20px;
+    width: 100%;
+
+    + .profile__save  {
+        margin-top: 10px;
+
+        @include respond-to(tablet) {
+            margin-top: 0;
+            margin-right: 20px;
+        }
+    }
+
+    @include respond-to(tablet) {
+        width: auto !important;
+    }
+}
+
+.profile__add-photo {
+    border: 2px solid $base-color-1;
+    float: left;
+    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-bottom: 70%;
+    }
+
+    &.no-border {
+        border: 2px solid transparent;
+    }
+
+    .text {
+        bottom: 20px;
+        color: $blue;
+        font-size: 16px;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+
+    .add {
+        color: $blue;
+        font-size: 90px;
+        left: 0;
+        line-height: 90px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.photo-container {
+
+    .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+        padding: 0 7px;
+
+    }
+
+    .row {
+        padding: 10px 8px;
+    }
+}
+
+.profile__overlay-actions {
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+
+    a {
+        color: $blue;
+    }
+}
+
+.importing-image {
+    display: block;
+    margin: auto;
+}
+
+.importing-preloader  {
+    position: absolute;
+    right: 0;
+}

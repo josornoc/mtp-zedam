@@ -1,0 +1,92 @@
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="search-modal">
+
+                <div class="col-sm-12">
+
+                    <div class="profile__section header-section">
+                        <div class="col-sm-6">
+                            <div class="profile__section-title only">
+                                Contactos de GMAIL
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <a href="" class="profile__save booking__submit">Enviar Invitación</a>
+                            <a href="" class="profile__save btn">Cancelar</a>
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Detalles -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <div class="profile__overlay-actions">
+                                    <a href="" class="select-all">Seleccionar todos</a>
+                                    <a href="" class="unselect-all">No Seleccionar ninguno</a>
+                                </div>
+
+                                <input type="text" class="input-form" placeholder="Buscar"/>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+                                <div class="row email__container">
+
+                                    <div class="col-sm-6">
+
+                                        {% set content = [
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include '../content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        {% set content = [
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellidolargo@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                            'nombreapellido@gmail.com',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include '../content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

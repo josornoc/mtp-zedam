@@ -1,0 +1,112 @@
+@import 'variables';
+@import 'typographie';
+
+.pagination {
+    float: left;
+    padding: 20px 0;
+    width: 100%;
+}
+
+.pagination__results {
+    color: $base-color-5;
+    font-size: 14px;
+    float: left;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        text-align: left;
+    }
+}
+
+.pagination__content {
+    display: table;
+    padding-top: 20px;
+    width: auto;
+    text-align: center;
+    margin: auto;
+
+    a {
+        @include transition();
+
+        &:hover {
+            background: $base-color-0;
+            text-decoration: none;
+        }
+    }
+
+    .prev,
+    .next,
+    .page {
+        border: 1px solid $blue;
+        border-radius: 4px;
+        color: $blue;
+        float: left;
+        height: 30px;
+        line-height: 28px;
+        position: relative;
+        text-align: center;
+        width: 30px;
+    }
+
+    .prev,
+    .next {
+
+        &:before {
+            content: '';
+            height: 8px;
+            border-left: 1px solid $blue;
+            border-top: 1px solid $blue;
+            position: absolute;
+            top: 10px;
+            width: 8px;
+        }
+
+    }
+
+    .prev {
+        margin-right: 20px;
+
+        &:before {
+            left: 12px;
+            @include transform(rotate(-45deg));
+        }
+    }
+
+    .next {
+        margin-left: 10px;
+
+        &:before {
+            left: 9px;
+            @include transform(rotate(135deg));
+        }
+    }
+
+    .page {
+        margin-right: 10px;
+
+        &.active {
+            background: $base-color-0;
+            border: 1px solid $base-color-0;
+            color: $base-color-6;
+        }
+    }
+
+    .separator {
+        float: left;
+        margin-right: 10px;
+        margin-top: 14px;
+
+        span {
+            background: $base-color-1;
+            border-radius: 2px;
+            height: 2px;
+            float: left;
+            width: 2px;
+
+            + span {
+                margin-left: 5px;
+            }
+        }
+    }
+}

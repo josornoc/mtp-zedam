@@ -1,7 +1,78 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
+.booking__case-main-container {
+    background: $white;
+    bottom: 0;
+    display: none;
+    height: 0;
+    position: fixed;
+    margin-top: 59px;
+    top: 0;
+    z-index: 2;
+
+    @include respond-to(tablet) {
+        background: none;
+        bottom: auto;
+        display: block;
+        margin-top: 0;
+        position: relative;
+    }
+
+    @include respond-to(desktop) {
+        position: absolute;
+    }
+
+    &.fixed {
+        left: 0;
+        position: fixed;
+        right: 0;
+        top: 40px;
+    }
+
+    .close {
+        background: $base-color-1;
+        border-radius: 100px;
+        border: 1px solid $black;
+        height: 29px;
+        position: absolute;
+        right: 15px;
+        top: 58px;
+        width: 29px;
+        z-index: 1;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+
+        &:after,
+        &:before {
+            background: $black;
+            content: '';
+            height: 2px;
+            left: 6px;
+            margin-top: -1px;
+            position: absolute;
+            top: 50%;
+            width: 16px;
+        }
+
+        &:after {
+            @include transform(rotate(45deg));
+        }
+
+        &:before {
+            @include transform(rotate(-45deg));
+        }
+    }
+
+    > .container {
+        pointer-events: none;
+    }
+}
+
 .booking__case {
+    pointer-events: auto;
 
     &.col-lg-4 {
         float: right;
@@ -33,7 +104,7 @@
 .booking__container {
     background: $white;
     box-sizing: border-box;
-    padding: 60px 0 20px;
+    padding: 67px 0 20px;
     position: relative;
     width: 100%;
 
@@ -45,35 +116,61 @@
 
 .booking__header {
     @include ff_gothamRounded();
-    background: rgba(86, 86, 86, .8);
+    background: rgba(246, 246, 246, .8);
     box-sizing: border-box;
-    color: $white;
+    color: $base-color-4;
     float: left;
     height: 40px;
     line-height: 40px;
-    left: -15px;
-    right: -15px;
-    padding: 0 10px;
+    left: -30px;
+    right: -30px;
+    padding: 0 20px;
+
     position: absolute;
-    top: -40px;
+    top: 0;
 
     @include respond-to(tablet) {
+        padding: 0 10px;
         left: 0;
         right: 0;
+        top: -40px;
+
+        .fixed & {
+            background: rgba(230, 230, 230, 1);
+        }
     }
 }
 
 .booking__points,
 .booking__extra_info {
     float: left;
-    font-size: 24px;
     width: 50%;
 }
 
+.booking__points {
+    font-size: 16px;
+    line-height: 42px;
+    padding-left: 8px;
+
+    .icon {
+        @include image('layout/my-twin-place_icon.png', 'mobile');
+        display: inline-block;
+        height: 20px;
+        margin-left: 5px;
+        margin-top: -3px;
+        vertical-align: middle;
+        width: 20px;
+    }
+}
+
 .booking__extra_info {
-    font-size: 14px;
-    font-style: italic;
+    font-size: 12px;
+    padding-right: 10px;
     text-align: right;
+
+    @include respond-to(tablet) {
+        padding-right: 0;
+    }
 }
 
 .booking__body {
@@ -92,11 +189,15 @@
     }
 
     .booking__inputs {
-        display: table;
-        border-spacing: 10px;
         margin-bottom: 10px;
-        margin-left: -10px;
-        width: calc(100% + 10px);
+        width: 100%;
+
+        @include respond-to(tablet) {
+            display: table;
+            border-spacing: 10px 0;
+            margin-left: -10px;
+            width: calc(100% + 20px);
+        }
     }
 
     .booking__input {
@@ -106,8 +207,8 @@
 
         @include respond-to(tablet_portrait) {
             width: 100px;
-
         }
+
         @include respond-to(tablet) {
             display: table-cell;
             float: none;
@@ -130,13 +231,15 @@
             -webkit-appearance: none;
             background: $white;
             border: 1px solid $base-color-1;
-            border-radius: 2px;
+            border-radius: 4px;
             height: 36px;
         }
 
         label {
-            width: 100%;
+            @include ff_gothamRounded();
+            color: $base-color-2;
             font-size: 12px;
+            width: 100%;
         }
     }
 
@@ -146,7 +249,7 @@
         width: 100%;
 
         @include respond-to(desktop) {
-            width: 78px;
+            //width: 78px;
         }
     }
 
@@ -156,7 +259,7 @@
         width: 100%;
 
         @include respond-to(desktop) {
-            width: 100px;
+            //width: 100px;
         }
     }
 
@@ -168,22 +271,24 @@
         @include respond-to(desktop) {
             padding-left: 10px;
             text-align: center;
-            width: 54px;
+            //width: 54px;
         }
     }
 }
 
 .booking__row {
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    font-size: 12px;
+    color: $base-color-6;
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+    width: 100%;
 
     &:last-child {
         border-bottom: 0;
     }
 
-    border-bottom: 1px solid $base-color-1;
-    float: left;
-    padding-bottom: 3px;
-    margin-bottom: 5px;
-    width: 100%;
 
     .content {
         font-style: italic;
@@ -193,20 +298,26 @@
 }
 
 .booking__submit {
-    @include ff_gothamRoundedBold();
+    @include ff_gothamRounded();
     @include transition();
     -webkit-appearance: none;
     background: $blue;
-    border-radius: 3px;
     border: 0;
+    border-bottom: 1px solid $blue-dark;
+    border-radius: 4px;
     color: $white;
-    font-size: 16px;
-    height: 50px;
-    line-height: 50px;
-    margin-top: 20px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 0;
     outline: none;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
+
+    @include respond-to(tablet) {
+        margin-top: 20px;
+    }
 
     &:hover {
         background: $blue-hover;
@@ -216,6 +327,17 @@
 
     + .house__info-container {
         margin-top: 20px;
+    }
+
+    &.disable {
+        background: $base-color-1;
+        border: 1px solid $base-color-1;
+        color: $white;
+
+        &:hover {
+            background: $base-color-2;
+            border: 1px solid $base-color-2;
+        }
     }
 }
 
@@ -246,23 +368,51 @@
 }
 
 .booking__warning {
+    background: #FFF8D0;
+    box-sizing: border-box;
+    color: $base-color-6;
     float: left;
-    padding: 20px;
-
-    @include respond-to(tablet) {
-        width: 50%;
-    }
-
-    @include respond-to(desktop) {
-        padding: 20px;
-        width: 100%;
-    }
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 15px;
+    position: relative;
+    width: 100%;
 }
 
 .booking__warning-icon {
     @include image('layout/warning_icon.png', 'mobile');
-    float: left;
-    height: 18px;
-    margin-right: 10px;
-    width: 18px;
+    height: 22px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 22px;
+}
+
+.booking__fire-icon {
+    @include image('layout/fire_icon.png', 'mobile');
+    height: 22px;
+    left: 15px;
+    position: absolute;
+    top: 15px;
+    width: 22px;
+}
+
+.booking__warning-text {
+    line-height: 18px;
+    padding-left: 30px;
+
+    a {
+        color: $blue;
+    }
+
+    br.text {
+
+        @include respond-to(tablet) {
+            display: block;
+        }
+
+        @include respond-to(tablet_portrait) {
+            display: none;
+        }
+    }
 }

@@ -1,8 +1,52 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
+.house__submenu {
+    max-height: 0;
+    overflow: hidden;
+    display: none;
+
+    @include respond-to(tablet) {
+        display: block;
+    }
+
+    @include respond-to(tablet_portrait) {
+        display: none;
+    }
+
+    @include respond-to(desktop) {
+        @include transition_str((opacity .3s, top .3s));
+        background: $base-color-1;
+        color: $base-color-5;
+        float: left;
+        line-height: 40px;
+        opacity: 0;
+        position: fixed;
+        top: 20px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+
+    a {
+        color: $base-color-5;
+        float: left;
+        margin-right: 25px;
+    }
+}
+
+.booking__case-main-container {
+    &.show-sub-menu {
+        +.house__submenu {
+            max-height: 40px;
+            opacity: 1;
+            top: 60px;
+        }
+    }
+}
+
 .house-resume__container {
-    background: $base-color-0;
+    border-bottom: 1px solid $base-color-1;
     box-sizing: border-box;
     display: block;
     float: left;
@@ -13,8 +57,9 @@
 
     @include respond-to(tablet) {
         float: none;
-        margin-left: 0;
         display: table;
+        margin-left: 0;
+        padding: 20px 20px 20px 0;
         width: 100%;
     }
 }
@@ -28,6 +73,7 @@
     @include respond-to(tablet) {
         font-size: 24px;
         line-height: 26px;
+        margin-top: 20px;
         text-align: left;
     }
 }
@@ -47,7 +93,15 @@
     width: 78px;
 
     @include respond-to(tablet){
-    display: table-cell;
+        border-radius: 120px;
+        display: table-cell;
+        width: 120px;
+    }
+
+    .reviews & {
+        @include respond-to(tablet){
+            width: 60px;
+        }
     }
 }
 
@@ -61,12 +115,15 @@
 }
 
 .house-resume__location {
-    margin: 10px auto 0;
+    color: $base-color-5;
     display: table;
+    margin: 10px auto 0;
+    text-align: center;
 
     @include respond-to(tablet) {
         display: block;
-        margin: 0 auto;
+        margin: 10px auto 0;
+        text-align: left;
     }
 }
 
@@ -83,6 +140,11 @@
         text-align: center;
         width: 100%;
     }
+
+    .reviews & {
+        color: $base-color-3;
+        font-size: 14px;
+    }
 }
 
 .house-resume__icons {
@@ -92,8 +154,6 @@
     width: 100%;
 
     @include respond-to(tablet) {
-        margin: 0;
-        width: auto;
     }
 
     .list-item {
@@ -103,7 +163,6 @@
         width: 25%;
 
         @include respond-to(tablet) {
-            width: 75px;
         }
 
         &.people {
@@ -111,34 +170,35 @@
                 @include image('layout/people_icon.png', 'mobile');
                 height: 26px;
                 margin: 0 0 0 -13px;
-                width: 32px;
+                width: 26px;
             }
         }
 
         &.room {
             .icon {
                 @include image('layout/room_icon.png', 'mobile');
-                height: 25px;
-                margin: 0 0 0 -12px;
-                width: 18px;
+                height: 26px;
+                margin: 0 0 0 -13px;
+                width: 26px;
             }
         }
 
         &.depto {
+            font-size: 14px;
             .icon {
-                @include image('layout/depto_icon.png', 'mobile');
-                height: 23px;
-                margin: 0 0 0 -11px;
-                width: 25px;
+                @include image('layout/room_icon.png', 'mobile');
+                height: 26px;
+                margin: 0 0 0 -13px;
+                width: 26px;
             }
         }
 
         &.bath {
             .icon {
                 @include image('layout/bath_icon.png', 'mobile');
-                height: 24px;
-                margin: 0 0 0 -12px;
-                width: 23px;
+                height: 26px;
+                margin: 0 0 0 -13px;
+                width: 26px;
             }
         }
 
@@ -150,7 +210,11 @@
             top: 10px;
 
             @include respond-to(tablet) {
-                top: 18px;
+                float: left;
+                left: 0;
+                margin: 0 !important;
+                position: relative;
+                top: 0;
             }
         }
 
@@ -163,7 +227,8 @@
             width: 100%;
 
             @include respond-to(tablet) {
-                margin-top: 50px;
+                margin: 5px 10px;
+                width: auto;
             }
         }
     }
@@ -174,7 +239,7 @@
 }
 
 .house__info-title {
-    @include ff_gothamRoundedBold();
+    @include ff_gothamRounded();
     color: $base-color-4;
     float: left;
     font-size: 18px;
@@ -187,17 +252,23 @@
         margin-top: 0;
         margin-bottom: 0;
     }
+
+    &.host {
+        margin: 30px 0;
+    }
 }
 
 .house__info-description {
-    color: $base-color-4;
+    color: $base-color-6;
     float: left;
     font-size: 14px;
+    line-height: 22px;
     margin-top: 10px;
 }
 
 .house__section-container {
     border-bottom: 1px solid $base-color-1;
+    color: $base-color-6;
     float: left;
     padding: 20px 0;
     width: 100%;
@@ -209,7 +280,7 @@
 
 
 .house__section-title {
-    @include ff_gothamRoundedBold();
+    @include ff_gothamRounded();
     color: $blue;
     float: left;
     min-height: 10px;
@@ -223,6 +294,7 @@
 .house__section-column {
     float: left;
     margin-top: 5px;
+    line-height: 22px;
     width: 100%;
 
     + .house__section-column {
@@ -247,6 +319,10 @@
     }
 
     &.amenities-column {
+
+        .hidden-services {
+            display: none;
+        }
 
         .amenitie {
             width: 50%;
@@ -355,4 +431,16 @@
         left: 16px;
         top: 50%;
     }
+}
+
+.house__section-description {
+    position: relative;
+    float: left;
+    width: 100%;
+}
+
+.house-items__container {
+    float: left;
+    //margin-top: 20px;
+    width: 100%;
 }

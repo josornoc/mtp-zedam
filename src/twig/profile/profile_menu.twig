@@ -1,0 +1,16 @@
+<div class="profile__menu">
+    {% set tag = (active != 'basic') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'basic' ? 'href="profile_basic.html"' : '' }}>Datos básicos</{{ tag }}>
+
+    {% set tag = (active != 'interest') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'interest' ? 'href="profile_interest.html"' : '' }}>Destinos e Intereses</{{ tag }}>
+
+    {% set tag = (active != 'social') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'social' ? 'href="profile_social.html"' : '' }}>Social</{{ tag }}>
+</div>
+
+
+<a href="profile.html" class="profile__btn btn">Ver Perfil</a>

@@ -1,0 +1,400 @@
+@import "../variables";
+@import "../typographie";
+
+.home__search {
+    background: rgba(0,0,0,.4);
+    bottom: 0;
+    left: 0;
+    padding: 30px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 8;
+}
+
+.home__subsearch-wrapper {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    padding: 30px 0 50px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding: 50px 0 30px;
+    }
+}
+
+.home__subsearch-title {
+    @include ff_gothamRounded();
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+        font-size: 38px;
+    }
+}
+
+.home__subsearch-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+}
+
+.home__subsearch {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.home__search-container {
+    background: $white;
+    border-radius: 5px;
+    color: $base-color-1;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+    width: 80%;
+
+    .home__subsearch & {
+        border: 1px solid $base-color-1;
+        width: 80%;
+
+        @include respond-to(tablet) {
+            width: 42%;
+        }
+        @include respond-to(tablet_portrait) {
+            width: 46%;
+        }
+    }
+}
+
+.home__header-content {
+    padding-top: 24px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-top: 5%;
+    }
+}
+
+.home__header-title {
+    @include ff_gothamRounded();
+    color: $white;
+    font-size: 23px;
+    line-height: 27px;
+    margin: auto;
+    max-width: 80%;
+    text-transform: uppercase;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: 44px;
+        line-height: 52px;
+        max-width: 650px;
+    }
+
+    @include respond-to(tablet_portrait) {
+        font-size: 38px;
+        line-height: 44px;
+        max-width: 600px;
+    }
+
+    @include respond-to(desktop) {
+
+    }
+}
+
+.home__header-subtitle {
+    @include ff_gothamRounded();
+    color: $white;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px auto 0;
+    max-width: 80%;
+    text-align: center;
+}
+
+.home__search-wrapper {
+    float: left;
+    height: 50px;
+    padding: 0 60px 0 10px;
+    overflow: hidden;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding: 0 0 0 46px;
+    }
+
+    .icon {
+        @include image('layout/search_icon_white.png', 'mobile');
+        float: left;
+        height: 20px;
+        margin: 15px 8px 8px;
+        position: absolute;
+        right: 6px;
+        width: 20px;
+        z-index: 3;
+
+        @include respond-to(tablet) {
+            @include image('layout/search_icon.png', 'mobile');
+            left: 10px;
+            right: auto;
+        }
+    }
+
+    .input-daterange {
+        border-left: 1px solid $base-color-1;
+        border-right: 1px solid $base-color-1;
+        float: left;
+        width: 30%;
+
+        &:after {
+            border-bottom: 4px solid transparent;
+            border-left: 4px solid $base-color-6;
+            border-top: 4px solid transparent;
+            content: '';
+            height: 0;
+            margin-top: -5px;
+            position: absolute;
+            right: 51%;
+            top: 50%;
+            width: 0;
+        }
+
+        input {
+            cursor: pointer;
+        }
+
+        .home__subsearch & {
+            border-left: 0 solid $base-color-1;
+            border-right: 0 solid $base-color-1;
+            display: none;
+            width: 100%;
+
+            @include respond-to(tablet) {
+                width: 70%;
+            }
+
+            input {
+               height: 48px;
+            }
+
+            &:after {
+                right: 58%;
+            }
+        }
+
+        .show-dates & {
+            display: block;
+        }
+    }
+
+    .select-sm {
+        float: left;
+        position: relative;
+        width: 20%;
+
+        &:after {
+            border-left: 4px solid transparent;
+            border-top: 4px solid $base-color-6;
+            border-right: 4px solid transparent;
+            content: '';
+            height: 0;
+            margin-top: -3px;
+            position: absolute;
+            right: 7px;
+            top: 50%;
+            width: 0;
+        }
+
+        select {
+            -webkit-appearance: none;
+            background: $white;
+            box-sizing: border-box;
+            border: 0;
+            color: $base-color-2;
+            float: left;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            padding-left: 15px;
+            width: 100%;
+        }
+    }
+}
+
+.home__subsearch-options {
+    float: left;
+    line-height: 20px;
+    padding-top: 10px;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding: 30px 0;
+    }
+}
+
+.home__subsearch-option {
+    display: inline-block;
+    color: $base-color-4;
+}
+
+.home__subsearch-date {
+    display: inline-block;
+    color: $blue;
+
+    .show-dates & {
+        display: none;
+    }
+}
+
+.home__subsearch-location {
+    display: none;
+    color: $blue;
+
+    .show-dates & {
+       display: inline-block;
+    }
+}
+
+.home__search-container-input {
+    @include placeholder($base-color-2, $white);
+    color: $base-color-2;
+    border: 0;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+    position: relative;
+    float: left;
+    outline: none;
+    text-align: center;
+    width: 100%;
+
+
+    &.location {
+        text-align: left;
+
+        @include respond-to(tablet) {
+            width: 30%;
+        }
+
+        .home__subsearch & {
+            height: 48px;
+            line-height: 48px;
+
+            @include respond-to(tablet) {
+                width: 70%;
+            }
+        }
+
+        .show-dates & {
+            display: none;
+        }
+    }
+
+    .input-daterange & {
+        float: left;
+        width: 50%;
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.home__search-submit-container {
+    float: left;
+    background: $blue;
+    border-radius: 0 5px 5px 0;
+    position: absolute;
+    right: 0;
+    width: 50px;
+    z-index: 2;
+
+    @include respond-to(tablet) {
+        position: relative;
+        width: 20%;
+    }
+
+    .home__subsearch & {
+        border-radius: 0 4px 4px 0;
+        line-height: 48px;
+
+        @include respond-to(tablet) {
+            width: 30%;
+        }
+    }
+}
+
+.home__search-submit {
+    @include ff_gothamRounded();
+    -webkit-appearance: none;
+    background: $blue;
+    border: none;
+    color: $white;
+    opacity: 0;
+    text-transform: uppercase;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        border-bottom: 1px solid $blue-dark;
+        border-radius: 0 0 3px 0;
+        opacity: 1;
+        height: 46px;
+    }
+}
+
+.home__header-play-button {
+    @include respond-to(tablet) {
+        @include transition();
+        @include image('layout/play_icon.png','mobile');
+        cursor: pointer;
+        height: 60px;
+        margin: 20px auto 0;
+        opacity: .7;
+        width: 60px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.home__section {
+    float: left;
+    margin: 0;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.home__section-title {
+    @include ff_gothamRounded();
+    color: $blue;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        font-size: 28px;
+    }
+}
+
+.home__section-text {
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,123 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/profile/profile_menu.twig' with {
+                        active: 'social'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    <div class="profile__section top">
+                        <div class="profile__section-title only">
+                            ¿Eres emprendedor?
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Linkedin -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Linkedin</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+                                <div class="row">
+
+                                    <div class="col-sm-8 col-md-6">
+                                        <a href="" class="btn linkedin">
+                                            <span class="enable">Conectar Linkedin</span>
+                                            <span class="disable">Desconectar Linkedin</span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+                        <div class="profile__section-title only">
+                            Share
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Facebook -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Facebook</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+                                <div class="row">
+
+                                    <div class="col-sm-8 col-md-7 col-lg-6">
+
+                                        <a href="" class="btn facebook disable">
+                                            <span class="enable">Conectar Facebook</span>
+                                            <span class="disable">Desconectar Facebook</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-4 col-md-5 col-lg-6">
+                                        {% set content = [
+                                            'Publicar automáticamente cuando añada una casa a mi wishlist.',
+                                        ] %}
+
+                                        {% for item in content %}
+                                        <label class="checkbox-label">
+                                            <input type="checkbox" value="">
+                                            {{ item }}
+                                        </label>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Twitter -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Twitter</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+                                <div class="row">
+
+                                    <div class="col-sm-8 col-md-7 col-lg-6">
+                                       <a href="" class="btn twitter">
+                                           <span class="enable">Conectar twitter</span>
+                                           <span class="disable">Desconectar twitter</span>
+                                       </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

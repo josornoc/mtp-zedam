@@ -1,0 +1,166 @@
+@import 'variables';
+@import 'typographie';
+
+.explore__wrapper {
+    float: left;
+    width: 100%;
+}
+
+.explore__container {
+    box-sizing: border-box;
+    float: left;
+    //padding-bottom: 50%;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-right: 2%;
+        width: 25%;
+    }
+
+    &.big {
+        width: 100%;
+
+        @include respond-to(tablet) {
+            width: 50%;
+        }
+
+        .explore__subcontainer {
+            padding-bottom: 78%;
+
+            @include respond-to(tablet) {
+                padding-bottom: 100%;
+            }
+        }
+    }
+
+    &.double {
+        .explore__subcontainer {
+            padding-bottom: 78%;
+
+            @include respond-to(tablet) {
+                margin-bottom: 8%;
+                padding-bottom: 203%;
+                padding-top: 10px;
+            }
+        }
+
+        + .explore__container {
+            clear: left;
+        }
+    }
+
+    &.simple {
+        .explore__subcontainer {
+            padding-bottom: 78%;
+
+            @include respond-to(tablet) {
+                padding-bottom: 48%;
+            }
+        }
+    }
+}
+
+.explore__subcontainer {
+    float: left;
+    padding-bottom: 78%;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-bottom: 100%;
+
+        + .explore__subcontainer {
+            margin-top: 8.5%;
+        }
+    }
+
+}
+
+.explore__item {
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.explore__overlay {
+    background: rgba(0,0,0,.2);
+    color: $white;
+    display: table;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+        color: $white;
+        text-decoration: none;
+
+        h3 {
+            text-decoration: none;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+
+    &:after {
+        @include transition();
+        background: rgba(0,0,0,.6);
+        bottom: 0;
+        content: '';
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.explore__overlay-cell {
+    display: table-cell;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 2;
+
+    .house__related-profile-image{
+        display: inline-block;
+        left: 0;
+        position: relative;
+        top: 0;
+    }
+
+    .explore__overlay-title {
+        @include ff_gothamRounded();
+        margin-top: 0;
+        margin-bottom: 0;
+        text-transform: none;
+
+        @include respond-to(tablet) {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+    }
+
+    .explore__overlay-text {
+        font-size: 18px;
+        margin-top: 0;
+
+        @include respond-to(tablet) {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    }
+
+    h3 {
+        @include ff_gothamRounded();
+        text-transform: uppercase;
+    }
+}

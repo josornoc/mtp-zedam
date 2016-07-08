@@ -1,0 +1,16 @@
+<span class="star__container">
+    {% for i in 1..stars %}
+        <div class="star"></div>
+    {% endfor %}
+    {% if stars < 5 %}
+        {% for i in 1..(5-stars) %}
+            <div class="star-off"></div>
+        {% endfor %}
+    {% endif %}
+</span>
+
+{% if reviews is defined %}
+<span class="reviews__amount">
+    {{ reviews }} reviews
+</span>
+{% endif %}

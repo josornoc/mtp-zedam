@@ -1,0 +1,112 @@
+<img src="images/mobile/layout/host@2x.png" width="100%" />
+
+<div class="profile__info">
+
+    {#EMAIL#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon email">
+                <span class="icon"></span> Email
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    {#Teléfono#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon phone">
+                <span class="icon"></span> Teléfono
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    {#Facebook#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon facebook">
+                <span class="icon"></span> Facebook
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    {#TWITTER#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon twitter">
+                <span class="icon"></span> Twitter
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    {#LINKEDIN#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon linkedin">
+                <span class="icon"></span> Linkedin
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+    {#GOOGLE +#}
+    <div class="profile__info-row">
+        <div class="profile__info-cell">
+            <div class="profile__info-icon google">
+                <span class="icon"></span> Google+
+            </div>
+        </div>
+        <div class="profile__info-cell">
+            <div class="profile__info-verified true">
+                Verificado <span class="icon"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="profile__related-title">
+    Spaces of Thomas
+</div>
+
+<div class="profile__related-content">
+
+    {% set content = [
+        {
+            title: 'Excelente departamento en el centro de Barcelona',
+            description: 'Casa/apto. entero — a 0.6 kilómetros',
+            image_profile: 'layout/host.png',
+            image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+            points: '253',
+            fav: true,
+            show_location: true,
+            show_icon: true,
+            location: 'Amsterdam, Holand',
+            user_name: 'Martha',
+        }
+    ] %}
+
+    {% for item in content %}
+        {% include '../content/component/house_item.twig' with {
+            item: item
+        } only %}
+    {% endfor %}
+</div>
+

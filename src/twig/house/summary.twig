@@ -1,0 +1,81 @@
+<div class="house__section-container">
+    <div class="house__section-title">
+        Resumen
+    </div>
+    <div class="house__section-column">
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Precisión
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 3
+                } only %}
+
+            </div>
+        </div>
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Comunicación
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 2
+                } only %}
+
+            </div>
+        </div>
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Limpieza
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 4
+                } only %}
+
+            </div>
+        </div>
+    </div>
+    <div class="house__section-column">
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Locación
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 5
+                } only %}
+
+            </div>
+        </div>
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Check-in
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 1
+                } only %}
+
+            </div>
+        </div>
+        <div class="house__section-row">
+            <div class="house__section-subcolumn">
+                Valor
+            </div>
+            <div class="house__section-subcolumn">
+
+                {% include '../content/component/stars.twig' with {
+                    stars: 1
+                } only %}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,150 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/profile/profile_menu.twig' with {
+                        active: 'basic'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    <div class="profile__section top">
+                        <div class="profile__section-title only">
+                            Datos básicos
+
+                            <a href="" class="profile__save booking__submit disable">Guardar</a>
+                        </div>
+                    </div>
+                    <div class="profile__section">
+
+                        <!-- Photo -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <div class=" profile__edit-image-container">
+                                    <img src="images/mobile/layout/host@2x.png" class="profile__edit-image-back" width="100%" />
+                                    <img src="images/mobile/layout/host@2x.png" class="profile__edit-image" width="100%" />
+                                </div>
+
+                                <div class="profile__edit-image-container">
+                                    <a href="" class="profile__btn btn">
+                                        <span>Cambiar Foto</span></a>
+                                    <a href="" class="profile__btn delete">Eliminar Foto</a>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 ">
+
+                                <div class="profile__basic-description">
+                                    Lorem ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, do ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commo
+                                </div>
+
+                                <div class="profile__edit-image-container hidden-mobile">
+                                    <a href="" class="profile__btn btn">Cambiar Foto</a>
+                                    <a href="" class="profile__btn delete">Eliminar Foto</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Name -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Nombre</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="name" class="input-form" />
+                            </div>
+                        </div>
+
+                        <!-- surname -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Apellidos</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="surname" class="input-form" />
+                            </div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Descripción</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <textarea name="Description" class="textarea-form" placeholder="Descriíbete. MyTwinPlace se basa en las relaciones personales. Ayuda a otros usuarios a conocerte un poco mejor"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- email -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Email</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" name="email" class="form-control" />
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <span class="verified icon"></span>
+                                        Confirmed
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- phone -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Phone</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="input-group">
+                                    <input type="text" name="phone" class="form-control" />
+                                    <span class="input-group-addon" id="basic-addon2">
+                                        <span class="verified icon"></span>
+                                        Confirmed
+                                    </span>
+                                </div>
+
+                                <div class="text_form">
+                                    Sólo facilitaremos tu email y teléfono cuando formalices <br/>una reserva para que el otro usuario te contacte.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile__section clean">
+                        <!-- phone -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Eliminar cuenta</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="" class="delete btn">Eliminar cuenta</a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        ¡Cuidado! Esta acción no se puede deshacer.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,14 +1,12 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
 .footer__container {
-    background-image: url('/images/mobile/layout/grid@2x.png');
-    background-color: $base-color-4;
-    background-position: 50%;
+    background-color: $base-color-0;
     box-sizing: border-box;
-    color: $white;
+    color: $base-color-4;
     float: left;
-    padding-top: 80px;
+    padding-top: 30px;
     position: relative;
     margin-top: 30px;
     width: 100%;
@@ -28,8 +26,44 @@
 }
 
 .footer__link-title {
-    @include ff_gothamRoundedBold();
-    margin-bottom: 10px;
+    @include ff_gothamRoundedMedium();
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+
+    @include respond-to(tablet) {
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+    }
+}
+
+.footer__links-container {
+    padding: 0 0 10px 0;
+
+    a {
+        color: $base-color-5;
+        font-size: 14px;
+        float: left;
+        line-height: 15px;
+        margin-bottom: 8px;
+        width: 100%;
+    }
+
+    &.cells_2 {
+        a {
+
+            @include respond-to(desktop_big) {
+                width: 50%;
+            }
+        }
+    }
+}
+
+.footer__links-container-wrapper {
+    @include respond-to(desktop_big) {
+        box-sizing: border-box;
+        padding-left: 40px;
+    }
 }
 
 .footer__logo {
@@ -44,27 +78,29 @@
 }
 
 .social-icons__container {
-    border-top: 1px solid $blue;
     float: left;
-    margin: 55px 0 25px;
+    margin: 10px 0 0;
     width: 100%;
 }
 
 .social-icons {
     display: table;
-    margin: 30px auto 0;
+    margin: 20px auto 0;
     max-width: 400px;
     text-align: center;
     width: 100%;
 
+    @include respond-to(tablet) {
+        float: right;
+        width: 197px;
+    }
+
     .icon-container {
         @include transition();
-        border: 1px solid $white;
-        border-radius: 50px;
         display: inline-block;
         height: 36px;
         position: relative;
-        width: 36px;
+        width: 32px;
 
         &:hover {
             .icon {
@@ -73,71 +109,41 @@
         }
 
         + .icon-container {
-            margin-left: 4%;
+            margin-left: 18%;
 
             @include respond-to(tablet) {
-                margin-left: 5%;
+                margin-left: 20px;
             }
         }
 
         .icon {
-            position: absolute;
-            left: 50%;
-            top: 50%;
+            float: left;
+            height: 36px;
             opacity: .8;
+            width: 36px;
         }
 
         &.facebook {
             .icon {
-                @include image('layout/social/facebook_icon.png', 'mobile');
-                height: 20px;
-                margin: -10px 0 0 -5px;
-                width: 11px;
+                @include image('layout/footer/facebook_icon.png', 'mobile');
             }
         }
 
         &.twitter {
             .icon {
-                @include image('layout/social/twitter_icon.png', 'mobile');
-                height: 13px;
-                margin: -6px 0 0 -7px;
-                width: 16px;
+                @include image('layout/footer/twitter_icon.png', 'mobile');
             }
         }
 
-        &.google {
+        &.email {
             .icon {
-                @include image('layout/social/google_icon.png', 'mobile');
-                height: 18px;
-                margin: -9px 0 0 -8px;
-                width: 18px;
-            }
-        }
-
-        &.instagram {
-            .icon {
-                @include image('layout/social/instagram_icon.png', 'mobile');
-                height: 16px;
-                margin: -8px 0 0 -8px;
-                width: 16px;
-            }
-        }
-
-        &.linkedin {
-            .icon {
-                @include image('layout/social/linkedin_icon.png', 'mobile');
-                height: 17px;
-                margin: -9px 0 0 -8px;
-                width: 17px;
+                @include image('layout/footer/mail_icon.png', 'mobile');
             }
         }
 
         &.pinterest {
             .icon {
-                @include image('layout/social/pinterest_icon.png', 'mobile');
-                height: 17px;
-                margin: -8px 0 0 -8px;
-                width: 17px;
+                @include image('layout/footer/pinterest_icon.png', 'mobile');
             }
         }
     }
@@ -149,45 +155,139 @@
 
 .selector-language {
     @include transition();
-    background: $base-color-2;
+    background: $blue;
     border-radius: 2px;
     color: $base-color-0;
     cursor: pointer;
     float: left;
-    height: 36px;
-    line-height: 36px;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
     opacity: .9;
     padding: 0 10px;
     position: relative;
     width: 100%;
-
-    @include respond-to(tablet) {
-        //max-width: 300px;
-    }
 
     &:hover {
         opacity: 1;
     }
 
     &:after {
-        border-top: 7px solid $white;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
+        @include transform(rotate(-135deg));
+        border-top: 1px solid $white;
+        border-left: 1px solid $white;
         content: '';
-        height: 0;
-        margin-top: -3px;
+        height: 10px;
+        margin-top: -6px;
         position: absolute;
         right: 15px;
         top: 50%;
-        width: 0;
+        width: 10px;
         z-index: 1;
     }
 }
 
 .footer__rights {
-    @include ff_gothamRoundedBold();
+    bottom: 14px;
+    color: $base-color-6;
     display: table;
-    font-size: 11px;
-    margin: 30px auto;
-    text-align: center;
+    font-size: 14px;
+    margin: 20px auto 10px;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+
+    br {
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    @include respond-to(tablet) {
+        bottom: 0;
+        float: left;
+        position: relative;
+        text-align: center;
+        margin: 30px auto 35px;
+    }
+}
+
+.footer__post-container {
+    box-sizing: border-box;
+    color: $base-color-4;
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+
+    &:hover {
+        background: rgba(255,255,255,.2);
+
+        .footer__post-title {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__post-image-container {
+    position: relative;
+    padding-bottom: 20%;
+}
+
+.footer__post-image {
+    background-size: cover;
+    bottom: 0;
+    left: 15px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.footer__post-info {
+    float: left;
+    padding-left: 20px;
+}
+
+.footer__post-title {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 5px;
+}
+
+.footer__post-date {
+    font-size: 14px;
+}
+
+.footer__post-text {
+    font-size: 12px;
+}
+
+.footer__images {
+    clear: both;
+    float: left;
+    //margin-bottom: 10px;
+    margin-top: 20px;
+
+    @include respond-to(tablet) {
+        clear: none;
+        float: left;
+        margin-bottom: 0;
+        margin-left: 28px;
+        margin-top: 24px;
+    }
+
+    + .footer__images {
+        margin-bottom: 80px;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.footer__social-container {
+    background: $base-color-8;
+    float: left;
+    margin-top: 25px;
+    width: 100%;
 }

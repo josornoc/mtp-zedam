@@ -1,0 +1,74 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+   <div class="container my_houses">
+       <div class="row">
+
+           <div class="col-xs-12">
+               <div class="my-houses__title-container">
+                   <div class="section__item-title">
+                       Mis Casas
+                   </div>
+
+                   <a href="" class="booking__submit">
+                       Añade una nueva casa
+                   </a>
+               </div>
+           </div>
+
+           <div class="col-xs-12 my-houses__wrapper">
+               {% set content = [
+                   {
+                       title: 'Excelente departamento en el centro de Barcelona',
+                       description: 'Casa/apto. entero — a 0.6 kilómetros',
+                        location: 'Dirección, Ciudad, País',
+                       image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                       points: '253',
+                       published: true,
+                       state: false,
+                        can_publish: true,
+                    },
+                   {
+                       title: 'Excelente departamento en el centro de Barcelona',
+                       description: 'Casa/apto. entero — a 0.6 kilómetros',
+                    location: 'Dirección, Ciudad, País',
+                       image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                       points: '253',
+                       published: true,
+                       state: true,
+                       can_publish: true,
+                    },
+                   {
+                       title: 'Excelente departamento en el centro de Barcelona',
+                       description: 'Casa/apto. entero — a 0.6 kilómetros',
+                    location: 'Dirección, Ciudad, País',
+                       image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                       points: '253',
+                        published: true,
+                        state: false,
+                    can_publish: false,
+                    },
+               ] %}
+
+
+               <div class="row">
+
+                   {% for item in content %}
+                       <div class="col-xs-12">
+
+                           {% include 'twig/content/component/my_house_item.twig' with {
+                                item: item
+                           } only %}
+
+                       </div>
+                   {% endfor %}
+
+               </div>
+           </div>
+
+       </div>
+   </div>
+{% endblock %}

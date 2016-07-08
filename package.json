@@ -29,5 +29,8 @@
     "gulp-uglify": "^1.4.1",
     "gulp-webserver": "^0.9.1",
     "node-sass": "^3.4.2"
+  },
+  "dependencies": {
+    "gulp-uglifyjs": "^0.6.2"
   }
 }

@@ -1,0 +1,53 @@
+<ul class="header__user-menu js-submenu-container points">
+    <li class="auto">
+        <div class="container-list">
+            1 point = 1€ de crédito de viaje
+            <br/>
+            <br/>
+            <span class="texts">
+                ¡Usa tus puntos para reservar alojamiento en tus viajes!
+            </span>
+        </div>
+    </li>
+    <li class="auto">
+        <div class="container-list">
+            <span class="row-list">
+                <span class="row-cell">
+                    Consigue más puntos
+                </span>
+                <span class="row-cell">
+                    Gana
+                </span>
+            </span>
+            {% set show_points = true %}
+            {% if show_points %}
+            <span class="row-list">
+                <a href="profile_basic.html" class="">
+                    Completa tu perfil
+                </a>
+
+                <span class="points">
+                    +150 puntos
+                </span>
+            </span>
+            {% else %}
+            <span class="row-list">
+                <a href="profile_basic.html" class="">
+                    Saber Más
+                </a>
+
+                <span class="points">
+                    Hasta XXXX puntos
+                </span>
+            </span>
+            {% endif %}
+        </div>
+    </li>
+    <li>
+        <a href="" class="only-text">
+            <span class="texts">
+                Mis Puntos
+            </span>
+        </a>
+    </li>
+</ul>

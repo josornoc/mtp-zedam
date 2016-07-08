@@ -1,4 +1,4 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
 .house__related-image {
@@ -8,57 +8,191 @@
     @include respond-to(tablet) {
         padding-bottom: 70%;
     }
+
+    .entrepreneur & {
+        margin-bottom: 10px;
+        padding-bottom: 72%;
+
+        @include respond-to(tablet) {
+            padding-bottom: 92%;
+        }
+    }
+
+    .travelers & {
+        padding-bottom: 78%;
+
+        @include respond-to(tablet) {
+            padding-bottom: 90%;
+        }
+    }
 }
 
 .house__related-profile-image {
-    border: 1px solid $white;
-    border-radius: 60px;
-    height: 60px;
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: -30px;
     width: 60px;
+    z-index: 2;
+
+    img {
+        border: 2px solid $white;
+        border-radius: 60px;
+        width: 100%;
+    }
+}
+
+.house__related-profile-text {
+    text-align: center;
+    color: $base-color-4;
+    width: 100%;
 }
 
 .house__related-points {
     @include ff_gothamRounded();
-    background: $base-color-3;
-    bottom: 25px;
-    color: $white;
-    font-size: 24px;
-    left: 0;
-    padding: 3px 10px;
+    background: rgba(246,246,246,.8);
+    color: $base-color-3;
+    font-size: 16px;
+    right: 0;
+    padding: 5px 10px 5px 20px;
     position: absolute;
+    top: 15px;
     z-index: 1;
+
+    &:after {
+        @include image('layout/points_icon.png', 'mobile');
+        content: '';
+        height: 14px;
+        position: absolute;
+        left: 7px;
+        margin-top: -7px;
+        top: 50%;
+        width: 9px;
+    }
+
+    span {
+        font-size: 10px;
+    }
 }
 
 .house__related-favorite {
+    left: 20px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
     z-index: 1;
 }
 
-
-
 .house__related-title {
-    @include ff_gothamRounded();
     color: $base-color-4;
-    margin-top: 10px;
     font-size: 16px;
+    display: inline-block;
+    float: none;
+    font-weight: bold;
+    height: 19px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        white-space: nowrap;
+    }
 }
 
 .house__related-description {
     color: $base-color-2;
     font-size: 14px;
+    height: 19px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        white-space: nowrap;
+    }
+
+    .star__container {
+        margin-left: 0;
+    }
 }
 
 .house__related-info {
+    @include transition();
+    background: $base-color-7;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 80px;
+    padding-right: 10px;
+    padding-bottom: 10px;
     position: relative;
-    float: left;
-    margin-bottom: 30px;
     width: 100%;
 
+    &:hover {
+        text-decoration: none;
+
+        .house__related-title {
+            text-decoration: underline;
+        }
+    }
+}
+
+.house__related-select {
+    @include transition();
+    display: none;
+
+    .show-multiple & {
+        background: rgba(255,255,255,.7);
+        bottom: 0;
+        display: block;
+        height: 60px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.house__related-select-action {
+    @include ff_gothamRoundedMedium();
+    background: $blue;
+    border-radius: 4px;
+    border: 1px solid $blue;
+    color: $white;
+    float: left;
+    font-size: 12px;
+    margin-left: 82px;
+    margin-top: 16px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 100;
+
+    .select {
+        display: block;
+    }
+
+    .unselect {
+        display: none;
+    }
+
+    .selected & {
+        border: 1px solid $blue;
+        background: $white;
+        color: $blue;
+
+        .select {
+            display: none;
+        }
+
+        .unselect {
+            display: block;
+        }
+
+
+    }
 }
 
 .map__embed {

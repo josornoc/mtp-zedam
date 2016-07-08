@@ -1,0 +1,120 @@
+@import 'variables';
+@import 'typographie';
+
+.left-column__image-container {
+    border-bottom: 2px solid $base-color-7;
+}
+
+.left-column__info {
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.left-column__info-name {
+    color: $base-color-4;
+    font-size: 18px;
+}
+
+.left-column__info-location {
+    color: $base-color-1;
+}
+
+.left-column__info-star {
+    .star__container {
+        margin-top: 10px;
+    }
+
+    .star__container,
+    .star,
+    .star-off,
+    .reviews__amount {
+        display: inline-block;
+        float: none;
+    }
+    .reviews__amount {
+        color: $base-color-3;
+    }
+}
+
+.left-column__reservation {
+    border-bottom: 1px solid $base-color-7;
+    float: left;
+    padding: 30px 0;
+    width: 100%;
+
+    .btn-link {
+        margin-top: 10px;
+    }
+
+    &.clean {
+        border-bottom: 0 solid $base-color-7;
+    }
+
+    &.points__information {
+        border-bottom: 0px solid $base-color-7;
+        text-align: center;
+
+        .label_win {
+            .text {
+                font-size: 14px;
+            }
+
+            .points {
+                font-size: 52px;
+            }
+
+        }
+
+        .left-column__reservation-content {
+            box-sizing: border-box;
+            float: left;
+            font-size: 14px;
+            margin: 0;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .content_text {
+            color: $base-color-4;
+        }
+    }
+}
+
+.left-column__reservation-title {
+    @include ff_gothamRoundedMedium();
+    font-size: 18px;
+}
+
+.left-column__reservation-calendar {
+    margin-top: 10px;
+
+    label {
+        color: $base-color-1;
+        font-size: 14px;
+        font-weight: normal;
+    }
+
+    .content {
+        color: $base-color-6;
+        font-size: 18px;
+    }
+}
+
+.left-column__reservation-content {
+    margin-top: 20px;
+
+    .content_win {
+        color: $base-color-6;
+        float: left;
+        font-size: 12px;
+        line-height: 14px;
+        margin-top: 10px;
+        width: 100%;
+
+        a {
+            color: $blue;
+            margin-top: 5px;
+        }
+    }
+}

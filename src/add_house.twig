@@ -1,0 +1,103 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="add-house row">
+
+        <div class="add-house__cell">
+            <div class="add-house__image_background image_1">
+
+                <div class="add-house__title">
+                    ¡Añade tu espacio
+                    <br/>
+                    en 1 solo clic!
+                </div>
+
+                <div class="add-house__description hidden-sm">
+                    <span>
+                        Importa tu anuncio desde tu plataforma <br/>
+                        de alquiler vacacional
+                    </span>
+                </div>
+
+                <a href="" class="link-btn hidden-sm">Añadir ahora</a>
+
+            </div>
+
+            <div class="add-house__info hidden-mobile">
+                <div class="add-house__special-arrow"></div>
+                <div class="first_title add-house__title">
+                    ¡Añade tu espacio
+                    <br/>
+                    en 1 solo clic!
+                </div>
+                <div class="add-house__description">
+                    <span>
+                        Introduce la URL de tu espacio para importar
+                    </span>
+                    <span>
+                        toda la información y evaluaciones.
+                    </span>
+                </div>
+
+
+                <div class="add-house__subsearch">
+                    <form class="add-house__search-container">
+                        <div class="add-house__search-wrapper">
+                            <span class="icon"></span>
+
+                            <input type="text" placeholder="Pega una URL/www.airbnb.com/-----" class="add-house__search-container-input location">
+
+                            <div class="add-house__search-submit-container">
+                                <input type="submit" class="add-house__search-submit" value="Importar">
+                            </div>
+                        </div>
+
+                        <div class="add-house__search-submit-container visible-mobile">
+                            <input type="submit" class="add-house__search-submit" value="Importar">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="add-house__logos"></div>
+            </div>
+
+        </div>
+
+        <div class=" add-house__cell">
+            <div class="add-house__image_background image_2"></div>
+
+            <div class="add-house__info grey-background">
+                <div class="add-house__title">
+                    O hazlo paso a paso
+                    <br/>
+                    desde cero
+                </div>
+                <div class="add-house__description">
+                    <span>
+                    Añade la localización, las fotos y datos como
+                    </span>
+                    <span>
+                    la disponibilidad, uno por uno.
+                    </span>
+                </div>
+
+                <div class="add-house__actions">
+                    <a href="" class="btn" data-toggle="modal" data-target=".bs-example-modal-lg">
+                        Empezar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    {% include 'twig/add_house/overlay.twig' %}
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+

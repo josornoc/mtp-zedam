@@ -1,0 +1,64 @@
+<a href="" class="house__related-image">
+    <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+
+    <div class="house__related-select">
+        <div class="house__related-select-action">
+            <span class="select">
+                Seleccionar
+            </span>
+            <span class="unselect">
+                Quitar
+            </span>
+
+        </div>
+    </div>
+
+    {% if item.show_icon is not defined or is not true %}
+    <div class="house__related-icon"></div>
+    {% endif %}
+
+    {% if item.points is not empty %}
+    <div class="house__related-points">
+        {{ item.points }} <span>points</span>
+    </div>
+    {% endif %}
+
+    {% if item.fav is not empty %}
+    <span class="house__related-favorite fav{{ (item.fav) ? ' true' : '' }}"></span>
+    {% endif %}
+</a>
+
+{% if item.image_profile is not empty %}
+<a href="" class="house__related-info">
+    <div class="house__related-profile-image">
+
+        {% if item.image_profile is not empty %}
+            {% include 'image.html.twig' with {
+                alt: item.title,
+                common: true,
+                class: '',
+                image: item.image_profile
+            } only %}
+        {% endif %}
+
+        {% if item.user_name is not empty %}
+        <div class="house__related-profile-text">
+            {{ item.user_name }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="house__related-title">{{ item.title }}</div>
+
+    <div class="house__related-description">
+        {% if item.show_location == true %}
+            {{ item.location }}
+        {% else %}
+            {% include 'stars.twig' with {
+                stars: 3,
+                reviews: 36
+            } only %}
+        {% endif %}
+    </div>
+</a>
+{% endif %}

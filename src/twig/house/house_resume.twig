@@ -1,0 +1,61 @@
+<div class="house-resume__container">
+
+    <div class="house-resume__user">
+
+        {% include '../content/component/image.html.twig' with {
+            alt: 'Host',
+            common: true,
+            class: 'house-resume__profile',
+            image: 'layout/host@2x.png',
+        } only %}
+
+        <span class="house-resume__profile-name">
+            Iris
+        </span>
+
+    </div>
+
+    <div class="house-resume__general-info">
+
+        <div class="house-resume__title">
+            Espectacular ático en el centro
+        </div>
+        <div class="house-resume__location">
+            Barcelona, Catalunya, España
+
+            {% include '../content/component/stars.twig' with {
+                stars: 3,
+                reviews: 36
+            } only %}
+
+        </div>
+
+        <ul class="house-resume__icons">
+            <li class="list-item depto">
+                <span class="icon"></span>
+                <span class="text">
+                Casa Entera
+                </span>
+            </li>
+            <li class="list-item people">
+                <span class="icon"></span>
+                <span class="text">
+                    2 plazas
+                </span>
+            </li>
+            <li class="list-item room">
+                <span class="icon"></span>
+                <span class="text">
+                    1 habitación
+                </span>
+            </li>
+            <li class="list-item bath">
+                <span class="icon"></span>
+                <span class="text">
+                    1 baño
+                </span>
+            </li>
+        </ul>
+
+    </div>
+</div>

@@ -1,20 +1,17 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
 .wishlist {
-    background: $base-color-0;
+    background: $white;
+    border: 1px solid $base-color-7;
     float: left;
     width: 100%;
 
     @include respond-to(tablet) {
-        margin-top: 5px;
-        width: 50%;
+        margin-bottom: 20px;
+        margin-top: 10px;
     }
 
-    @include respond-to(desktop) {
-        margin-top: 5px;
-        width: 100%;
-    }
 }
 
 .wishlist__functionality {
@@ -25,27 +22,28 @@
 }
 
 .wishlist__button {
-    @include ff_gothamRoundedBold();
+    @include ff_gothamRounded();
     @include transition();
-    border: 1px solid $base-color-1;
+    border: 1px solid $blue;
     border-radius: 3px;
     background: $white;
-    color: $base-color-4;
+    color: $blue;
     float: left;
-    font-size: 16px;
+    font-size: 14px;
     height: 36px;
     line-height: 36px;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
 
     .icon {
-        @include image('layout/heart_icon.png', 'mobile');
+        /*@include image('layout/heart_icon.png', 'mobile');
         display: inline-block;
         height: 16px;
         margin-right: 10px;
         margin-top: -4px;
         vertical-align: middle;
-        width: 17px;
+        width: 17px;*/
     }
 
     &:hover {
@@ -56,8 +54,9 @@
 }
 
 .wishlist__online {
-    color: $base-color-2;
+    color: $base-color-6;
     float: left;
+    font-size: 12px;
     padding: 10px 0 0;
     text-align: center;
     width: 100%;
@@ -70,12 +69,12 @@
 }
 
 .wishlist__btn {
-    @include ff_gothamRoundedBold();
+    @include ff_gothamRounded();
     @include transition();
     box-sizing: border-box;
-    color: $base-color-4;
+    color: $blue;
     float: left;
-    font-size: 14px;
+    font-size: 12px;
     padding: 10px 0;
     position: relative;
     text-align: center;
@@ -101,9 +100,9 @@
 
         .icon {
             @include image('layout/email_icon.png', 'mobile');
-            height: 10px;
+            height: 14px;
             margin-top: -2px;
-            width: 15px;
+            width: 16px;
         }
     }
 
@@ -111,9 +110,9 @@
 
         .icon {
             @include image('layout/social_icon.png', 'mobile');
-            height: 15px;
+            height: 16px;
             margin-top: -2px;
-            width: 14px;
+            width: 16px;
         }
     }
 
@@ -126,15 +125,17 @@
 
 .wishlist__report {
     @include ff_gothamRounded();
-    float: left;
+    background: $white;
     color: $base-color-4;
+    float: left;
     padding: 10px 0;
     text-align: center;
     width: 100%;
 
     @include respond-to(tablet) {
         float: right;
-        margin: 10px 0 30px;
+        margin: 0 0 30px;
+        padding-top: 30px;
         width: 50%;
     }
 

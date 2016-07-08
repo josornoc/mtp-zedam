@@ -1,59 +1,70 @@
 
 {% block header %}
-    <div class="header">
+    <div class="header {{ current }}">
         <div class="header__search">
-            <a href="" class="header__logo">
+            <a href="/" class="header__logo">
                 <span class="burger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </span>
-                <img src="images/mobile/layout/logo.svg" alt="" width="43" />
+
+                <img src="images/mobile/layout/logo_header.svg" alt="" width="158" class="header__logo-default"/>
+                <img src="images/mobile/layout/logo_headerhome.svg" alt="" width="158" class="header__logo-white"/>
             </a>
             <div class="header__search-container">
-                <span class="icon"></span>
-                <input type="text" placeholder="¿Adonde quieres ir?" class="header__search-input" />
+                <form action="search.html">
+                    <span class="icon"></span>
+                    <input type="text" placeholder="¿Adonde quieres ir?" class="header__search-input" />
+                </form>
             </div>
         </div>
+
         <ul class="header__links">
             <li>
-                <a href="#" class="houses">
-                    <span class="text">
-                        Mis Casas
+                {% if current == 'home' %}
+                <a href="messages_host.html" class="notifications">
+                    <span class="icon"></span>
+                </a>
+                {% else %}
+                <a href="" class="btn">
+                    Conviértete en Anfitrión
+                </a>
+                {% endif %}
+            </li>
+            <li>
+                <a href="my_houses.html" class="houses">
+                    <span class="icon"></span>
+                </a>
+            </li>
+            <li>
+                <a href="messages_host.html" class="message">
+                    <span class="amount">
+                        2
                     </span>
                     <span class="icon"></span>
                 </a>
             </li>
             <li>
-                <a href="#" class="notifications">
-                    <span class="text">
-                        Notificaciones
+                <a href="#" class="points js-submenu">
+                    350 points
+                </a>
+
+                {% include 'header_points_menu.twig' %}
+
+            </li>
+            <li>
+                <a href="#" class="user js-submenu">
+                    <span class="icon">
+                        <img src="images/mobile/layout/profile@2x.png" alt="" width="116"/>
                     </span>
-                    <span class="icon"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="help">
-                    <span class="text">
-                        Ayuda
-                    </span>
-                    <span class="icon"></span>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="points">
-                    30 pts
-                </a>
-            </li>
-            <li>
-                <a href="#" class="user">
                     <span class="text">
                         Andrés
                     </span>
-                    <span class="icon">
-                        <img src="images/mobile/layout/profile@2x.png" alt="" />
-                    </span>
                 </a>
+
+                {% include 'header_user_menu.twig' %}
+
             </li>
         </ul>
     </div>

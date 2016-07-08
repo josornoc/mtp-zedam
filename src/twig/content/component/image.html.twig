@@ -1,7 +1,7 @@
 
 {% if common is defined and common == true %}
 
-    <picture>
+    <picture class="{{ (addclass is defined) ? addclass : '' }}">
         <!--[if IE 9]><video><![endif]-->
         <source data-srcset="images/mobile/{{ image }}" data-sizes="auto"/>
 

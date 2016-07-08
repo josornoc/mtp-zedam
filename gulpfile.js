@@ -10,6 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var webserver = require('gulp-webserver');
 var twig = require('gulp-twig');
 var uglify = require('gulp-uglify');
+//var uglify = require('gulp-uglifyjs');
 var prettify = require('gulp-html-prettify');
 
 gulp.task('sass', function () {
@@ -22,7 +23,7 @@ gulp.task('sass', function () {
         }))
     .pipe(gulp.dest('./dist/css'))
     .pipe(rename({suffix: '.min'}))
-    .pipe(minifycss())
+    .pipe(minifycss({ processImport: true }))
     .pipe(s)
     .pipe(gulp.dest('./dist/css'))
     .pipe(notify({
@@ -51,10 +52,33 @@ gulp.task('webserver', function() {
 });
 
 gulp.task('javascript', function() {
-  gulp.src('./src/js/libs/*.js')
+  gulp.src('./src/js/**/*.js')
     .pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest('./dist/js'))
 });
+//var config = require('./config').javascript;
+
+/*gulp.task('javascript', function () {
+    'use strict';
+
+    console.log('js generating');
+    gulp.src(config.src)
+        //.pipe(sourcemaps.init())
+        .pipe(uglify('app.min.js', {
+            outSourceMap: true,
+            output: {
+                beautify: true,
+                comments: false
+            }
+        }).on('error', function (e) {
+            gutil.beep();
+            console.log(e);
+
+            this.emit('end');
+        }))
+        //.pipe(sourcemaps.write())
+        .pipe(gulp.dest(config.dest));
+});*/
 
 gulp.task('images', function () {
   gulp.src([

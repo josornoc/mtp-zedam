@@ -1,7 +1,8 @@
-@import "var-mixins";
+@import "variables";
 @import "typographie";
 
 .header {
+    @include transition();
     @include ff_gothamRounded();
     @include transform(translateZ(0));
     background: $white;
@@ -13,7 +14,52 @@
     z-index: 10;
 
     @include respond-to(tablet) {
+        .search & {
+            position: fixed;
+        }
+    }
+
+    &.home {
+        background: none;
+        border-bottom: 0;
+    }
+
+    .home & {
+        position: fixed;
+    }
+}
+
+.header__logo-white {
+    display: none;
+
+    .header.home & {
+        display: block;
+    }
+
+    .home & {
+        left: 58px;
         position: absolute;
+        top: 17px;
+    }
+}
+
+.header__logo-default {
+    display: none;
+
+    @include respond-to(tablet) {
+        display: block;
+        margin-top: 16px;
+
+        .header.home & {
+            display: none;
+        }
+    }
+
+    .home & {
+        left: 58px;
+        margin-top: 0;
+        position: absolute;
+        top: 17px;
     }
 }
 
@@ -27,18 +73,15 @@
     float: left;
     height: 60px;
     padding-left: 8px;
-    width: 60px;
+    width: 64px;
 
-    img {
-        display: none;
-
-        @include respond-to(tablet) {
-            display: inline-block;
-            opacity: 1;
-        }
+    @include respond-to(tablet) {
+        padding-left: 25px;
+        width: 200px;
     }
 
     .burger {
+        @include transition();
         float: left;
         padding-top: 16px;
 
@@ -51,11 +94,19 @@
             margin-left: 10px;
             margin-top: 5px;
             width: 25px;
+
+            .header.home & {
+                background: $white;
+            }
         }
 
         @include respond-to(tablet) {
             display: none;
         }
+    }
+
+    .home & {
+        border-right: 0 solid $base-color-1;
     }
 }
 
@@ -68,9 +119,19 @@
     .icon {
         @include image('layout/search_icon.png', 'mobile');
         float: left;
-        height: 19px;
+        height: 20px;
         margin: 21px 8px 8px;
-        width: 18px;
+        width: 20px;
+    }
+
+    @include respond-to(tablet) {
+        .home & {
+            display: none;
+        }
+    }
+
+    .header.home & {
+        display: none;
     }
 }
 
@@ -80,42 +141,78 @@
     height: 60px;
     line-height: 60px;
     outline: none;
-    width: 200px;
+    width: 188px;
+
+    @include respond-to(tablet) {
+        width: 164px;
+    }
 }
 
 .header__links {
     display: none;
     float: right;
     list-style: none;
+    padding: 0;
 
     @include respond-to(tablet) {
         display: block;
     }
 
     li {
-        border-right: 1px solid $base-color-1;
         float: left;
-        min-height: 60px;
+        height: 60px;
+        line-height: 60px;
+
+        + li {
+            border-left: 1px solid $base-color-7;
+        }
 
         &:last-child {
             border-right: 0;
         }
 
         a {
+            @include transition();
             color: $base-color-1;
+            cursor: pointer;
+            float: left;
+            height: 60px;
+            line-height: 64px;
             padding: 0 15px;
+            position: relative;
 
             &:hover {
+                background: $base-color-0;
                 color: $base-color-2;
+
+                .text {
+                    text-decoration: underline;
+                }
+            }
+
+            .header.home & {
+
+                &:hover {
+                    background: none;
+                    color: $base-color-2;
+
+                    .icon {
+                        opacity: .6;
+                    }
+                }
             }
 
             .text {
-                float: left;
+                float: right;
                 margin-right: 15px;
                 display: none;
 
                 @include respond-to(desktop) {
                     display: block;
+                }
+
+                .header.home & {
+                    color: $white;
                 }
             }
 
@@ -126,36 +223,107 @@
             &.houses {
                 .icon {
                     @include image('layout/house_icon.png', 'mobile');
-                    height: 19px;
-                    margin-top: 20px;
+                    height: 22px;
+                    margin-top: 21px;
+                    width: 25px;
+
+                    .header.home & {
+                        @include image('layout/house_icon_white.png', 'mobile');
+                    }
+                }
+            }
+
+            &.message {
+                .icon {
+                    @include image('layout/message_icon.png', 'mobile');
+                    height: 15px;
+                    margin-top: 24px;
                     width: 20px;
+
+                    .header.home & {
+                        @include image('layout/message_icon_white.png', 'mobile');
+                    }
+                }
+
+                .amount {
+                    @include ff_Helvetica();
+                    background: $red;
+                    border-radius: 26px;
+                    color: $white;
+                    font-size: 10px;
+                    height: 17px;
+                    line-height: 18px;
+                    min-width: 17px;
+                    padding: 0 3px;
+                    position: absolute;
+                    right: 7px;
+                    text-align: center;
+                    top: 14px;
+                    z-index: 1;
                 }
             }
 
             &.notifications {
+                border-left: 1px solid $base-color-7;
+
+                .header.home & {
+                    border-left: 0 solid $white;
+                }
+
                 .icon {
-                    @include image('layout/message_icon.png', 'mobile');
-                    height: 17px;
-                    margin-top: 22px;
-                    width: 21px;
+                    @include image('layout/notification_icon.png', 'mobile');
+                    margin-top: 21px;
+                    height: 22px;
+                    width: 18px;
+
+                    .header.home & {
+                        @include image('layout/notification_icon_white.png', 'mobile');
+                    }
                 }
             }
 
-            &.help {
+            &.points {
+                color: $blue;
+                text-align: center;
+
+                @include respond-to(tablet) {
+                    min-width: 89px;
+                }
+
+                @include respond-to(desktop) {
+                    min-width: 139px;
+                }
+
+                .header.home & {
+                    color: $white;
+                }
+
                 .icon {
-                    @include image('layout/help_icon.png', 'mobile');
-                    height: 17px;
-                    margin-top: 21px;
-                    width: 17px;
+                    @include image('layout/my-twin-place_icon.png', 'mobile');
+                    float: right;
+                    height: 25px;
+                    margin-left: 10px;
+                    margin-top: 18px;
+                    width: 25px;
                 }
             }
 
             &.user {
+                text-align: center;
+
+                @include respond-to(tablet) {
+                    min-width: 62px;
+                }
+
+                @include respond-to(desktop) {
+                    min-width: 139px;
+                }
+
                 .icon {
-                    border: 1px solid $base-color-1;
                     border-radius: 30px;
+                    float: right;
                     height: 30px;
-                    margin-top: 14px;
+                    margin-top: 16px;
                     overflow: hidden;
                     width: 30px;
 
@@ -165,28 +333,456 @@
                     }
                 }
             }
+
+        }
+
+        .btn {
+            border: 1px solid $blue;
+            color: $blue;
+            height: 32px;
+            line-height: 32px;
+            margin: 14px 20px 0;
+            width: auto;
+
+            .home & {
+                border: 1px solid $white;
+                background: none;
+                color: $white;
+
+                &:hover {
+                    background: rgba(255,255,255,.2);
+                }
+            }
+
+            @include respond-to(tablet) {
+                display: none;
+            }
+
+            @include respond-to(desktop_big) {
+                display: block;
+            }
+        }
+
+        .header.home & {
+            border-left: 1px solid transparent;
         }
     }
 }
 
 .image__container {
     float: left;
-    height: 300px;
+    height: 360px;
     padding-top: 60px;
     position: relative;
     width: 100%;
 
     @include respond-to(tablet) {
-        height: 500px;
+        height: 460px;
     }
 
     @include respond-to(desktop) {
-        height: 600px;
+        height: 460px;
     }
 
     img {
         float: left;
         position: relative;
         width: 100%;
+    }
+
+    .home & {
+        padding-top: 60px;
+
+        .background__container-animation {
+            @include image('home/header_image_home.png','mobile');
+        }
+    }
+}
+
+.header__user-menu {
+    background: $white;
+    border: 1px solid $base-color-7;
+    display: none;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    width: 270px;
+
+    li {
+        box-sizing: border-box;
+        float: left;
+        list-style: none;
+        position: relative;
+        width: 100%;
+
+        + li {
+            border-left: 0;
+        }
+
+        &:last-child {
+            position: relative;
+            z-index: 1;
+        }
+
+        &.auto {
+            height: auto;
+
+            &:first-child {
+                &:after {
+                    border-bottom: 9px solid $base-color-7;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    content: '';
+                    height: 0;
+                    position: absolute;
+                    right: 11px;
+                    top: -9px;
+                    width: 0;
+                    z-index: 1;
+
+                    @include respond-to(desktop) {
+                        right: 52px;
+                    }
+                }
+
+                &:before {
+                    border-bottom: 9px solid $white;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    content: '';
+                    height: 0;
+                    position: absolute;
+                    right: 11px;
+                    top: -8px;
+                    width: 0;
+                    z-index: 2;
+
+                    @include respond-to(desktop) {
+                        right: 52px;
+                    }
+                }
+            }
+        }
+
+        .container-list {
+            box-sizing: border-box;
+            color: $base-color-6;
+            float: left;
+            font-size: 14px;
+            line-height: 12px;
+            padding: 15px 20px;
+
+            .texts {
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        .row-list {
+            float: left;
+            width: 100%;
+
+            + .row-list {
+                margin-top: 10px;
+            }
+
+            .row-cell {
+                float: left;
+                color: $base-color-1;
+                font-size: 10px;
+                width: auto;
+
+                + .row-cell {
+                    float: right;
+                }
+
+            }
+
+            a {
+                @include ff_Helvetica();
+                color: $blue;
+                float: left;
+                height: auto;
+                line-height: 14px;
+                padding: 0;
+                width: auto;
+
+                &:hover {
+                    background: none;
+                }
+            }
+
+            .points {
+                @include ff_Helvetica();
+                color: $base-color-6;
+                float: right;
+            }
+        }
+
+        &:first-child {
+            a {
+                &:after {
+                    border-bottom: 9px solid $base-color-7;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    content: '';
+                    height: 0;
+                    position: absolute;
+                    right: 11px;
+                    top: -9px;
+                    width: 0;
+                    z-index: 1;
+
+                    @include respond-to(desktop) {
+                        right: 52px;
+                    }
+                }
+
+                &:before {
+                    border-bottom: 9px solid $white;
+                    border-left: 9px solid transparent;
+                    border-right: 9px solid transparent;
+                    content: '';
+                    height: 0;
+                    position: absolute;
+                    right: 11px;
+                    top: -8px;
+                    width: 0;
+                    z-index: 2;
+
+                    @include respond-to(desktop) {
+                        right: 52px;
+                    }
+                }
+
+                &:hover {
+                    &:before {
+                        border-bottom: 10px solid $base-color-0;
+                    }
+                }
+            }
+        }
+
+        + li {
+            border-top: 1px solid $base-color-7;
+        }
+
+        a {
+            @include transition();
+            cursor: pointer;
+            float: left;
+            padding-left: 60px;
+            position: relative;
+            width: 100%;
+
+            &:hover,
+            &.hover {
+                background: $base-color-0;
+                text-decoration: none;
+
+                .icon {
+                    opacity: 1;
+                }
+            }
+
+            &.only-text {
+                padding-left: 20px;
+            }
+
+            .icon {
+                position: absolute;
+                left: 7%;
+                opacity: .6;
+                top: 50%;
+            }
+
+            &.profile {
+                .icon {
+                    @include image('layout/submenu/profile_icon.png', 'mobile');
+                    height: 21px;
+                    margin: -10px 0 0 3px;
+                    width: 20px;
+                }
+            }
+
+            &.house {
+                .icon {
+                    @include image('layout/submenu/houses_icon.png', 'mobile');
+                    height: 22px;
+                    margin: -11px 0 0 2px;
+                    width: 25px;
+                }
+            }
+
+            &.reserve {
+                .icon {
+                    @include image('layout/submenu/reserve_icon.png', 'mobile');
+                    height: 17px;
+                    margin: -8px 0 0 4px;
+                    width: 20px;
+                }
+            }
+
+            &.invite {
+                .icon {
+                    @include image('layout/submenu/invite_icon.png', 'mobile');
+                    height: 20px;
+                    margin: -10px 0 0 3px;
+                    width: 20px;
+                }
+            }
+
+            &.help {
+                .icon {
+                    @include image('layout/submenu/help_icon.png', 'mobile');
+                    height: 20px;
+                    margin: -10px 0 0 8px;
+                    width: 14px;
+                }
+            }
+
+            &.logout {
+                .icon {
+                    @include image('layout/submenu/logout_icon.png', 'mobile');
+                    height: 24px;
+                    margin: -10px 0 0 3px;
+                    width: 21px;
+                }
+            }
+
+            .texts {
+                color: $base-color-6;
+            }
+        }
+    }
+
+    &.points {
+        right: 139px;
+    }
+}
+
+.navigation {
+    @include transform(translateX(-100%));
+    @include transition();
+    background: $white;
+    pointer-events: none;
+    border-right: 1px solid $base-color-1;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 260px;
+    z-index: 101;
+
+    .open-menu & {
+        @include transform(translateX(0));
+        opacity: 1;
+        pointer-events: auto;
+
+        &:after {
+            opacity: 1;
+        }
+
+        .burger {
+            opacity: 1;
+        }
+    }
+
+    .burger {
+        @include transition();
+        opacity: 0;
+        position: fixed;
+        right: -18%;
+        top: 15px;
+        z-index: 102;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+
+        span {
+            @include transition();
+            @include transform(rotate(-45deg));
+            background: $blue;
+            border-radius: 3px;
+            clear: both;
+            height: 3px;
+            float: left;
+            margin-left: 10px;
+            margin-top: 5px;
+            width: 25px;
+
+            +span {
+                @include transform(rotate(45deg));
+                margin-top: -3px;
+
+                +span {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+
+    &:after {
+        @include transition();
+        background: rgba(255,255,255,.6);
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: fixed;
+        right: -500px;
+        opacity: 0;
+        top: 0;
+        z-index: 99;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: 0;
+        position: relative;
+        z-index: 100;
+
+        li {
+            margin-top: 10px;
+
+            &:first-child {
+                margin-top: 0;
+                padding: 20px 0;
+            }
+
+            &.separator {
+                margin-top: 40px;
+            }
+
+            .main-logo {
+                margin-left: -20px;
+            }
+
+            a {
+                color: $blue;
+                padding: 0 20px;
+                position: relative;
+
+                &.highlight {
+                    margin: 15px 0;
+
+                    &:after {
+                        bottom: -7px;
+                        border: 1px solid $blue;
+                        border-radius: 4px;
+                        content: '';
+                        left: 0;
+                        right: 30px;
+                        position: absolute;
+                        top: -7px;
+                    }
+                }
+            }
+        }
     }
 }

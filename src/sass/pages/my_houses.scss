@@ -1,0 +1,581 @@
+@import '../variables';
+@import '../typographie';
+
+.my_houses {
+    padding-top: 90px;
+
+    .booking__submit {
+        float: right;
+        margin-bottom: 20px;
+        margin-top: 0;
+        padding: 0 20px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            width: auto;
+        }
+    }
+}
+
+.my-houses__title-container {
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.my-houses__container {
+    border-bottom: 1px solid $base-color-1;
+    float: left;
+    padding: 30px 0;
+    width: 100%;
+}
+
+.my-houses__info {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+    //    width: 67%;
+
+    }
+}
+
+.my-houses__info-container {
+    padding-top: 30px;
+    float: left;
+
+    @include respond-to(tablet_portrait) {
+        padding-top: 0;
+        width: 66%;
+    }
+    @include respond-to(tablet) {
+        padding-top: 0;
+        padding-left: 30px;
+        width: 66%;
+    }
+
+}
+
+.my-house__info-title {
+    @include ff_gothamRoundedMedium();
+    clear: both;
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.my-house__info-location,
+.my-house__info-date {
+    clear: both;
+    color: $base-color-6;
+    font-size: 14px;
+    float: left;
+    margin-bottom: 20px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin-bottom: 15px;
+    }
+
+    @include respond-to(tablet_portrait) {
+        margin-bottom: 10px;
+    }
+
+    &.clean {
+        margin-bottom: 5px;
+    }
+
+    .icon {
+        float: left;
+        height: 21px;
+        margin-right: 10px;
+        width: 21px;
+    }
+}
+
+.my-house__info-location {
+    margin-top: 10px;
+
+    .icon {
+        @include image('layout/location_icon.png', 'mobile');
+    }
+}
+
+.my-house__info-date {
+    .icon {
+        @include image('layout/date_icon.png', 'mobile');
+    }
+}
+
+
+.my-houses__related-image {
+    float: left;
+    padding-bottom: 56.25%;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-bottom: 25%;
+        width: 33%;
+    }
+}
+
+.my-house__info-actions {
+    float: left;
+    max-width: 500px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        position: absolute;
+        bottom: 0;
+        max-width: 63%;
+        width: 100%;
+    }
+
+    @include respond-to(tablet_portrait) {
+        width: 62%;
+    }
+
+    @include respond-to(desktop) {
+        max-width: 500px;
+    }
+
+    .btn {
+        float: left;
+        margin-bottom: 0;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+            max-width: 150px;
+        }
+    }
+}
+
+.my-houses__state {
+    background: $base-color-1;
+    border-radius: 4px;
+    color: $base-color-2;
+    float: right;
+    margin-top: 10px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        max-width: 270px;
+        margin-top: 0;
+    }
+
+    a {
+        border-radius: 4px;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &.true {
+
+        .first-action {
+            display: block;
+        }
+
+        .second-action {
+            display: none;
+        }
+    }
+}
+
+.my-houses__state {
+    background: $base-color-0;
+    position: relative;
+
+    a,
+    span {
+        box-sizing: border-box;
+        float: left;
+        font-size: 14px;
+        line-height: 40px;
+        padding: 0 20px;
+        text-align: center;
+        width: 50%;
+    }
+
+    span {
+        @include ff_gothamRounded();
+        color: $base-color-2;
+    }
+}
+
+.my-houses__state-item {
+    .publish {
+        @include transition();
+        //display: block;
+        opacity: 1;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+    }
+
+    .published {
+        @include transition();
+        color: $green;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        text-align: left;
+    }
+
+    .true & {
+        .publish {
+            //display: none;
+            opacity: 0;
+        }
+
+        .published {
+            //display: block;
+            opacity: 1;
+        }
+    }
+}
+
+.my-houses__state-item-btn {
+    @include ff_gothamRoundedMedium();
+    @include transition();
+    background: $green;
+    bottom: 0;
+    line-height: 42px;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    top: 0;
+
+    span {
+        @include transition();
+        bottom: 0;
+        color: $white;
+        left: 0;
+        line-height: 40px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    }
+
+    &:hover {
+        background: $green-dark;
+    }
+
+    .published {
+        opacity: 0;
+    }
+
+    .publish {
+        opacity: 1;
+    }
+
+    .true & {
+        background: $base-color-6;
+
+        &:hover {
+            background: $base-color-5;
+        }
+
+        .published {
+            opacity: 1;
+        }
+
+        .publish {
+            opacity: 0;
+        }
+    }
+}
+
+.my-houses__wrapper {
+    margin-bottom: 50px;
+}
+
+.my-houses__state-publish {
+    background: $base-color-0;
+    box-sizing: border-box;
+    color: $base-color-6;
+    float: right;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 10px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin-top: 0;
+        width: auto;
+    }
+}
+
+.section__item-title {
+    @include ff_gothamRoundedMedium();
+    font-size: 18px;
+    float: left;
+    line-height: 38px;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        text-align: left;
+        width: 50%;
+    }
+}
+
+.my-houses__traveler-image {
+    float: left;
+    padding-bottom: 55%;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-bottom: 28%;
+        width: 24%;
+    }
+
+    .background__container-animation {
+        bottom: 70px;
+
+        .win & {
+            bottom: 0;
+        }
+    }
+
+    .win & {
+        padding-bottom: 50%;
+
+        @include respond-to(tablet) {
+            padding-bottom: 23%;
+        }
+    }
+}
+
+.my-houses__third-column,
+.my-houses__second-column {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding-left: 30px;
+        width: 38%;
+    }
+}
+
+.my-houses__third-column {
+    padding-top: 20px;
+
+    @include respond-to(tablet) {
+        padding-top: 0;
+    }
+
+    &.win {
+        @include respond-to(tablet) {
+            padding-top: 0;
+        }
+    }
+}
+
+.my-house__info-contact {
+    color: $base-color-4;
+    float: left;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.my-house__info-contact-mail {
+    float: left;
+    color: $base-color-2;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.my-houses__second-column {
+    margin-top: 20px;
+
+    @include respond-to(tablet) {
+        //margin-top: 0;
+    }
+}
+
+.traveler__row {
+    background: $base-color-0;
+    box-sizing: border-box;
+    float: left;
+    padding: 10px 0;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding: 20px 0;
+    }
+
+    + .traveler__row {
+        margin-top: 20px;
+    }
+
+    .win & {
+        margin-top: 0;
+    }
+}
+
+.traveler__info {
+    float: left;
+    padding: 0 20px;
+    width: 100%;
+
+    .content,
+    .label {
+        float: left;
+        font-size: 12px;
+        width: 50%;
+    }
+
+    .label {
+        color: $base-color-5;
+        font-weight: normal;
+        padding: 0;
+        text-align: left;
+    }
+
+    .content {
+        color: $base-color-4;
+        font-weight: 500;
+        text-align: right;
+    }
+
+    .content_win {
+        box-sizing: border-box;
+        color: $base-color-4;
+        float: left;
+        font-size: 12px;
+        padding: 0 20px;
+        text-align: left;
+        width: 50%;
+
+        a {
+            color: $blue;
+            margin: 10px 0 0;
+        }
+    }
+
+    .label_win {
+        @include ff_gothamRoundedMedium();
+        color: $blue;
+        float: left;
+        width: 50%;
+
+        .text {
+            font-size: 12px;
+            float: left;
+            text-align: center;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .points {
+            float: left;
+            font-size: 40px;
+            line-height: 33px;
+            margin: 15px 0 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        &.full {
+            width: 100%;
+        }
+
+        .traveler__row {
+            margin-top: 10px;
+            padding: 30px 0 0;
+            position: relative;
+
+            &:after {
+                border-top: 1px solid $base-color-1;
+                content: '';
+                left: -20px;
+                position: absolute;
+                right: -20px;
+                top: 5px;
+            }
+
+            .traveler__info {
+                padding: 0;
+            }
+        }
+    }
+}
+
+.house__host-image {
+    background: $base-color-0;
+    border-bottom: 2px solid $base-color-1;
+    bottom: 0;
+    float: left;
+    height: 70px;
+    position: absolute;
+    width: 100%;
+}
+
+.house__host-image-container {
+    left: 50%;
+    margin-left: -35px;
+    position: absolute;
+    top: -35px;
+    width: 70px;
+
+    img {
+        border: 2px solid $white;
+        border-radius: 100px;
+        width: 100%;
+    }
+}
+
+.house__host-image-text {
+    color: $blue;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 40px;
+    width: 100%;
+}
+
+.switch__container {
+    float: left;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin-top: 20px;
+    }
+}
+
+.switch__enable {
+    color: $blue;
+    float: left;
+    text-align: center;
+    width: 50%;
+
+    @include respond-to(tablet){
+        text-align: left;
+        width: 100%;
+    }
+}
+
+.switch__disable {
+    float: left;
+    color: $base-color-4;
+    text-align: center;
+    width: 50%;
+
+    @include respond-to(tablet){
+        text-align: left;
+        width: 100%;
+    }
+}

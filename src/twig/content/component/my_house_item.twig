@@ -1,0 +1,62 @@
+<div class="my-houses__container">
+
+
+    <div class="my-houses__info">
+        <div class="my-houses__related-image">
+            <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+
+            <div class="house__related-points">
+                {{ item.points }} <span>points</span>
+            </div>
+        </div>
+
+        <div class="my-houses__info-container">
+
+            <div class="my-house__info-title">
+                {{ item.title }}
+            </div>
+            <div class="my-house__info-location">
+                {{ item.location}}
+            </div>
+            <div class="my-house__info-date">
+                Publicada: el 15/05/2016 a las 10:12<br/>
+                Última modificación
+            </div>
+
+
+            <div class="my-house__info-actions">
+                <a href="" class="btn">Editar</a>
+
+                {% if item.can_publish %}
+                <div class="my-houses__state {{ item.state }}">
+
+                    <a href="" class="my-houses__state-item-btn">
+                        <span class="published">
+                            Ocultar
+                        </span>
+                        <span class="publish">
+                            Publicar
+                        </span>
+                    </a>
+                    <span class="my-houses__state-item publish">
+                        <span class="publish">
+                            Privada
+                        </span>
+                        <span class="published">
+                            Publicada
+                        </span>
+                    </span>
+
+                </div>
+                {% else %}
+                <div class="my-houses__state-publish">
+                    Completa la información para publicar
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</div>
+

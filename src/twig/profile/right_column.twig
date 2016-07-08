@@ -1,0 +1,188 @@
+<div class="profile__title">
+    ¡Hola, soy Thomas!
+</div>
+<div class="profile__location">
+    Barcelona, Catalunya, España · Miembro desde Junio 2014
+</div>
+<div class="profile__personal">
+    {% include '../content/component/stars.twig' with {
+        stars: 3,
+        reviews: 36
+    } only %} <span class="profile__response">• Tasa de respuesta 85%<span>
+</div>
+
+<div class="profile__section">
+    <div class="profile__section-title">
+        Descripción
+    </div>
+    <div class="profile__description-title hidden-content">
+        imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.  Donec sodales pede justo, fringilla vel, aliquet nec, vulpu viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
+    </div>
+    <div class="hidden-more">
+        El loft de 90 m2 es muy luminoso y soleado y se incluido un patio privada de 20 m2. La arquitectura es realmente única para una ciudad como Buenos Aires, donde la mayoría de los edificios están inspirados por los primeros casas europeos del siglo 20.
+    </div>
+    <a href="" class="more">Más +</a>
+</div>
+
+<div class="profile__section">
+    <div class="profile__section-title">
+        Professional Summary
+    </div>
+    <div class="profile__section-text">
+        and more effective platform to help SMBs grow their business online.Internet businesses entrepreneur. As CEO and Founder of MarketGoo my goal is to create the easiest
+    </div>
+</div>
+
+
+<div class="profile__section">
+    <div class="profile__section-title">
+        Aﬁciones e Intereses
+    </div>
+    <div class="profile__section-text">
+
+        <ul class="profile__list">
+            <li>
+                Cine
+            </li>
+            <li>
+                Museos
+            </li>
+            <li>
+                Música (conciertos..)
+            </li>
+            <li>
+                Ir de tiendas
+            </li>
+            <li>
+                Cocinar
+            </li>
+            <li>
+                Teatro/Ópera
+            </li>
+            <li>
+                Lugares históricos
+            </li>
+            <li>
+                Gastronomia/vinos
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+
+<div class="profile__section">
+    <div class="profile__section-title">
+        Reumen de viajeros
+    </div>
+
+    <div class="profile__section-text">
+
+        {% for i in 1..3 %}
+        <div class="profile__section-reviews reviews">
+
+            <div class="house__section-title">
+                <div class="house-resume__user">
+
+                    {% include '../content/component/image.html.twig' with {
+                        alt: 'Host',
+                        common: true,
+                        class: 'house-resume__profile',
+                        image: 'layout/host@2x.png',
+                    } only %}
+
+                </div>
+                <span class="house-resume__profile-name">
+                    Iris
+                </span>
+            </div>
+            <div class="house__section-column-2">
+
+                <div class="house__section-description hidden-content">
+                    The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+                </div>
+                <div class="hidden-more">
+                    The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+                    <a href="" class="btn helpfull">
+                        <span class="icon"></span>
+                        Helpful
+                    </a>
+                </div>
+
+                <a href="" class="more">
+                    + Más
+                </a>
+
+                <span class="house__reviews-date">
+                    Marzo 2016
+                </span>
+
+            </div>
+        </div>
+        {% endfor %}
+
+
+        <div class="profile__section-actions">
+            <a href="">Cargar 3 más</a><span>·</span><a href="">Ver todas</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="profile__section">
+    <div class="profile__section-title">
+        Resumen de anfitriones
+    </div>
+
+    <div class="profile__section-text">
+
+        {% for i in 1..3 %}
+        <div class="profile__section-reviews reviews">
+
+            <div class="house__section-title">
+                <div class="house-resume__user">
+
+                    {% include '../content/component/image.html.twig' with {
+                        alt: 'Host',
+                        common: true,
+                        class: 'house-resume__profile',
+                        image: 'layout/host@2x.png',
+                    } only %}
+
+                </div>
+                <span class="house-resume__profile-name">
+                    Iris
+                </span>
+            </div>
+            <div class="house__section-column-2">
+
+                <div class="house__section-description hidden-content">
+                    The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+                </div>
+                <div class="hidden-more">
+                    The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+                    <a href="" class="btn helpfull">
+                        <span class="icon"></span>
+                        Helpful
+                    </a>
+                </div>
+
+                <a href="" class="more">
+                    + Más
+                </a>
+
+                <span class="house__reviews-date">
+                    Marzo 2016
+                </span>
+
+            </div>
+        </div>
+        {% endfor %}
+
+        <div class="profile__section-actions">
+            <a href="">Cargar 3 más</a><span>·</span><a href="">Ver todas</a>
+        </div>
+
+    </div>
+</div>

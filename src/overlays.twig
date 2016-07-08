@@ -1,0 +1,67 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <br/>
+    <button data-toggle="modal" data-target=".new-reservation">
+        New reservation
+    </button>
+
+    {% include 'twig/overlay/new_reservation.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".verify-account">
+        Verificar cuenta
+    </button>
+
+    {% include 'twig/overlay/verify_account.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".verify-account-code">
+        Verificar cuenta code
+    </button>
+
+    {% include 'twig/overlay/verify_account_code.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".thankyou">
+        Gracias
+    </button>
+
+    {% include 'twig/overlay/thank_you.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".congrats">
+        Muy bien!
+    </button>
+
+    {% include 'twig/overlay/congrats.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".no-points">
+        No Points
+    </button>
+
+    {% include 'twig/overlay/no_points.twig' %}
+
+
+    <br/>
+    <button data-toggle="modal" data-target=".importing">
+        Importando
+    </button>
+
+    {% include 'twig/overlay/importing.twig' %}
+
+{% endblock %}
+

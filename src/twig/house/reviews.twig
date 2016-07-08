@@ -1,0 +1,122 @@
+<div class="house__section-container">
+    <div class="house__info-title">
+        58 Reviews
+
+        {% include '../content/component/stars.twig' with {
+            stars: 3
+        } only %}
+
+    </div>
+</div>
+
+
+<!-- Summary -->
+{% include '../house/summary.twig' %}
+
+<div class="house__section-container reviews">
+    <div class="house__section-title">
+    </div>
+    <div class="house__section-column-2">
+        <a href="" class="btn">
+            Traducir comentarios al español
+        </a>
+    </div>
+    <div class="house__section-title">
+        <div class="house-resume__user">
+
+            {% include '../content/component/image.html.twig' with {
+                alt: 'Host',
+                common: true,
+                class: 'house-resume__profile',
+                image: 'layout/host@2x.png',
+            } only %}
+
+        </div>
+        <span class="house-resume__profile-name">
+            Iris
+        </span>
+    </div>
+    <div class="house__section-column-2">
+
+        <div class="house__section-description hidden-content">
+            The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+        </div>
+        <div class="hidden-more">
+            The appartment of Iris was really good. It has AC, a well equipped kitchen, a nice bathroom. The location is also really good an near the metro. It a big appartment and nice for 4 people. Diego Simeone was also really helpful and gave of Some good tips. Really recommend it!
+            <a href="" class="btn helpfull">
+                <span class="icon"></span>
+                Helpful
+            </a>
+        </div>
+
+        <a href="" class="more">
+            + Más
+        </a>
+
+        <span class="house__reviews-date">
+            Marzo 2016
+        </span>
+
+
+        <div class="house__reviews-response house__section-container">
+            <div class="house__reviews-response-profile-container">
+
+                {% include '../content/component/image.html.twig' with {
+                    alt: 'Host',
+                    common: true,
+                    class: 'house__reviews-response-profile',
+                    image: 'layout/host@2x.png',
+                } only %}
+            </div>
+
+            <div class="house__reviews-response-content">
+                <div class="house__reviews-response-title">
+                    Respuesta de Iris
+                </div>
+                <div class="house__reviews-response-text">
+                    Thank you Juana! See you next time!
+                </div>
+                <span class="house__reviews-date">
+                    Marzo 2016
+                </span>
+
+            </div>
+        </div>
+        <div class="house__reviews-others">
+            el anfitrión tiene 35 reviews en otro portales
+        </div>
+    </div>
+</div>
+
+<div class="house__section-container clean">
+
+    <div class="house__info-title host">
+        Sobre tu anfitirón
+    </div>
+
+    <div class="house__section-title">
+        <div class="house-resume__user">
+            {% include '../content/component/image.html.twig' with {
+                alt: 'Host',
+                common: true,
+                class: 'house-resume__profile',
+                image: 'layout/host@2x.png',
+            } only %}
+        </div>
+    </div>
+    <div class="house__section-column-2">
+        <div class="house__review-host">Iris</div>
+        <div class="house__reviews-response-text">
+
+            I'm a social worker from the Netherlands, working in a Montessori like school. Apart from loving my job, I love travelling, reading, cooking and animals :). I am very relaxed and flexible. Me and my husband are currently living in this truly amazing loft in one of the best areas in Buenos Aires and are really enjoying every minute of it.
+
+            I have a dog named Paco, that I rescued in Peru, who has traveled around the world with me (i.e. Ecuador, Colombia, Nicaragua, Netherlands, Germany). He is currently not travelling with me anymore, but enjoying his old day in Argentina with me.
+
+        </div>
+
+        <a href="" class="house__review-link">Contacta con tu anfitrión</a>
+
+    </div>
+</div>
+
+

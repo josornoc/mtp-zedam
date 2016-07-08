@@ -1,0 +1,38 @@
+
+<div class="house__section-container clean entrepreneur">
+
+    {% set content = [
+        {
+            title: 'Excelente departamento en el centro de Barcelona',
+            description: 'Casa/apto. entero — a 0.6 kilómetros',
+            image_profile: 'layout/host.png',
+            image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+            points: '253'
+        }, {
+            title: 'Excelente departamento en el centro de Barcelona',
+            description: 'Casa/apto. entero — a 0.6 kilómetros',
+            image_profile: 'layout/host.png',
+            image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bc/f987/8c62/8900/0331/large/mtp-9a0190e97e2382795a05867e10dfcb71023a.jpg?1444123580',
+            points: '253'
+        }, {
+            title: 'Excelente departamento en el centro de Barcelona',
+            description: 'Casa/apto. entero — a 0.6 kilómetros',
+            image_profile: 'layout/host.png',
+            image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+            points: '253',
+            fav: true
+        }
+    ] %}
+
+    <div class="row">
+
+        {% for item in content %}
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+            {% include '../content/component/entrepreneur_item.twig' %}
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>

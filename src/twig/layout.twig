@@ -9,20 +9,68 @@
 
   </head>
   <body class="{{  current }}" id="page">
+      <div class="navigation">
+          <div class="burger">
+              <span></span>
+              <span></span>
+          </div>
+          <ul>
+              <li>
+                  <a href="/">
+                    <img src="images/mobile/layout/logo_header.svg" alt="" width="158" class="main-logo" />
+                  </a>
+              </li>
+              <li>
+                  <a href="/">Inicio</a>
+              </li>
+              <li>
+                  <a href="/" class="highlight">Hazte Anfitrión</a>
+              </li>
+              <li>
+                  <a href="/points.html">Puntos</a>
+              </li>
+              <li>
+                  <a href="/messages_host.html">Mensajes</a>
+              </li>
+              <li class="separator">
+                  <a href="/profile_basic.html">Mi perfil</a>
+              </li>
+              <li>
+                  <a href="/my_houses.html">Mis casas</a>
+              </li>
+              <li>
+                  <a href="/my_reservations_host.html">Mis reservas</a>
+              </li>
+              <li>
+                  <a href="/invite.html">Invita a tus amigos</a>
+              </li>
+              <li>
+                  <a href="/">Ayuda</a>
+              </li>
+              <li class="separator">
+                  <a href="/">Salir</a>
+              </li>
+          </ul>
+      </div>
+
     {#<div class="header">
       <div class="wrapper">
         {% include 'navigation.twig' %}
         <a href="#" class="menu-trigger" id="mobile-nav-trigger">MENU</a>
       </div>
     </div>#}
-    {% block header %}{% endblock %}
-    {% include 'header.twig' %}
+    {% block header %}
+        {% include 'header.twig' %}
+    {% endblock %}
     <div class="page {{  current }}">
       <div class="wrapper">
         {% block page %}{% endblock %}
       </div>
     </div>
-    {% include 'footer.twig' %}
+    {% block footer %}
+        {% include 'footer.twig' %}
+    {% endblock %}
+
 
     <script src="/js/jquery.min.js" charset="utf-8"></script>
     <script src="js/00_webfont.min.js" charset="utf-8"></script>
@@ -31,7 +79,29 @@
     <script src="js/ls.bgset.min.js" charset="utf-8"></script>
     <script src="js/ls.unveilhooks.min.js" charset="utf-8"></script>
     <script src="js/01_loader.min.js" charset="utf-8"></script>
-    <script src="/js/javascript.min.js" charset="utf-8"></script>
+    <script src="js/ion.rangeSlider.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap-datepicker.min.js" charset="utf-8"></script>
+    <script src="js/bootstrap-datepicker.es.min.min.js" charset="utf-8"></script>
+    <script src="../../bower_components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff " charset="utf-8"></script>
+
+
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&v=3"></script>
+    <script src="http://cdn-dev.aldu.net/google.maps.markerwithlabel/1.1.5/markerwithlabel.min.js" charset="utf-8"></script>
+    <script src="js/infobox-1.1.13.min.js" charset="utf-8"></script>
+    <script src="/js/libs/jquery.geocomplete.min.js" charset="utf-8"></script>
+    <script src="/js/libs/jquery.rateyo.min.min.js" charset="utf-8"></script>
+    <script src="/js/components/moment.min.js" charset="utf-8"></script>
+    <script src="/js/components/daterangepicker.min.js" charset="utf-8"></script>
+    <script src="/js/components/jquery.daterange.min.js" charset="utf-8"></script>
+    <script src="/js/content/javascript.min.js" charset="utf-8"></script>
+    <script src="/js/content/calendar.min.js" charset="utf-8"></script>
+    <script src="/js/content/header.min.js" charset="utf-8"></script>
+    <script src="/js/content/search.min.js" charset="utf-8"></script>
+    <script src="/js/content/add_house.min.js" charset="utf-8"></script>
+    <script src="/js/content/house_basic.min.js" charset="utf-8"></script>
+    <script src="/js/content/invite.min.js" charset="utf-8"></script>
+    <script src="/js/maps_house.min.js" charset="utf-8"></script>
 
   </body>
 </html>

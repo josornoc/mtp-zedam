@@ -1,0 +1,80 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+   <div class="container my_houses">
+       <div class="row">
+
+           <div class="col-xs-12 col-sm-12 col-md-2">
+
+               {% include 'twig/reservation/my_reservations_switch.twig' with {
+                   active: 'traveler'
+               } %}
+           </div>
+
+           <div class="col-xs-12 col-sm-12 col-md-10">
+               <div class="my-houses__title-container">
+                   <div class="section__item-title">
+                       Mis Reservas
+                   </div>
+
+               </div>
+           </div>
+
+           <div class="col-xs-12 my-houses__wrapper col-sm-12 col-md-10 col-md-offset-2">
+                {% set content = [
+                    {
+                        title: 'Excelente departamento en el centro de Barcelona',
+                        description: 'Casa/apto. entero — a 0.6 kilómetros',
+                        location: 'Dirección, Ciudad, País',
+                        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                        image_profile: 'layout/host.png',
+                        points: '253',
+                        published: true,
+                        state: false,
+                        can_publish: true
+                    },
+                    {
+                        title: 'Excelente departamento en el centro de Barcelona',
+                        description: 'Casa/apto. entero — a 0.6 kilómetros',
+                        location: 'Dirección, Ciudad, País',
+                        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                        image_profile: 'layout/host.png',
+                        points: '253',
+                        published: true,
+                        state: true,
+                        can_publish: true
+                    },
+                    {
+                        title: 'Excelente departamento en el centro de Barcelona',
+                        description: 'Casa/apto. entero — a 0.6 kilómetros',
+                        location: 'Dirección, Ciudad, País',
+                        image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                        image_profile: 'layout/host.png',
+                        points: '253',
+                        published: true,
+                        state: false,
+                        can_publish: false
+                    },
+                ] %}
+
+               <div class="row">
+
+                   {% for item in content %}
+                       <div class="col-xs-12">
+
+                           {% include 'twig/reservation/my_resevations_item_traveler.twig' with {
+                                item: item
+                           } only %}
+
+                       </div>
+                   {% endfor %}
+
+               </div>
+           </div>
+
+       </div>
+   </div>
+{% endblock %}

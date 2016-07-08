@@ -1,0 +1,101 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="image__container">
+        {% include 'twig/content/component/background_image.html.twig' with {
+            alt: 'Header Image logo',
+            common: false,
+            class: 'logo_image',
+            image: 'header_image.png',
+        } only %}
+    </div>
+    <div class="container " >
+        <div class="row booking__case-container">
+
+            <div class="booking__case-main-container">
+
+                <a href="" class="close"></a>
+                <div class="container">
+
+                    <div class="col-lg-8 col-md-8 col-xs-12" id="content">
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="booking__case">
+                            <!-- Booking Case-->
+                            {% include 'twig/house/booking.twig' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="house__submenu">
+                <div class="container">
+                    <a href="">Fotos</a>
+                    <a href="">Información de este anuncio</a>
+                    <a href="">Reviews</a>
+                    <a href="">Tu Anfitrión</a>
+                    <a href="">Ubicación</a>
+                </div>
+            </div>
+
+            <div class="col-lg-8 col-md-8 col-xs-12" id="content">
+                <!-- Preview User Depto-->
+                {% include 'twig/house/house_resume.twig' %}
+
+                <!-- Reservation button, only visible in mobile -->
+                <a href="" class="booking__submit col-xs-12 visible-xs">
+                    Solicitar reserva
+                </a>
+
+                <!-- House info -->
+                {% include 'twig/house/house_info.twig' %}
+
+                <div class="house__section-container">
+                    <div class="house__section-title">
+                        Contactar al host
+                    </div>
+                </div>
+
+                <!-- House Space -->
+                {% include 'twig/house/space.twig' %}
+
+                <!-- House Amenities -->
+                {% include 'twig/house/amenities.twig' %}
+
+                <!-- House Description -->
+                {% include 'twig/house/description.twig' %}
+
+                <!-- House Rules -->
+                {% include 'twig/house/rules.twig' %}
+
+                <!-- House Availability -->
+                {% include 'twig/house/availability.twig' %}
+
+                <!-- Photos -->
+                {% include 'twig/house/photos.twig' %}
+
+                <!-- Reviews -->
+                {% include 'twig/house/reviews.twig' %}
+
+            </div>
+
+            <div class="col-md-12 col-lg-12">
+                <!-- Map -->
+                {% include 'twig/house/map.twig' %}
+
+                <!-- Related -->
+                {% include 'twig/house/related.twig' %}
+
+                <!-- extra -->
+                {% include 'twig/house/related_extra.twig' %}
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

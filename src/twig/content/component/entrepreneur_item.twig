@@ -1,0 +1,28 @@
+<div class="house__related-image entrepreneur">
+    <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+
+    <div class="house__related-points">
+        {{ item.points }} <span>points</span>
+    </div>
+
+    <div class="explore__item" style=" background-image: url(&quot;https://s3-eu-west-1.amazonaws.com/mytwinplace-wp-content/wp-content/uploads/sites/2/2014/07/Bcn-living-mosaic-600x600.jpg&quot;);">
+        <a href="#" class="explore__overlay">
+            <div class="explore__overlay-cell">
+
+                <div class="house__related-profile-image">
+                    {% include 'image.html.twig' with {
+                        alt: 'Iris',
+                        common: true,
+                        class: 'house-resume__profile',
+                        image: 'layout/host@2x.png',
+                    } only %}
+                </div>
+                <h3 class="explore__overlay-title">Thomas’ home</h3>
+                <div class="explore__overlay-text">Amsterdam</div>
+
+            </div>
+        </a>
+    </div>
+</div>
+
+

@@ -1,0 +1,204 @@
+
+<div class="search__sidebar">
+
+    <div class="filters__container">
+
+        <div class="filters__row" id="filters">
+
+            <div class="filters__row-title">
+                Detalles de viaje
+            </div>
+
+            <div class="filters__row-content input-daterange">
+                <div class="filters__row-input">
+                    <input type="text" name="llegada" class="input-sm form-control filter__input" placeholder="Llegada"/>
+                </div>
+                <div class="filters__row-input">
+                    <input type="text" name="salida" class="input-sm form-control filter__input"  placeholder="Salida"/>
+                </div>
+                <div class="filters__row-select">
+
+                    <select name="personas" class="form-control">
+                        <option value="" disabled selected hidden>Huéspedes</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="filters__row">
+
+            <div class="filters__row-title">
+                Tipo de Alojamiento
+            </div>
+
+            <div class="filters__row-content">
+
+                <div class="filters__row-checkbox-container">
+                   {# <input type="checkbox" id="entire" />
+                    <label for="entire">Alojamiento entero</label>#}
+
+                    {% set content = [
+                        'Alojamiento entero',
+                    ] %}
+
+                    {% for item in content %}
+                        {% include '../content/component/checkbox.twig' with {
+                            item: item
+                        } only %}
+                    {% endfor %}
+                </div>
+                <div class="filters__row-checkbox-container">
+                    {% set content = [
+                        'Habitación privada',
+                    ] %}
+
+                    {% for item in content %}
+                        {% include '../content/component/checkbox.twig' with {
+                        item: item
+                        } only %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="filters__row">
+
+            <div class="filters__row-title">
+                Intervalo de Puntos
+            </div>
+
+            <div class="filters__row-content">
+
+                <div class="range__wrapper">
+                    <div id="double_number_range" class="filters__interval"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="search__extra-info">
+        <div class="search__extra-info-row">
+            <div class="search__extra-info-title">
+                Hay <span>48 ALOJAMIENTOS</span>
+                <br/>EN MADRID, ESPAÑA
+            </div>
+
+            <div class="search__extra-info-actions">
+                <a href="" class="btn">Más Filtros</a>
+                <a href=""  class="btn blue js-multiple-search">
+                    <span class="multiple">Solicitud Múltiple</span>
+                    <span class="single">Solicitud Múltiple</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="search__extra-info-row hidden blue-container">
+            <div class="search__extra-info-title">
+                <span id="houses-selected" class="search__extra-info-amount">0</span>
+                Hay <span>48 ALOJAMIENTOS</span>
+                <br/>EN MADRID, ESPAÑA
+            </div>
+
+            <div class="search__extra-info-actions">
+                <a href="" class="btn js-multiple-search">Cancelar</a>
+                <a href="" class="btn blue js-send-multiple" data-toggle="modal" data-target=".bs-example-modal-lg">
+                    <span class="multiple">Enviar Solicitudes</span>
+                    <span class="single">Enviar Solicitudes</span>
+                </a>
+            </div>
+        </div>
+
+
+        <div class="warning">
+            <span class="icon"></span>
+            Un mensaje importante para ayudar al usuario
+        </div>
+
+        {% set content = [
+            {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                user_name: 'Martha',
+                points: '253'
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bc/f987/8c62/8900/0331/large/mtp-9a0190e97e2382795a05867e10dfcb71023a.jpg?1444123580',
+                user_name: 'Martha',
+                points: '253'
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                points: '253',
+                user_name: 'Martha',
+                fav: true
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bc/f987/8c62/8900/0331/large/mtp-9a0190e97e2382795a05867e10dfcb71023a.jpg?1444123580',
+                user_name: 'Martha',
+                points: '253'
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                points: '253',
+                user_name: 'Martha',
+                fav: true
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bc/f987/8c62/8900/0331/large/mtp-9a0190e97e2382795a05867e10dfcb71023a.jpg?1444123580',
+                points: '253',
+                user_name: 'Martha'
+            }, {
+                title: 'Excelente departamento en ...',
+                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                image_profile: 'layout/host.png',
+                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                points: '253',
+                user_name: 'Martha',
+                fav: true
+            }
+        ] %}
+
+        <div class="house-items__container">
+            <div class="">
+
+                {% for item in content %}
+                    <div class="search__house-item">
+
+                       {% include '../content/component/house_item.twig' with {
+                           item: item
+                       } %}
+
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        {% include '../content/component/pagination.twig' %}
+
+
+    </div>
+    <div class="footer__rights">
+        My Twin Place © 2016 · All rights reserved
+    </div>
+</div>

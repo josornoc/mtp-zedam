@@ -1,128 +1,272 @@
 <div class="footer__container">
     <div class="container">
 
-        <div class="footer__logo"></div>
-
         <div class="row">
 
-            <div class="col-xs-8 col-xs-push-2 col-sm-6 col-sm-push-3 col-md-4 col-md-push-8 col-lg-3 selector">
+            <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
                 <div type="text" class="selector-language" >
                     <div>English</div>
                 </div>
+
+                <div class="footer__link-title">
+                    Última Entrada del blog
+                </div>
+
+                <div class="footer__links-container">
+                    {% set posts = [
+                        {
+                            'title': 'Top 5 houses in Italy',
+                            'url': '/',
+                            'image': 'images/mobile/images/image_1.png',
+                            'date': '29 April, 2014',
+                            'text': 'Read the post'
+                        }
+                    ] %}
+                    {% for key in posts %}
+                        <a href="{{ key['url'] }}" class="footer__post-container">
+                            <div class="row">
+                                <div class="col-xs-3 footer__post-image-container">
+                                    <div style="background-image: url('{{ key['image'] }}')" class="footer__post-image"></div>
+                                </div>
+
+                                <div class="col-xs-9 footer__post-info">
+                                    <div class="footer__post-title">
+                                        {{ key['title'] }}
+                                    </div>
+                                    <div class="footer__post-date">
+                                        {{ key['date'] }}
+                                    </div>
+                                    <div class="footer__post-text">
+                                        {{ key['text'] }}
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
 
-            <div class="hidden-xs hidden-sm col-md-pull-4 col-md-8 footer__link col-lg-7 col-lg-offset-2">
+            <div class="col-xs-12 col-sm-6 col-md-7 col-sm-offset-1 col-lg-9 col-lg-offset-0 footer__links-container-wrapper">
 
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4  ">
-                    <div class="footer__link-title">
-                        Empresa
-                    </div>
-                    <div>
-                        <a href="">
-                            About
-                        </a>
-                        <a href="">
-                            Careers
-                        </a>
-                        <a href="">
-                            Press</a>
-                        <a href="">
-                            Blog</a>
-                        <a href="">
-                            Help
-                        </a>
-                        <a href="">
-                            Policies
-                        </a>
-                        <a href="">
-                            Disaster Response
-                        </a>
-                        <a href="">
-                            Terms & Privacy
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
-                    <div class="footer__link-title">
-                        Descubre
-                    </div>
-                    <div>
-                        <a href="">
-                            Trust & Safety
-                        </a>
-                        <a href="">
-                            Travel Credit
-                        </a>
-                        <a href="">
-                            Gift Cards
-                        </a>
-                        <a href="">
-                            Picks
-                        </a>
-                        <a href="">
-                            Mobile
-                        </a>
-                        <a href="">
-                            Action
-                        </a>
-                        <a href="">
-                            Business Travel
-                        </a>
-                        <a href="">
-                            Site Map
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 ">
-                    <div class="footer__link-title">
-                        Hospedar
-                    </div>
-                    <div>
-                        <a href="">
-                            Why Host
-                        </a>
-                        <a href="">
-                            Hospitality
-                        </a>
-                        <a href="">
-                            Responsible Hosting
-                        </a>
-                        <a href="">
-                            Home Safety
-                        </a>
-                        <a href="">
-                            Instant Book
-                        </a>
-                    </div>
-                </div>
+                <div class="row  ">
 
+                    {# CITIES #}
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-4">
+                        <div class="footer__link-title">
+                            Top Cities
+                        </div>
+                        <div class="footer__links-container cells_2 hidden-xs">
+                            {% set cities = [
+                                {
+                                    'title': 'New York',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Paris',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'San Francisco',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Barcelona',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Madrid',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Chicago',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Berlin',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Roma',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Londres',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Marraketch',
+                                    'url': '/',
+                                },
+                            ] %}
+                            {% for key in cities %}
+                                <a href="{{ key['url'] }}" class="icon-container ">
+                                    {{ key['title'] }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {# COUNTRIES #}
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-4">
+                        <div class="footer__link-title">
+                            Top Countries
+                        </div>
+                        <div class="footer__links-container cells_2 hidden-xs">
+                            {% set countries = [
+                                {
+                                    'title': 'USA',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Spain',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'France',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Italy',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Canada',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Germany',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'UK',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Japan',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Australia',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Mexico',
+                                    'url': '/',
+                                },
+                            ] %}
+                            {% for key in countries %}
+                                <a href="{{ key['url'] }}" class="icon-container ">
+                                    {{ key['title'] }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {# MORE INFO #}
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                        <div class="footer__link-title">
+                            More Info
+                        </div>
+                        <div class="footer__links-container hidden-xs">
+                            {% set info = [
+                                {
+                                    'title': 'How it works',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Pricing',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': '1 click Profile importation',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Home And travel insurance',
+                                    'url': '/',
+                                },
+                            ] %}
+                            {% for key in info %}
+                                <a href="{{ key['url'] }}" class="icon-container ">
+                                    {{ key['title'] }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {# COMPANY #}
+                    <div class="col-xs-12 col-sm-6 col-md-3 col-lg-2">
+                        <div class="footer__link-title">
+                            Company
+                        </div>
+                        <div class="footer__links-container hidden-xs">
+                            {% set company = [
+                                {
+                                    'title': 'About us',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Blog',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Help',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Policies',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Terms & Cond',
+                                    'url': '/',
+                                },
+                                {
+                                    'title': 'Contact',
+                                    'url': '/',
+                                },
+                            ] %}
+                            {% for key in company %}
+                                <a href="{{ key['url'] }}" class="icon-container ">
+                                    {{ key['title'] }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
+    </div>
+
+
+    <div class="footer__social-container">
+    <div class="container">
 
         <div class="social-icons__container">
             {% set social = [
-                'facebook',
-                'google',
-                'linkedin',
-                'instagram',
-                'pinterest',
-                'twitter'
+            'twitter',
+            'facebook',
+            'pinterest',
+            'email',
             ] %}
 
+
             <div class="social-icons">
-
-            {% for item in social %}
-                <a href="" class="icon-container {{ item }}">
-                    <span class="icon"></span>
-                </a>
-            {% endfor %}
-
+                {% for item in social %}
+                    <a href="" class="icon-container {{ item }}">
+                        <span class="icon"></span>
+                    </a>
+                {% endfor %}
             </div>
 
-        </div>
+            <div class="footer__rights">
+                My Twin Place © 2016 <br/><span class="hidden-xs">·</span> All rights reserved
+            </div>
 
-        <div class="footer__rights">
-            MyTwinPlace © 2016 · Todos los derechos reservados
+            <img src="images/mobile/layout/footer/spain_gov@2x.png" alt="" width="182" class="footer__images"/>
+            <img src="images/mobile/layout/footer/mobile_analytics@2x.png" alt="" width="95" class="footer__images"/>
         </div>
+    </div>
     </div>
 </div>

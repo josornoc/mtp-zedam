@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'typographie';
+
+.right-column__state {
+    background: $base-color-8;
+    border-radius: 4px;
+    float: right;
+    line-height: 50px;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 200px;
+    }
+
+    &.consulta {
+        color: $orange;
+    }
+
+    &.pendiente {
+        color: $orange;
+    }
+
+    &.finalizada {
+        color: $green;
+    }
+
+    &.anulada {
+        color: $base-color-9;
+    }
+
+    &.rechazada {
+        color: $base-color-6;
+    }
+}
+
+.right-column__image-profile {
+    border-radius: 45px;
+    float: left;
+    margin: 0 auto 10px;
+    width: 45px;
+
+    @include respond-to(tablet) {
+        float: right;
+        margin: auto;
+    }
+}
+
+.right-column__actions-sub {
+    .booking__submit {
+        margin-bottom: 10px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+            width: auto;
+        }
+    }
+
+    .btn {
+        margin-bottom: 10px;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            margin-bottom: 0;
+            width: auto;
+        }
+    }
+}
+
+.right-column__actions {
+
+    @include respond-to(desktop) {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    .booking__submit {
+        width: 100% !important;
+        margin: 10px auto;
+
+        @include respond-to(desktop) {
+            margin: 0;
+            width: auto !important;
+        }
+    }
+
+    .btn {
+        margin-right: 0;
+        width: 100%;
+
+        @include respond-to(desktop) {
+            margin-right: 20px;
+            width: auto;
+
+            &.only {
+                margin-right: 0;
+            }
+        }
+    }
+}
