@@ -112,6 +112,20 @@
         padding-left: 20px;
         vertical-align: top;
     }
+
+    .star__container {
+        @include respond-to(tablet) {
+            @include transform(translateY(2px));
+        }
+    }
+
+    .reviews__amount {
+        display: block;
+
+        @include respond-to(tablet) {
+            display: inline-block;
+        }
+    }
 }
 
 .house-resume__location {

@@ -33,6 +33,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "range-picker": "^1.0.0",
-    "ion.rangeSlider": "ionrangeslider#^2.1.4"
+    "ion.rangeSlider": "ionrangeslider#^2.1.4",
+    "jeet": "^6.1.4"
   }
 }
