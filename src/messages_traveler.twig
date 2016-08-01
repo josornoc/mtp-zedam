@@ -1,0 +1,127 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+                    {% include 'twig/messages/messages_menu.twig' with {
+                        active: 'traveler',
+                        host_amount: 3,
+                        traveler_amount: 2,
+                    } only %}
+                </div>
+
+                <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
+                    <div class="profile__section top">
+                        <div class="profile__section-title only">
+                            Tus Mensajes como viajero <span class="split">(2 sin leer)</span>
+
+                            <div class="col-sm-3 select-form">
+
+                                <select class="form-control">
+                                    <option>Todos (5)</option>
+                                    <option>Consulta (2)</option>
+                                    <option>Pendiente (1)</option>
+                                    <option>Rechazada (1)</option>
+                                    <option>Anulada (1)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile__section top clean mobile-container">
+                        <!-- messages -->
+                        {% set content = [
+                            {
+                                date: 'Ayer a las 20:12',
+                                text: 'Hi Thomas. Lorem ipsum dolor sit amet, consectetuer...',
+                                location: 'Ciudad, País',
+                                reservation_start: '09/06/16 ',
+                                reservation_end: '12/06/16',
+                                points: '320',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                                profile_user: 'Martha',
+                                image_profile: 'layout/host.png',
+                                state: 'consulta',
+                                read: false
+                            },
+                            {
+                                date: 'Ayer a las 20:12',
+                                text: 'Hi Thomas. Lorem ipsum dolor sit amet, consectetuer...',
+                                location: 'Ciudad, País',
+                                reservation_start: '09/06/16 ',
+                                reservation_end: '12/06/16',
+                                points: '320',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                                profile_user: 'Martha',
+                                image_profile: 'layout/host.png',
+                                state: 'pendiente',
+                                read: false,
+                            },
+                            {
+                                date: 'Ayer a las 20:12',
+                                text: 'Hi Thomas. Lorem ipsum dolor sit amet, consectetuer...',
+                                location: 'Ciudad, País',
+                                reservation_start: '09/06/16 ',
+                                reservation_end: '12/06/16',
+                                points: '320',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                                profile_user: 'Martha',
+                                image_profile: 'layout/host.png',
+                                state: 'finalizada',
+                                read: true,
+                            },
+                            {
+                                date: 'Ayer a las 20:12',
+                                text: 'Hi Thomas. Lorem ipsum dolor sit amet, consectetuer...',
+                                location: 'Ciudad, País',
+                                reservation_start: '09/06/16 ',
+                                reservation_end: '12/06/16',
+                                points: '320',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                                profile_user: 'Martha',
+                                image_profile: 'layout/host.png',
+                                state: 'anulada',
+                                read: true,
+                            },
+                            {
+                                date: 'Ayer a las 20:12',
+                                text: 'Hi Thomas. Lorem ipsum dolor sit amet, consectetuer...',
+                                location: 'Ciudad, País',
+                                reservation_start: '09/06/16 ',
+                                reservation_end: '12/06/16',
+                                points: '320',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93c0/f987/8c62/8900/0333/large/mtp-dd6eb3470618bf308ad7679337d1464a67a4.jpg?1444123584',
+                                profile_user: 'Martha',
+                                image_profile: 'layout/host.png',
+                                state: 'rechazada',
+                                read: true,
+                            },
+
+                        ] %}
+
+                        {% for item in content %}
+                            <div class="message__container {{ item.read == true ? 'read' : '' }}">
+
+                                {% include 'twig/messages/message_item.twig' with {
+                                    item: item
+                                } only %}
+
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

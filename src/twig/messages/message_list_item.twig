@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-xs-2 col-sm-3 col-md-2">
+        {% include '../content/component/image.html.twig' with {
+            alt: alt,
+            common: true,
+            class: 'right-column__image-profile',
+            image: image
+        } only %}
+    </div>
+    <div class="col-xs-10 col-sm-9 col-md-10">
+        <div class="message__item {{ type }}">
+            {{ text }}
+
+            <div class="message__date">
+                {{ date }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,165 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'basic'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Información básica'
+                    } only %}
+
+                    <div class="profile__section">
+
+                        <!-- Donde está? -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form top">¿Donde está?</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 autocomplete__container">
+                                <div class="profile__section-label">Introduce tu ubicación</div>
+                               {# <input id="geocomplete" type="text" name="name" class="input-form"
+                                       placeholder="Empieza a escribir y selecciona de la lista" />
+#}
+
+                                <input id="geocomplete" type="text" class="input-form" placeholder="Type in an address" value="" />
+                            </div>
+
+
+
+                            <form class="form__container">
+
+                                <div class="form__cell-container">
+                                    <div class="form__cell">
+                                        <label class="profile__section-label">Piso, puerta</label>
+                                        <input name="street_number"  class="input-form" type="text" value="">
+                                    </div>
+
+                                    <div class="form__cell">
+                                        <label class="profile__section-label">Código Postal</label>
+                                        <input name="postal_code"  class="input-form" type="text" value="">
+                                    </div>
+
+                                    <div class="form__cell">
+                                        <label class="profile__section-label">Ciudad</label>
+                                        <input name="locality"  class="input-form" type="text" value="">
+                                    </div>
+
+                                    <div class="form__cell">
+                                        <label class="profile__section-label">País</label>
+                                        <input name="country"  class="input-form" type="text" value="">
+                                    </div>
+                                </div>
+
+                            <div id="map_basic" class="map_canvas"></div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- phone -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form top">Tipo de alojamiento</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Casa entera',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Habitación privada',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- phone -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Características</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <div class="row show-grid">
+                                    <div class="col-sm-4">
+                                        <div class="profile__select-label">Plazas (personas)</div>
+                                        <select name="personas" class="form-control" placeholder="Personas">
+                                            <option></option>
+                                            <option>1 persona</option>
+                                            <option>2 personas</option>
+                                            <option>3 personas</option>
+                                            <option>4 personas</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="profile__select-label">Habitaciones</div>
+
+                                        <select name="room" class="form-control" placeholder="Habitaciones">
+                                            <option></option>
+                                            <option>2 Habitaciones</option>
+                                            <option>3 Habitaciones</option>
+                                            <option>4 Habitaciones</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-sm-4">
+                                        <div class="profile__select-label">Baños</div>
+
+                                        <select name="bath" class="form-control" placeholder="Baños">
+                                            <option></option>
+                                            <option>1 baño</option>
+                                            <option>2 baños</option>
+                                            <option>3 baños</option>
+                                            <option>4 baños</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

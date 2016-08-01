@@ -1,0 +1,61 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'description'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Descripción de la casa'
+                    } only %}
+
+                    <div class="profile__section">
+
+                        <!-- Nombre de la casa -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form top">Nombre de la casa</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <input type="text" name="description" class="input-form"
+                                       placeholder="Máximo 80 caracteres" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section clean">
+                        <!-- Nombre de la casa -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form top">Descripción</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <textarea name="Description" class="textarea-form" placeholder="Describe tu piso. cuantos más detalles pongas, ¡más fácil será de encontrar el mejor huésped para tu hogar!"></textarea>
+
+                                <div class="profile__section-label">(150 caracteres mínimo)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

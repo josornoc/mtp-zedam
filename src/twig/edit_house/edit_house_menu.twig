@@ -1,0 +1,32 @@
+<div class="profile__menu">
+    {% set tag = (active != 'basic') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'basic' ? 'href="edit_house_basic.html"' : '' }}>Datos básicos</{{ tag }}>
+
+    {% set tag = (active != 'photos') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'photos' ? 'href="edit_house_photos.html"' : '' }}>Fotos</{{ tag }}>
+
+    {% set tag = (active != 'description') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'description' ? 'href="edit_house_description.html"' : '' }}>Descripción de la Casa</{{ tag }}>
+
+    {% set tag = (active != 'calendar') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'calendar' ? 'href="edit_house_calendar.html"' : '' }}>Calendario y puntos</{{ tag }}>
+
+    {% set tag = (active != 'services') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'services' ? 'href="edit_house_services.html"' : '' }}>Servicios</{{ tag }}>
+
+    {% set tag = (active != 'activities') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'activities' ? 'href="edit_house_activities.html"' : '' }}>Actividades alrededor</{{ tag }}>
+
+    {% set tag = (active != 'social') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'social' ? 'href="edit_house_social.html"' : '' }}>Redes Sociales</{{ tag }}>
+</div>
+
+
+<a href="profile.html" class="profile__btn btn">Ver Preview</a>

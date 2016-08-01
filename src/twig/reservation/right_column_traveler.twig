@@ -1,0 +1,79 @@
+<div class="profile__section top">
+    <div class="profile__section-title only">
+        Solicitud de reserva
+
+        <div class="right-column__actions">
+            <a href="" class="first-action btn only"  data-toggle="modal" data-target=".bs-example-modal-lg">
+                Modificar
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="profile__section">
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <label class="label-form">Responde a la solicitud tu huéspedes</label>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+
+            <div class="right-column__actions-sub">
+                <a href="" class="profile__save booking__submit">
+                    Confirmar
+                </a>
+                <a href="" class="first-action btn">
+                    Rechazar
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="profile__section">
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-3 col-md-2">
+            {% include '../content/component/image.html.twig' with {
+                alt: 'aa',
+                common: true,
+                class: 'right-column__image-profile',
+                image: 'user/traveler-image.png'
+            } only %}
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-10">
+            <textearea class="textarea-form" placeholder="">Escribe un mensaje</textearea>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-5 col-md-offset-7">
+                    <a href="" class="full grey btn">Enviar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="profile__section clean">
+
+    {% for i in 1..4 %}
+
+        {% include '../messages/message_list_item.twig' with {
+            image: 'user/traveler-image.png',
+            alt: '',
+            type: 'traveler',
+            text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commo.',
+            date: 'Ayer a las 20:12',
+        } only %}
+
+        {% include '../messages/message_list_item.twig' with {
+            image: 'user/host-image.png',
+            alt: '',
+            type: 'host',
+            text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commo.',
+            date: 'Ayer a las 20:12',
+        } only %}
+
+    {% endfor %}
+
+</div>

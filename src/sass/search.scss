@@ -283,6 +283,10 @@
 
     .show-multiple & {
         margin-bottom: 10%;
+
+        @include respond-to(tablet) {
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -634,6 +638,7 @@
 
 .dropdown-menu {
     border: 0 !important;
+    box-shadow: 0 6px 12px rgba(0,0,0,.375);
 }
 
 .search-modal {

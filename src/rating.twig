@@ -1,0 +1,130 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+
+                    <div class="profile__related-content">
+
+                        {% set content = [
+                            {
+                                title: 'Excelente departamento en el centro de Barcelona',
+                                description: 'Casa/apto. entero — a 0.6 kilómetros',
+                                image_profile: 'layout/host.png',
+                                image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+                                points: '253',
+                                fav: true,
+                                show_location: true,
+                                show_icon: true,
+                                location: 'Amsterdam, Holand',
+                                user_name: 'Martha',
+                            }
+                        ] %}
+
+                        {% for item in content %}
+                            {% include 'twig/content/component/house_item.twig' with {
+                                item: item
+                            } only %}
+                        {% endfor %}
+                    </div>
+
+                    {% include 'twig/reservation/left_column_reservation_data.twig' with {
+                        title: 'Detalles de la reserva'
+                    }  only %}
+
+                </div>
+
+                <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+
+                    <div class="profile__section top">
+                        <div class="profile__section-title only">
+                            Datos básicos
+
+                            <a href="" class="profile__save booking__submit disable">Guardar</a>
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- Description -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-3">
+                                <label class="label-form">Publicaremos tu evaluación
+                                    en el perfil de la casa en la
+                                    que te has hospedado.
+                                </label>
+                            </div>
+                            <div class="col-xs-12 col-sm-9">
+                                <textarea name="Description" class="textarea-form" placeholder="Describe tu experiencia"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Veracidad #}
+                    <div class="profile__section">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="profile__section-title only">Veracidad</div>
+                                <div>¿El perfil de la casa se corresponde con la realidad?</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="rateYo"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Comunicación #}
+                    <div class="profile__section">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="profile__section-title only">Comunicación</div>
+                                <div>¿Ha sido fácil comunicarte con tu anfitrión?</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="rateYo"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Limpieza #}
+                    <div class="profile__section">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="profile__section-title only">Limpieza</div>
+                                <div>¿Encontraste la vivienda en buenas condiciones?</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="rateYo"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Ubicación #}
+                    <div class="profile__section">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="profile__section-title only">Ubicación</div>
+                                <div>¿Consideras que la casa está bien situada?</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="rateYo"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}

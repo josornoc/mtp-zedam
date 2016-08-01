@@ -1,0 +1,123 @@
+@import '../variables';
+@import '../typographie';
+
+.invite_image {
+    background-position: top !important;
+    margin-top: 60px;
+}
+
+.invite__container {
+    display: table;
+    padding: 50px 0;
+    margin: auto;
+    max-width: 1200px;
+
+    .col-sm-4 {
+        padding: 1%;
+        @include respond-to(desktop) {
+            padding: 3%;
+        }
+    }
+
+    .booking__submit {
+        @include respond-to(tablet_portrait) {
+            font-size: 10px;
+        }
+    }
+}
+
+.invite__title-container {
+    color: $white;
+    position: absolute;
+    text-align: center;
+    top: 33%;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        top: 56%;
+    }
+
+    @include respond-to(desktop) {
+        top: 54%;
+    }
+}
+
+.invite__title {
+    @include ff_gothamRoundedMedium();
+    box-sizing: border-box;
+    display: block;
+    font-size: 30px;
+    line-height: 34px;
+    margin: 0 auto 30px;
+    max-width: 566px;
+    padding: 0 24px;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+.invite__description {
+    display: block;
+    font-size: 18px;
+    max-width: 560px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+
+    }
+}
+
+.invite__action-container {
+    background: $base-color-7;
+    display: table;
+    float: left;
+    min-height: 85px;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.invite__action-cell {
+    display: table-cell;
+    vertical-align: middle;
+
+    .booking__submit {
+        margin-top: 0;
+    }
+}
+
+.invite__action-text {
+    float: left;
+    margin: 20px 0 40px;
+    text-align: center;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        margin: 20px 0;
+    }
+}
+
+.invite__icon {
+    float: left;
+
+    &.gmail {
+        @include image('invite/gmail_icon.png','mobile');
+        height: 42px;
+        width: 62px;
+    }
+
+    &.yahoo {
+        @include image('invite/yahoo_icon.png','mobile');
+        height: 58px;
+        width: 59px;
+    }
+
+    &.windows {
+        @include image('invite/windows_icon.png','mobile');
+        height: 64px;
+        width: 64px;
+    }
+}

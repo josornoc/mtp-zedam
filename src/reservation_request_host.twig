@@ -1,0 +1,26 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-5 col-md-4 col-lg-3">
+                    {% include 'twig/reservation/left_column_host.twig' %}
+                </div>
+
+                <div class="col-xs-12 col-sm-7 col-md-8 col-lg-9">
+                    {% include 'twig/reservation/right_column_host.twig' %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% include 'twig/reservation/overlay.twig' %}
+
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'social'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Redes sociales'
+                    } only %}
+
+                    <div class="profile__section">
+
+                        <!-- Linkedin -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Síguenos en Facebook</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <a href="" class="btn facebook">
+                                    <span class="enable">Me gusta</span>
+                                    <span class="disable">Me gusta</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Facebook -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Promociona tu casa en Facebook</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <a href="" class="btn facebook">
+                                    <span class="enable">Promocionar en Facebook</span>
+                                    <span class="disable">Promocionar en Facebook</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Twitter -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Promociona tu casa en Twitter</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <a href="" class="btn linkedin">
+                                    <span class="enable">Promocionar en Twitter</span>
+                                    <span class="disable">Promocionar en Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Google -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Promociona tu casa en Twitter</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <a href="" class="btn google">
+                                    <span class="enable">Promocionar en Google+</span>
+                                    <span class="disable">Promocionar en Google+</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Pinterest -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Promociona tu casa en Pinterest</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <a href="" class="btn pinterest">
+                                    <span class="enable">Promocionar en Pinterest</span>
+                                    <span class="disable">Promocionar en Pinterest</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="profile__section">
+
+                        <!-- Enlace corto -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <label class="label-form">Enlace Corto</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <input type="" placeholder="http://mtp.com/1324567" class="input-form" >
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

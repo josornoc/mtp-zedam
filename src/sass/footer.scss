@@ -25,23 +25,31 @@
     }
 }
 
+.selector-language {
+    + .footer__link-title {
+        margin-bottom: 5px;
+    }
+}
+
 .footer__link-title {
     @include ff_gothamRoundedMedium();
+    color: $base-color-4;
     font-weight: bold;
-    margin-bottom: 5px;
     margin-top: 10px;
 
     @include respond-to(tablet) {
+        font-size: 16px;
         margin-bottom: 5px;
         padding-bottom: 10px;
     }
+
 }
 
 .footer__links-container {
     padding: 0 0 10px 0;
 
     a {
-        color: $base-color-5;
+        color: $base-color-6;
         font-size: 14px;
         float: left;
         line-height: 15px;
@@ -60,9 +68,12 @@
 }
 
 .footer__links-container-wrapper {
+    margin-top: 20px;
+
     @include respond-to(desktop_big) {
         box-sizing: border-box;
         padding-left: 40px;
+        margin-top: 0;
     }
 }
 
@@ -80,24 +91,27 @@
 .social-icons__container {
     float: left;
     margin: 10px 0 0;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 }
 
 .social-icons {
     display: table;
-    margin: 20px auto 0;
+    margin: 20px 0 0 -8%;
     max-width: 400px;
     text-align: center;
-    width: 100%;
+    width: calc(100% + 16%);
 
     @include respond-to(tablet) {
         float: right;
+        margin-left: 0;
         width: 197px;
     }
 
     .icon-container {
         @include transition();
-        display: inline-block;
+        display: table-cell;
         height: 36px;
         position: relative;
         width: 32px;
@@ -117,8 +131,9 @@
         }
 
         .icon {
-            float: left;
+            display: inline-block;
             height: 36px;
+            margin: auto;
             opacity: .8;
             width: 36px;
         }
@@ -198,18 +213,19 @@
     text-align: left;
     width: 100%;
 
-    br {
-        @include respond-to(tablet) {
-            display: none;
-        }
-    }
-
     @include respond-to(tablet) {
         bottom: 0;
         float: left;
         position: relative;
-        text-align: center;
+        //text-align: center;
         margin: 30px auto 35px;
+        width: 300px;
+    }
+
+    br {
+        @include respond-to(tablet) {
+            display: none;
+        }
     }
 }
 
@@ -256,15 +272,18 @@
 
 .footer__post-date {
     font-size: 14px;
+    margin-top: 4px;
 }
 
 .footer__post-text {
     font-size: 12px;
+    margin-top: 4px;
 }
 
 .footer__images {
     clear: both;
     float: left;
+    width: 180px;
     //margin-bottom: 10px;
     margin-top: 20px;
 
@@ -274,10 +293,12 @@
         margin-bottom: 0;
         margin-left: 28px;
         margin-top: 24px;
+        width: 182px;
     }
 
     + .footer__images {
         margin-bottom: 80px;
+        width: 95px;
 
         @include respond-to(tablet) {
             margin-bottom: 0;

@@ -1,0 +1,50 @@
+<div class="message__image-wrapper">
+    <a href="" class="message__image-container">
+        <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+    </a>
+</div>
+
+<a href="" class="message__profile-image-container">
+    {% include '../content/component/image.html.twig' with {
+        alt: item.title,
+        common: true,
+        class: 'message__profile-image',
+        image: item.image_profile
+    } only %}
+    <div class="house__related-profile-text">
+    </div>
+</a>
+
+<div class="message__info">
+    <div class="message__info-row zero">
+        <div class="message__state {{ item.state }}">
+            {{ item.state }}
+        </div>
+    </div>
+    <div class="message__info-row first">
+        {{ item.profile_user }} -
+        {{ item.date }}
+    </div>
+
+    <div class="message__info-row second">
+        {{ item.text }}
+    </div>
+    <div class="message__info-row third">
+        {{ item.location }} -
+        {{ item.reservation_start }} to
+        {{ item.reservation_end }} -
+        {{ item.points }} <span>puntos</span>
+    </div>
+</div>
+
+<div class="message__actions">
+    <div class="message__state {{ item.state }}">
+        {{ item.state }}
+    </div>
+    <a href="" class="message__favorite">
+        Añadir a favoritos
+    </a>
+    <a href="" class="message__archive">
+        Archivar
+    </a>
+</div>

@@ -1,0 +1,82 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'calendar'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Calendario y Puntos'
+                    } only %}
+
+                    <div class="profile__section top">
+
+                        <!-- Donde está? -->
+                        <div class="row">
+                            <div class="col-xs-12">
+
+                                <div id="cal_container"></div>
+
+                                <div class="row calendar__settings">
+                                    <div class="col-sm-4" id="disponibility_container">
+                                        <label class="label-form disabled">
+                                            Disponibilidad
+                                        </label>
+
+                                        <div class="calendar__btn blocked disabled">
+                                            <span class="enable">Disponible</span>
+                                            <span class="blocked">Bloqueado</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 disabled" id="days_container">
+                                        <label class="label-form">
+                                            Días seleccionados
+                                        </label>
+                                        <div class="row calendar__selected-days">
+                                            <div class="col-sm-6">
+                                                <input type="text" name="llegada" disabled id="date-range200" class="input-sm form-control filter__input" />
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <input type="text" name="Salida" disabled id="date-range201" class="input-sm form-control filter__input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 disabled" id="points_container">
+                                        <label class="label-form">
+                                            Puntos/noche
+                                        </label>
+                                        <input type="text" name="" id="points" class="input-sm form-control filter__input" maxlength="5" disabled/>
+
+                                    </div>
+                                </div>
+
+                                <a href="" class="warning">
+                                    <span class="icon"></span>
+                                    Un mensaje importante para el usuario
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

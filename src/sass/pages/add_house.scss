@@ -1,0 +1,357 @@
+@import '../variables';
+@import '../typographie';
+
+.add-house {
+    color: $base-color-4;
+    padding-top: 60px;
+
+    &.row {
+        margin-left: 0;
+        margin-right: 0;
+
+        @include respond-to(tablet) {
+            margin-left: -15px;
+            margin-right: -15px;
+        }
+    }
+}
+
+.add-house__cell {
+    box-sizing: border-box;
+    float: left;
+    //padding: 20px;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 50%;
+    }
+}
+
+.add-house__image_background {
+    box-sizing: border-box;
+    float: left;
+    height: auto;
+    padding: 30px 20px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        height: 300px;
+    }
+
+    &.image_1 {
+        @include image('add_house/image_backgorund_mobile.png', 'mobile');
+
+        @include respond-to(tablet){
+            @include image('add_house/image_1.jpg', 'desktop');
+        }
+    }
+
+    &.image_2 {
+        @include image('add_house/image_2.jpg', 'mobile');
+        display: none;
+
+        @include respond-to(tablet){
+            display: block;
+            @include image('add_house/image_2.jpg', 'desktop');
+        }
+    }
+
+    .add-house__title {
+        color: $white;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    .add-house__description {
+        color: $white;
+        text-align: center;
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+    .link-btn {
+        @include ff_gothamRoundedMedium();
+        background: $white;
+        border-radius: 3px;
+        color: $blue;
+        margin: auto;
+        padding: 0 20px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 100%;
+    }
+}
+
+.add-house__logos {
+    @include image('add_house/logos.png', 'mobile');
+    display: table;
+    margin: 110px auto 20px;
+    padding-bottom: 42%;
+    width: 279px;
+
+    @include respond-to(tablet) {
+        display: none;
+    }
+}
+.add-house__info {
+    box-sizing: border-box;
+    float: left;
+    padding: 30px 20px;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        padding: 100px 50px;
+    }
+
+    &.hidden-mobile {
+        display: none;
+
+        @include respond-to(tablet) {
+            display: block;
+        }
+    }
+}
+/*
+.add-house__special-arrow {
+    @include respond-to(tablet) {
+        @include image('layout/special_arrow.png', 'mobile');
+        height: 380px;
+        position: absolute;
+        right: 55px;
+        top: -117px;
+        width: 96px;
+        z-index: 4;
+    }
+}*/
+
+.add-house__title {
+    @include ff_gothamRoundedMedium();
+    color: $blue;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+        font-size: 32px;
+        text-align: center;
+        line-height: 36px;
+    }
+}
+
+.add-house__description {
+    color: $base-color-2;
+    font-size: 14px;
+    margin: 20px auto;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: 18px;
+        margin: 30px auto;
+        text-align: center;
+    }
+
+    span {
+        @include respond-to(tablet){
+            display: inline-block;
+        }
+    }
+}
+
+
+
+// subSearch
+.add-house__subsearch-wrapper {
+    box-sizing: border-box;
+    padding: 50px 0 30px;
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.add-house__subsearch-title {
+    @include ff_gothamRounded();
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include respond-to(tablet) {
+        font-size: 38px;
+    }
+}
+
+.add-house__subsearch-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: 21px;
+        margin-bottom: 30px;
+    }
+}
+
+.add-house__subsearch {
+    box-sizing: border-box;
+    float: left;
+    padding: 0 20px;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.add-house__search-container {
+    background: $white;
+    border-radius: 5px;
+    color: $base-color-1;
+    height: 50px;
+    line-height: 50px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 80%;
+    }
+
+    .add-house__subsearch & {
+        border: 1px solid $base-color-1;
+    }
+
+}
+
+
+.add-house__search-container-input {
+    @include placeholder($base-color-1, $white);
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 0;
+    color: $base-color-3;
+    float: left;
+    font-size: 13px;
+    height: 48px;
+    outline: none;
+    padding: 0 10px;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        width: 70%;
+    }
+}
+
+.add-house__search-submit-container {
+    background: $blue;
+    border-radius: 0 5px 5px 0;
+    display: none;
+    float: right;
+    position: absolute;
+    right: 0;
+    width: 35%;
+    z-index: 2;
+
+    @include respond-to(tablet) {
+        display: block;
+        position: relative;
+        width: 20%;
+    }
+
+    .add-house__subsearch & {
+        border-radius: 0 4px 4px 0;
+        line-height: 48px;
+
+        @include respond-to(tablet) {
+            width: 30%;
+        }
+    }
+
+    &.visible-mobile {
+        border-radius: 0 4px 4px 0;
+        display: block;
+        float: left;
+        //margin-top: 10px;
+        position: absolute;
+        width: 40px;
+
+        @include respond-to(tablet){
+            display: none;
+        }
+
+        &:after {
+            @include transform(rotate(-135deg));
+            border-left: 2px solid $white;
+            border-bottom: 2px solid $white;
+            content: '';
+            left: 50%;
+            margin: -5px 0 0 -5px;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+
+        }
+    }
+}
+
+.add-house__search-submit {
+    @include ff_gothamRounded();
+    -webkit-appearance: none;
+    background: $blue;
+    border: none;
+    border-bottom: 1px solid $blue-dark;
+    border-radius: 0 0 0 0;
+    color: $white;
+    height: 45px;
+    outline: 0;
+    opacity: 1;
+    padding: 0;
+    text-indent: -1000px;
+    text-transform: uppercase;
+    width: 100%;
+
+    @include respond-to(tablet) {
+        -webkit-appearance: none;
+        background: $blue;
+        border: none;
+        border-bottom: 1px solid $blue-dark;
+        border-radius: 0 0 3px 0;
+        color: $white;
+        height: 45px;
+        opacity: 1;
+        padding: 0;
+        outline: 0;
+        text-indent: 0;
+        text-transform: uppercase;
+        width: 100%;
+    }
+
+    .visible-mobile & {
+        border-radius: 0 3px 3px 0;
+    }
+}
+
+.add-house__actions {
+    width: 100%;
+
+    .btn {
+        display: table;
+        float: none;
+        height: 50px;
+        line-height: 50px;
+        margin: auto;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            width: auto;
+        }
+    }
+}

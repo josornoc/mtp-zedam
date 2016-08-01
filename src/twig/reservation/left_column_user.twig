@@ -1,0 +1,19 @@
+<div class="left-column__image-container">
+    <img src="images/{{ user_image }}" width="100%" />
+
+    <div class="left-column__info">
+        <div class="left-column__info-name">
+            {{ name }}
+        </div>
+        <div class="left-column__info-location">
+            {{ location }}
+        </div>
+
+        <div class="left-column__info-star">
+            {% include '../content/component/stars.twig' with {
+                stars: stars,
+                reviews: reviews
+            } only %}
+        </div>
+    </div>
+</div>

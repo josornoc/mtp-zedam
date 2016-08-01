@@ -1,0 +1,146 @@
+@import '../variables';
+@import '../typographie';
+
+.message__container {
+    background: $base-color-8;
+    border-bottom: 1px solid $base-color-1;
+    box-sizing: border-box;
+    display: table;
+    padding: 10px;
+    width: 100%;
+
+    &.read {
+        background: $white;
+    }
+}
+
+.message__image-wrapper {
+    display: none;
+
+    @include respond-to(tablet) {
+        display: table-cell;
+        padding-right: 10px;
+        vertical-align: top;
+        width: 19%;
+    }
+
+    @include respond-to(desktop_big) {
+        width: 16%;
+    }
+}
+
+.message__image-container {
+    padding-bottom: 78%;
+    position: relative;
+    width: 100%;
+}
+
+.message__profile-image-container {
+    display: table-cell;
+    padding: 0 10px 0 0;
+    vertical-align: middle;
+
+    @include respond-to(tablet) {
+        padding: 0 10px;
+    }
+}
+
+.message__profile-image {
+    border-radius: 45px;
+    height: 45px;
+    width: 45px;
+}
+
+.message__info {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.message__info-row {
+    float: left;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+
+    &.zero {
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+
+
+    &.first {
+        color: $base-color-9;
+    }
+
+    &.second {
+        color: $base-color-4;
+    }
+
+    &.third {
+        color: $base-color-6;
+    }
+}
+
+.message__actions {
+    display: none;
+
+    @include respond-to(tablet) {
+        display: table-cell;
+        vertical-align: middle;
+        min-width: 112px;
+    }
+
+    a {
+        color: $blue;
+    }
+}
+
+.message__state {
+    text-transform: uppercase;
+
+    &.consulta {
+        color: $orange;
+    }
+
+    &.pendiente {
+        color: $orange;
+    }
+
+    &.finalizada {
+        color: $green;
+    }
+
+    &.anulada {
+        color: $base-color-9;
+    }
+
+    &.rechazada {
+        color: $base-color-6;
+    }
+}
+
+.message__item {
+    border-radius: 4px;
+    color: $base-color-4;
+    float: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+
+    &.traveler {
+        background: $base-color-0;
+    }
+
+    &.host {
+        background: $blue-light-2;
+    }
+}
+
+.message__date {
+    color: $base-color-9;
+    font-size: 12px;
+    margin-top: 5px;
+}

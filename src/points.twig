@@ -1,0 +1,278 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    <div class="left-column__image-container clean">
+                        <img src="images/mobile/user/host-image.png" width="100%" />
+
+                        <div class="left-column__reservation points__information">
+
+                            <div class="traveler__info">
+                                <div class="label_win full">
+                                    <span class="text">Tienes</span>
+
+                                    <span class="points">700</span>
+
+                                    <span class="text">
+                                        puntos
+                                    </span>
+
+                                </div>
+
+                            </div>
+                            <div class="left-column__reservation-content">
+
+                                <div class="content_text">
+                                    1 punto = 1€ de crédito de viaje
+                                </div>
+                                <div class="content_win">
+                                    Reserva ahora tu próximo viaje en
+                                    más de 20.000 destino
+
+                                    <br/>
+
+                                    <a href="">
+                                        Mira nuestras sugerencias
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-7 col-md-offset-1 col-lg-offset-1 col-lg-8">
+
+                    <div class="profile__section top">
+                        <div class="profile__section-title only">
+                            Consigue más puntos
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- datos perfil -->
+                        <div class="row">
+
+                            {% set profile = false %}
+
+                            {% if profile %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form big">Completa los datos de tu perfil</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win">
+                                        <span class="enable">GANA 200 PUNTOS</span>
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form success">
+                                        <span class="congrats">¡Enhorabuena!</span>
+                                        Has ganado 200 puntos al completar tu perfil
+                                    </label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win ok">
+                                        <span class="enable">Ok</span>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- Invita a tus amigos a MyTwinPlace -->
+                        <div class="row">
+
+                            {% set invite = true %}
+
+                            {% if invite %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form big">Invita a tus amigos a MyTwinPlace</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win">
+                                        <span class="enable">GANA 200 PUNTOS</span>
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form success">
+                                        <span class="congrats">¡Enhorabuena!</span>
+                                        Has ganado 200 puntos al invitar amigos
+                                    </label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win ok">
+                                        <span class="enable">Ok</span>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- añadir espacio perfil -->
+                        <div class="row">
+
+                            {% set space = true %}
+
+                            {% if space %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form big">Añade tu espacio</label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win">
+                                        <span class="enable">GANA 200 PUNTOS</span>
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <label class="label-form success">
+                                        <span class="congrats">¡Enhorabuena!</span>
+                                        Has ganado 200 puntos al añadir tu espacio
+                                    </label>
+                                </div>
+                                <div class="col-xs-12 col-sm-12 col-md-5">
+                                    <a href="" class="btn win ok">
+                                        <span class="enable">Ok</span>
+                                    </a>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- Código Promocional -->
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <label class="label-form dark mtop">Código Promocional</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-7">
+                                <div class="input-group only">
+                                    <input type="text" name="phone" class="form-control" placeholder="Inserta el código" />
+                                    <span class="input-group-addon btn grey" id="basic-addon2">
+                                        Validar
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <!-- Código Promocional -->
+                        <div class="row">
+
+                            <div class="col-xs-12 col-sm-12 col-md-7">
+                                <label class="label-form mtop">¿Necesitas más puntos?</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-5">
+                                <a href="" class="btn light-blue">
+                                    <span class="enable">Contáctanos</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {# Transacciones #}
+                    <div class="profile__section extra">
+                        <div class="profile__section-title only">
+                            Últimas transacciones
+                        </div>
+                    </div>
+
+                    <div class="profile__section">
+                        <div class="transactions">
+
+                            <div class="transactions__header">
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                        Fecha
+                                    </div>
+                                    <div class="col-sm-8">
+                                        Descripción
+                                    </div>
+                                    <div class="col-sm-2 points">
+                                        Puntos
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transactions__content">
+                                {% set content = [
+                                    {
+                                        date: '18/03/2014',
+                                        type: 'success',
+                                        text: 'Has completado tu perfil y has ganado:',
+                                        points: '150'
+                                    },
+                                    {
+                                        date: '18/03/2014',
+                                        type: 'reservation',
+                                        text: 'Tu reserva en',
+                                        house: 'Nombre de la casa',
+                                        text2: 'del 12/03/2014',
+                                        points: '150'
+                                    },
+                                    {
+                                        date: '18/03/2014',
+                                        type: 'code',
+                                        text: '4YFN',
+                                        points: '150'
+                                    },
+                                ] %}
+
+                                {% for item in content %}
+                                <div class="transactions__row">
+
+                                    <div class="row {{ item.type }}">
+                                        <div class="col-sm-2 date">
+                                            {{ item.date }}
+                                        </div>
+                                        <div class="col-sm-8 description">
+                                            {% if item.type == 'success' %}
+                                                <span class="success">¡Enhorabuena!</span>
+                                                {{ item.text }}
+                                            {% elseif item.type == 'code' %}
+                                                <span class="success">Código Promocional</span>
+                                                {{ item.text }}
+                                            {% elseif item.type == 'reservation' %}
+                                                {{ item.text }}
+                                                <a href="">{{ item.house }}</a>
+                                                {{ item.text2 }}
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-sm-2 points">
+                                            {{ item.type == 'reservation' ? '-' : '+' }}
+                                            {{ item.points }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

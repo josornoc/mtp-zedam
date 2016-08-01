@@ -1,0 +1,23 @@
+<div class="switch__container">
+
+    {% if active == 'traveler' %}
+        <div class="switch__disable">
+            Como viajero
+        </div>
+    {% else %}
+        <a href="my_reservations_traveler.html" class="switch__enable">
+            Como viajero
+        </a>
+    {% endif %}
+
+    {% if active == 'host' %}
+        <div class="switch__disable">
+            Como anfitrión
+        </div>
+    {% else %}
+        <a href="my_reservations_host.html" class="switch__enable">
+            Como anfitrión
+        </a>
+    {% endif %}
+
+</div>

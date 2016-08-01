@@ -1,0 +1,42 @@
+{% include 'left_column_user.twig' with {
+    name: 'Martha',
+    user_image: 'mobile/user/host-image.png',
+    location: 'Barcelona, Spain',
+    stars: 3,
+    reviews: 36,
+} only %}
+
+
+{% include 'left_column_reservation_data.twig' with {
+    title: 'Datos de la reserva',
+} %}
+
+{% include 'left_column_details_host.twig' with {
+    title: 'Detalles',
+} %}
+
+<div class="left-column__reservation clean">
+
+    <div class="left-column__reservation-title">
+        Interesada en esta casa
+    </div>
+
+    <div class="left-column__reservation-content">
+
+        {% set content = [
+        {
+            image: 'https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579',
+            points: '253',
+            show_icon: false
+        }
+        ] %}
+
+        {% for item in content %}
+            {% include '../content/component/house_item.twig' with {
+                item: item
+            } only %}
+        {% endfor %}
+
+    </div>
+
+</div>

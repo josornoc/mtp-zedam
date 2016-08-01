@@ -46,7 +46,6 @@
 }
 
 .house-resume__container {
-    border-bottom: 1px solid $base-color-1;
     box-sizing: border-box;
     display: block;
     float: left;
@@ -56,6 +55,7 @@
     width: calc(100% + 30px);
 
     @include respond-to(tablet) {
+        border-bottom: 1px solid $base-color-1;
         float: none;
         display: table;
         margin-left: 0;

@@ -13,16 +13,16 @@ $(function () {
             to: 128,
             step: 1,
             onStart: function (data) {
-                console.log(data);
+                //console.log(data);
             },
             onChange: function (data) {
-                console.log(data);
+                //console.log(data);
             },
             onFinish: function (data) {
-                console.log(data);
+                //console.log(data);
             },
             onUpdate: function (data) {
-                console.log(data);
+                //console.log(data);
             }
         });
     });
@@ -31,7 +31,7 @@ $(function () {
     var today = new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate(), 0, 0, 0, 0);
 
     inputDateRange.datepicker({
-        autoclose: true,
+        autoclose: false,
         todayHighlight: true,
         startDate: today,
         language: 'es',

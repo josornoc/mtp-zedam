@@ -1,0 +1,62 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+                <!-- IMAGE PROFILE -->
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'photos'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Fotos'
+                    } only %}
+
+                    <div class="profile__section">
+
+                        <!-- Nombre de la casa -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12">
+                                <label class="label-form top">Fotos de la casa</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 photo-container">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="profile__add-photo no_border">
+                                            <span class="add">+</span>
+                                            <span class="text">
+                                                Añadir Fotos
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% for i in 0..6 %}
+                                    <div class="col-sm-4">
+                                        <div class="profile__add-photo no-border">
+                                            <div class="background__container-animation" style="background-image: url('https://d2lirea7fsl1nf.cloudfront.net/pictures/attachments/5613/93bb/f987/8c62/8900/0330/large/mtp-286f5065837ec7090efa8a94379b93d39198.jpg?1444123579')"></div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

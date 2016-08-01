@@ -1,0 +1,53 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="image__container invite__image_container">
+        {% include 'twig/content/component/background_image.html.twig' with {
+            alt: 'Header Image logo',
+            common: false,
+            class: 'invite_image',
+            image: 'invite/background_image.png',
+        } only %}
+
+
+        <div class="invite__title-container">
+            <div class="invite__title">
+                ¡Invita a tus amigos y gana 200 puntos!
+            </div>
+            <div class="invite__description">
+                Utilizalos para reservar alojamiento en tu próximo destino.
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" >
+        <div class="row invite__container">
+
+            <div class="col-sm-4">
+                {% include 'twig/invite/action.twig' with {
+                    class: 'gmail',
+                    text: 'GMAIL'
+                } only %}
+            </div>
+
+            <div class="col-sm-4">
+                {% include 'twig/invite/action.twig' with {
+                    class: 'yahoo',
+                    text: 'YAHOO'
+                } only %}
+            </div>
+
+            <div class="col-sm-4">
+                {% include 'twig/invite/action.twig' with {
+                    class: 'windows',
+                    text: 'WINDOWS LIVE'
+                } only %}
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

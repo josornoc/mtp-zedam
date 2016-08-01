@@ -1,0 +1,15 @@
+<div class="switch__container messages">
+    {% set tag = (active != 'traveler') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'traveler' ? 'href="messages_traveler.html"' : '' }} class="{{ active != 'traveler' ? 'switch__enable' : 'switch__disable'}}">
+        Como viajero
+        <span class="notif">{{ traveler_amount }}</span>
+    </{{ tag }}>
+
+    {% set tag = (active != 'host') ? 'a' : 'div' %}
+
+    <{{ tag }} {{ active != 'host' ? 'href="messages_host.html"' : '' }} class="{{ active != 'host' ? 'switch__enable' : 'switch__disable'}}">
+        Como anfitrión
+        <span class="notif">{{ host_amount }}</span>
+    </{{ tag }}>
+</div>

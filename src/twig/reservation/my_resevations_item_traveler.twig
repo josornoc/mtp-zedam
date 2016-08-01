@@ -1,0 +1,56 @@
+<div class="my-houses__container">
+
+    <div class="my-houses__info">
+
+        <div class="my-houses__traveler-image">
+            <div class="background__container-animation lazyload" style="background-image: url('{{ item.image }}')"></div>
+
+            <div class="house__related-points">
+                {{ item.points }} <span>points</span>
+            </div>
+
+            <div class="house__host-image">
+                <div class="house__host-image-container">
+                    {% include '../content/component/image.html.twig' with {
+                        alt: item.title,
+                        common: true,
+                        class: '',
+                        image: item.image_profile
+                    } only %}
+                </div>
+                <a href="" class="house__host-image-text">
+                    Hable con ella
+                </a>
+            </div>
+        </div>
+
+        <div class="my-houses__second-column">
+
+            <div class="my-house__info-title">
+                {{ item.title }}
+            </div>
+            <a href="" class="my-house__info-location clean">
+                <span class="icon"></span>{{ item.location}}
+            </a>
+            <div class="my-house__info-date clean">
+                <span class="icon"></span>
+                Desde 15/05/2016 hasta 20/05/2016
+            </div>
+            <div class="my-house__info-contact">
+                Tu anfitrión(a): Kati
+            </div>
+            <div class="my-house__info-contact-mail">
+                katilizandra@yahoo.es<br>
+                +34 000000000<br>
+            </div>
+
+        </div>
+
+        <div class="my-houses__third-column">
+            {% include 'traveler_data.twig' %}
+        </div>
+
+    </div>
+
+</div>
+

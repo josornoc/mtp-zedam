@@ -6,6 +6,7 @@
     bottom: 0;
     display: none;
     height: 0;
+    padding-bottom: 20px;
     position: fixed;
     margin-top: 59px;
     top: 0;
@@ -16,6 +17,7 @@
         bottom: auto;
         display: block;
         margin-top: 0;
+        padding-bottom: 0;
         position: relative;
     }
 
@@ -68,6 +70,14 @@
 
     > .container {
         pointer-events: none;
+    }
+
+    &.table {
+        display: inline-table !important;
+
+        @include respond-to(tablet) {
+            display: block !important;
+        }
     }
 }
 

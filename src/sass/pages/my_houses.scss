@@ -99,6 +99,10 @@
 }
 
 .my-house__info-location {
+    color: $blue;
+}
+
+.my-house__info-location {
     margin-top: 10px;
 
     .icon {
@@ -332,12 +336,12 @@
 
 .my-houses__traveler-image {
     float: left;
-    padding-bottom: 55%;
+    padding-bottom: 80%;
     position: relative;
     width: 100%;
 
     @include respond-to(tablet) {
-        padding-bottom: 28%;
+        padding-bottom: 24%;
         width: 24%;
     }
 
@@ -354,6 +358,14 @@
 
         @include respond-to(tablet) {
             padding-bottom: 23%;
+        }
+    }
+
+    &.host {
+        padding-bottom: 60%;
+
+        @include respond-to(tablet) {
+            padding-bottom: 16%;
         }
     }
 }
@@ -549,17 +561,35 @@
 
 .switch__container {
     float: left;
+    padding-bottom: 20px;
+    text-align: center;
     width: 100%;
 
     @include respond-to(tablet) {
         margin-top: 20px;
+        padding-bottom: 0;
+    }
+
+    &.messages {
+        text-align: left;
+
+        .switch__enable,
+        .switch__disable {
+            box-sizing: border-box;
+            padding-left: 25px;
+
+            @include respond-to(tablet) {
+                padding-left: 0;
+            }
+        }
     }
 }
 
 .switch__enable {
     color: $blue;
     float: left;
-    text-align: center;
+    padding-bottom: 5px;
+    position: relative;
     width: 50%;
 
     @include respond-to(tablet){
@@ -571,7 +601,8 @@
 .switch__disable {
     float: left;
     color: $base-color-4;
-    text-align: center;
+    padding-bottom: 5px;
+    position: relative;
     width: 50%;
 
     @include respond-to(tablet){

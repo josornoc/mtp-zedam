@@ -307,26 +307,26 @@
         position: relative;
     }
 
-    .notif {
-        background: $red;
-        border-radius: 100px;
-        box-sizing: border-box;
-        color: $white;
-        font-size: 12px;
-        line-height: 20px;
-        left: 130px;
-        min-width: 20px;
-        padding: 0 3px;
-        position: absolute;
-        text-align: center;
-
-        @include respond-to(tablet) {
-
-        }
-    }
-
     &.messages {
         margin-bottom: 30px;
+    }
+}
+
+.notif {
+    background: $red;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: $white;
+    font-size: 12px;
+    line-height: 20px;
+    min-width: 20px;
+    padding: 0 3px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        left: 130px;
     }
 }
 
@@ -395,6 +395,7 @@
 
 .profile__edit-image-back {
     opacity: .5;
+    margin-bottom: 20px;
 }
 
 .profile__edit-image {

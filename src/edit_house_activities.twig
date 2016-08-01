@@ -1,0 +1,174 @@
+{% extends "twig/layout.twig" %}
+
+{% set current = 'house' %}
+
+{% block page %}
+
+    <div class="profile">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
+                    {% include 'twig/edit_house/edit_house_menu.twig' with {
+                        active: 'activities'
+                    } %}
+                </div>
+
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9">
+
+                    {% include 'twig/profile/profile_header.twig' with {
+                        title: 'Actividades alrededor'
+                    } only %}
+
+                    <div class="profile__section">
+
+                        <!-- General -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">General</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Gastronomia/vinos',
+                                            'Cocinar',
+                                            'Campamentos infantiles',
+                                            'Lugares históricos',
+                                            'Música (conciertos..)',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Eventos deportivos',
+                                            'Ordenadores/Internet',
+                                            'Video juegos',
+                                            'Conducción - Karting',
+                                            'Motos',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- General -->
+                        <div class="row row_extra">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Playa</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Buceo/esnórquel',
+                                            'Esquí acuático',
+                                            'Navegar',
+                                            'Pasear en barco',
+                                            'Pescar',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Rafting/Canoa',
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Ciudad -->
+                        <div class="row row_extra">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Ciudad</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Teatro/Ópera',
+                                            'Museos',
+                                            'Ir de tiendas',
+                                            'Cine'
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Montaña/Naturaleza -->
+                        <div class="row row_extra">
+                            <div class="col-xs-12 col-sm-12 col-md-3">
+                                <label class="label-form">Montaña/Naturaleza</label>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9">
+
+                                <div class="row">
+
+                                    <div class="col-sm-6">
+                                        {% set content = [
+                                            'Esquiar/Snowboard',
+                                            'Ciclismo de montaña',
+                                            'Excursionismo',
+                                            'Escalada'
+                                        ] %}
+
+                                        {% for item in content %}
+                                            {% include 'twig/content/component/checkbox.twig' with {
+                                                item: item
+                                            } only %}
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
